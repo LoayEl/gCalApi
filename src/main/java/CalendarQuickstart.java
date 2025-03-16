@@ -71,7 +71,7 @@ public class CalendarQuickstart {
     //     .build();
 
 
-    //REMOVES SAVING AUTH TOKENS SO YOU SIGN IN EVERY TIME
+    //same as above but REMOVES SAVING AUTH TOKENS SO YOU SIGN IN EVERY TIME
     GoogleAuthorizationCodeFlow flow = new GoogleAuthorizationCodeFlow.Builder(
       HTTP_TRANSPORT, JSON_FACTORY, clientSecrets, SCOPES)
       .setAccessType("offline")
