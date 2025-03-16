@@ -62,12 +62,22 @@ public class CalendarQuickstart {
     GoogleClientSecrets clientSecrets =
         GoogleClientSecrets.load(JSON_FACTORY, new InputStreamReader(in));
 
-    // Build flow and trigger user authorization request.
+        
+    // Build flow and trigger user authorization request. (SAVES AUTHORIZATION TOKENS< DONT HAVE TO RESIGN IN)
+    // GoogleAuthorizationCodeFlow flow = new GoogleAuthorizationCodeFlow.Builder(
+    //     HTTP_TRANSPORT, JSON_FACTORY, clientSecrets, SCOPES)
+    //     .setDataStoreFactory(new FileDataStoreFactory(new java.io.File(TOKENS_DIRECTORY_PATH)))
+    //     .setAccessType("offline")
+    //     .build();
+
+
+    //REMOVES SAVING AUTH TOKENS SO YOU SIGN IN EVERY TIME
     GoogleAuthorizationCodeFlow flow = new GoogleAuthorizationCodeFlow.Builder(
-        HTTP_TRANSPORT, JSON_FACTORY, clientSecrets, SCOPES)
-        .setDataStoreFactory(new FileDataStoreFactory(new java.io.File(TOKENS_DIRECTORY_PATH)))
-        .setAccessType("offline")
-        .build();
+      HTTP_TRANSPORT, JSON_FACTORY, clientSecrets, SCOPES)
+      .setAccessType("offline")
+      .build();
+
+
     LocalServerReceiver receiver = new LocalServerReceiver.Builder().setPort(8888).build();
     Credential credential = new AuthorizationCodeInstalledApp(flow, receiver).authorize("user");
     //returns an authorized Credential object.
