@@ -9,6 +9,11 @@ import java.util.List;
 import java.util.Arrays;
 import java.util.stream.Collectors;
 
+//TO DO;
+// lists recurrence, reminders, attendees
+// start and end time with adapter
+// do we want getters?
+
 
 public class EventBuilder {
     private Event event;

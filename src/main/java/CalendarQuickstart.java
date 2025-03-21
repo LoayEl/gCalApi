@@ -27,7 +27,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Arrays;
 
-
+// BASIC SETUP QUICKSTART , main is CalCOntroller
 public class CalendarQuickstart {
   /**
    * Application name.
