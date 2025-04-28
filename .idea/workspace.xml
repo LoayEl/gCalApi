@@ -67,6 +67,7 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;Application.CalController.executor&quot;: &quot;Run&quot;,
     &quot;Application.CalendarQuickstart.executor&quot;: &quot;Profiler#1&quot;,
     &quot;Gradle.Build gCalApi.executor&quot;: &quot;Run&quot;,
     &quot;Gradle.gCalApi [:CalController.main()].executor&quot;: &quot;Run&quot;,
@@ -93,6 +94,13 @@
     </key>
   </component>
   <component name="RunManager">
+    <configuration name="CalController" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="CalController" />
+      <module name="GoogleCaAPI.main" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="JetRunConfigurationType">
       <module name="gCalApi" />
       <method v="2">
@@ -104,6 +112,11 @@
       <option name="filePath" />
       <method v="2" />
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.CalController" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -129,7 +142,7 @@
       <workItem from="1743513342447" duration="174000" />
       <workItem from="1744153510179" duration="5170000" />
       <workItem from="1745798649624" duration="1012000" />
-      <workItem from="1745864235262" duration="1970000" />
+      <workItem from="1745864235262" duration="3252000" />
     </task>
     <task id="LOCAL-00001" summary="Test add event works!">
       <option name="closed" value="true" />
@@ -186,5 +199,16 @@
     <MESSAGE value="Cal COntroller works w refactor lesgoooo" />
     <MESSAGE value="Testing set upppppp&#10;need to work on functions" />
     <option name="LAST_COMMIT_MESSAGE" value="Testing set upppppp&#10;need to work on functions" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/build.gradle</url>
+          <line>3</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
