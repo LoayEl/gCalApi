@@ -20,9 +20,6 @@ public class EventBuilderTest {
         assertEquals("Weekly team sync-up", event.getDescription());
         assertNotNull(event.getStart());
         assertEquals("2025-03-30T10:00:00-07:00", event.getStart().getDateTime().toStringRfc3339());
-        assertEquals(
-                new DateTime("2025-03-30T10:00:00-07:00").getValue(),
-                event.getStart().getDateTime().getValue()
-        );
+        assertEquals("America/Los_Angeles", event.getStart().getTimeZone());
     }
 }
