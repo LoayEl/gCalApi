@@ -1,13 +1,13 @@
+package Service;
+
 import com.google.api.services.calendar.model.Event;
 import com.google.api.services.calendar.model.EventDateTime;
 import com.google.api.services.calendar.model.EventAttendee;
 import com.google.api.services.calendar.model.EventReminder;
 import com.google.api.client.util.DateTime; // Google's DateTime class
-import java.time.LocalDate;
-import java.time.LocalDateTime;
+
 import java.util.List;
 import java.util.Arrays;
-import java.util.stream.Collectors;
 
 //TO DO;
 // lists recurrence, reminders, attendees
