@@ -5,16 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5d2decef-94a3-4672-be24-c279407ba90e" name="Changes" comment="Testing set upppppp&#10;need to work on functions">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Application/Application.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Controller/CalController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Authorization.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ConfigAndUtil/Authorization.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CalController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DateAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ConfigAndUtil/DateAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/EventBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Service/EventBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/EventBuilderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/EventBuilderTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Application/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Application/Application.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -151,7 +143,7 @@
       <workItem from="1743513342447" duration="174000" />
       <workItem from="1744153510179" duration="5170000" />
       <workItem from="1745798649624" duration="1012000" />
-      <workItem from="1745864235262" duration="13728000" />
+      <workItem from="1745864235262" duration="14339000" />
     </task>
     <task id="LOCAL-00001" summary="Test add event works!">
       <option name="closed" value="true" />
