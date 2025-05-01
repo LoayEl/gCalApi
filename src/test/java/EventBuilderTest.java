@@ -1,5 +1,7 @@
 import Service.EventBuilder;
-import com.google.api.services.calendar.model.*;
+import com.google.api.client.util.DateTime;
+import com.google.api.services.calendar.model.Event;
+import com.google.api.services.calendar.model.EventDateTime;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -19,8 +21,14 @@ public class EventBuilderTest {
         assertEquals("Team Sync", event.getSummary());
         assertEquals("Meeting Room A", event.getLocation());
         assertEquals("Weekly team sync-up", event.getDescription());
-        assertNotNull(event.getStart());
-        assertEquals("2025-03-30T10:00:00-07:00", event.getStart().getDateTime().toStringRfc3339());
-        assertEquals("America/Los_Angeles", event.getStart().getTimeZone());
+
+        EventDateTime start = event.getStart();
+        assertNotNull(start);
+        assertNotNull(start.getDateTime());
+        assertEquals("America/Los_Angeles", start.getTimeZone());
+
+        // Validate timestamp content
+        DateTime expectedStart = new DateTime("2025-03-30T10:00:00-07:00");
+        assertEquals(expectedStart.getValue(), start.getDateTime().getValue());
     }
 }
