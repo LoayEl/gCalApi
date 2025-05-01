@@ -1,5 +1,6 @@
 package Controller;
 
+import ConfigAndUtil.Authorization;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.core.io.ClassPathResource;
@@ -8,11 +9,13 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.io.InputStream;
 
+@RestController
 public class ConfigControl {
 
 
     @GetMapping("/google-client-id")
     public String getGoogleClientId() {
+        System.out.println("GET /google-client-id called");
         try {
             ClassPathResource resource = new ClassPathResource("credentials.json");
             InputStream inputStream = resource.getInputStream();
@@ -27,5 +30,6 @@ public class ConfigControl {
             return "Error loading client ID";
         }
     }
+
 
 }
