@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletResponse;
+import java.io.File;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 
@@ -14,6 +15,9 @@ import com.google.api.client.googleapis.auth.oauth2.GoogleClientSecrets;
 
 import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.api.client.json.gson.GsonFactory;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.node.ObjectNode;
 
 import ConfigAndUtil.Authorization;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -32,7 +36,7 @@ public class AuthControl {
         }
     }
 
-    //after clicking the oauth link the call back comes back to backend and gets the token
+    //after clicking the oauth link the call back comes back to backend and gets the tokens
     @GetMapping("/oauth/callback")
     public void oauthCallback(@RequestParam("code") String code, HttpServletResponse response) {
         try {
@@ -61,7 +65,14 @@ public class AuthControl {
             System.out.println("Access Token: " + accessToken);
             System.out.println("Refresh Token: " + refreshToken);
 
-            //OK TO DO FIND OUT HOW TO SEND TOKENS
+            //OK TO DO FIND OUT HOW TO SEND TOKEN
+            ObjectMapper objectMapper = new ObjectMapper();
+            ObjectNode jsonNode = objectMapper.createObjectNode();
+            jsonNode.put("access_token", accessToken);
+            jsonNode.put("refresh_token", refreshToken);
+
+            File file = new File("src/main/resources/tokens.json");
+            objectMapper.writeValue(file, jsonNode);
 
             response.sendRedirect("http://localhost:5174/homepage");
         } catch (Exception e) {
