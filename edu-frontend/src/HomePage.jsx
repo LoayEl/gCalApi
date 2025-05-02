@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-export default function Dashboard() {
+export default function HomePage() {
     const [events, setEvents] = useState(null)
     const [loading, setLoading] = useState(false)
     const [error, setError] = useState(null)
@@ -9,7 +9,7 @@ export default function Dashboard() {
         setLoading(true)
         setError(null)
         try {
-            const res = await fetch('/events')     // via proxy to localhost:8080
+            const res = await fetch('/events')
             if (!res.ok) throw new Error('Fetch failed')
             const text = await res.text()
             setEvents(text)

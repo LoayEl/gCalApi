@@ -23,6 +23,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+//***************************DELETE CLASS WHEN PHASED OUT ************************************************************
 @RestController
 public class CalController {
 
