@@ -5,18 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5d2decef-94a3-4672-be24-c279407ba90e" name="Changes" comment="Testing set upppppp&#10;need to work on functions">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Controller/ClassControl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Controller/GroupControl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Controller/ScheduleControl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Controller/UserControl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Model/Class.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Model/Group.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Model/Schedule.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Service/ClassService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Service/GroupService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Service/ScheduleService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Service/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/edu-frontend/src/HomePage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/edu-frontend/src/HomePage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ConfigAndUtil/Authorization.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ConfigAndUtil/Authorization.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/AuthControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/AuthControl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/CalController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/CalController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tokens/StoredCredential" beforeDir="false" afterPath="$PROJECT_DIR$/tokens/StoredCredential" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,11 +90,13 @@
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\IntelliJ IDEA 2024.3.5\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\hwatt\IdeaProjects\gCalApi\edu-frontend\src" />
       <recent name="C:\Users\hwatt\IdeaProjects\gCalApi\src" />
     </key>
   </component>

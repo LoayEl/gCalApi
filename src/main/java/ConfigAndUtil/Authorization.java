@@ -14,6 +14,11 @@ import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
 import java.util.Collections;
 import java.util.List;
+import com.google.api.client.googleapis.auth.oauth2.GoogleAuthorizationCodeFlow;
+import com.google.api.client.util.store.FileDataStoreFactory;
+import java.io.File;
+import java.util.Collections;
+
 
 public class Authorization {
 
@@ -22,6 +27,7 @@ public class Authorization {
     private static final List<String> SCOPES = Collections.singletonList("https://www.googleapis.com/auth/calendar");
 
     public static Credential getCredentials(final NetHttpTransport httpTransport) throws IOException {
+
         InputStream in = Authorization.class.getResourceAsStream(CREDENTIALS_FILE_PATH);
         if (in == null) {
             throw new IOException("Error: credentials.json not found in resources.");
@@ -30,8 +36,14 @@ public class Authorization {
 
         GoogleAuthorizationCodeFlow flow = new GoogleAuthorizationCodeFlow.Builder(
                 httpTransport, JSON_FACTORY, clientSecrets, SCOPES)
+                .setDataStoreFactory(new FileDataStoreFactory(new File("tokens")))
                 .setAccessType("offline")
                 .build();
+
+
+        Credential credential = flow.loadCredential("user");
+        System.out.println("Loaded credential: " + (credential != null ? "FOUND" : "NOT FOUND"));
+
 
         return flow.loadCredential("user");
     }

@@ -1,30 +1,34 @@
 package Controller;
 
+import com.google.api.client.googleapis.auth.oauth2.GoogleAuthorizationCodeFlow;
+import com.google.api.client.googleapis.auth.oauth2.GoogleAuthorizationCodeTokenRequest;
+import com.google.api.client.googleapis.auth.oauth2.GoogleClientSecrets;
+import com.google.api.client.googleapis.auth.oauth2.GoogleTokenResponse;
+import com.google.api.client.googleapis.javanet.GoogleNetHttpTransport;
+import com.google.api.client.http.javanet.NetHttpTransport;
+import com.google.api.client.json.JsonFactory;
+import com.google.api.client.json.gson.GsonFactory;
+import com.google.api.client.util.store.FileDataStoreFactory;
+
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletResponse;
+
 import java.io.File;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-
-import com.google.api.client.googleapis.auth.oauth2.GoogleAuthorizationCodeTokenRequest;
-import com.google.api.client.googleapis.auth.oauth2.GoogleTokenResponse;
-import com.google.api.client.googleapis.auth.oauth2.GoogleClientSecrets;
-
-import com.google.api.client.http.javanet.NetHttpTransport;
-import com.google.api.client.json.gson.GsonFactory;
-
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.node.ObjectNode;
+import java.util.Collections;
+import java.util.List;
 
 import ConfigAndUtil.Authorization;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class AuthControl {
+
+    private static final JsonFactory JSON_FACTORY = GsonFactory.getDefaultInstance();
+    private static final List<String> SCOPES = Collections.singletonList("https://www.googleapis.com/auth/calendar");
 
     @GetMapping("/auth/url")
     public String getAuthUrl() {
@@ -36,9 +40,9 @@ public class AuthControl {
         }
     }
 
-    //after clicking the oauth link the call back comes back to backend and gets the tokens
     @GetMapping("/oauth/callback")
     public void oauthCallback(@RequestParam("code") String code, HttpServletResponse response) {
+        System.out.println("called oauthCallback");
         try {
             InputStream in = Authorization.class.getResourceAsStream("/credentials.json");
             GoogleClientSecrets clientSecrets = GoogleClientSecrets.load(
@@ -59,22 +63,17 @@ public class AuthControl {
                     redirectUri
             ).execute();
 
-            String accessToken = tokenResponse.getAccessToken();
-            String refreshToken = tokenResponse.getRefreshToken();
+            NetHttpTransport httpTransport = GoogleNetHttpTransport.newTrustedTransport();
+            GoogleAuthorizationCodeFlow flow = new GoogleAuthorizationCodeFlow.Builder(
+                    httpTransport, JSON_FACTORY, clientSecrets, SCOPES)
+                    .setDataStoreFactory(new FileDataStoreFactory(new File("tokens")))
+                    .setAccessType("offline")
+                    .build();
 
-            System.out.println("Access Token: " + accessToken);
-            System.out.println("Refresh Token: " + refreshToken);
-
-            //OK TO DO FIND OUT HOW TO SEND TOKEN
-            ObjectMapper objectMapper = new ObjectMapper();
-            ObjectNode jsonNode = objectMapper.createObjectNode();
-            jsonNode.put("access_token", accessToken);
-            jsonNode.put("refresh_token", refreshToken);
-
-            File file = new File("src/main/resources/tokens.json");
-            objectMapper.writeValue(file, jsonNode);
+            flow.createAndStoreCredential(tokenResponse, "user");
 
             response.sendRedirect("http://localhost:5174/homepage");
+
         } catch (Exception e) {
             e.printStackTrace();
             try {

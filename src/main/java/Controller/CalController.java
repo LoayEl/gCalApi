@@ -1,10 +1,8 @@
 package Controller;
 
 import ConfigAndUtil.Authorization;
-
 import Service.EventBuilder;
 
-import ConfigAndUtil.Authorization;
 import com.google.api.client.auth.oauth2.Credential;
 import com.google.api.client.googleapis.javanet.GoogleNetHttpTransport;
 import com.google.api.client.http.javanet.NetHttpTransport;
@@ -46,6 +44,7 @@ public class CalController {
     // Fetch upcoming events from the user's calendar
     @GetMapping("/events")
     public String getUpcomingEvents() throws IOException {
+        System.out.println("getUpcomingEvents called");
         // Get the current time for filtering events
         DateTime now = new DateTime(System.currentTimeMillis());
 
@@ -69,6 +68,7 @@ public class CalController {
                 }
                 eventDetails.append(String.format("%s (%s)\n", event.getSummary(), start));
             }
+            System.out.println(eventDetails.toString());
             return eventDetails.toString();
         }
     }
@@ -77,18 +77,25 @@ public class CalController {
     @PostMapping("/createEvent")
     public String createEvent() throws IOException {
         // Build an event using Service.EventBuilder
-        Event event = new EventBuilder()
-                .setSummary("Google I/O 2025")
-                .setLocation("800 Howard St., San Francisco, CA 94103")
-                .setDescription("A chance to hear more about Google's developer products.")
-                .setStart("2025-05-28T09:00:00-07:00", "America/Los_Angeles")
-                .setEnd("2025-05-28T17:00:00-07:00", "America/Los_Angeles")
-                .build();
+        try {
+            Event event = new EventBuilder()
+                    .setSummary("Google I/O 2025")
+                    .setLocation("800 Howard St., San Francisco, CA 94103")
+                    .setDescription("A chance to hear more about Google's developer products.")
+                    .setStart("2025-05-28T09:00:00-07:00", "America/Los_Angeles")
+                    .setEnd("2025-05-28T17:00:00-07:00", "America/Los_Angeles")
+                    .build();
 
-        // Insert event into the primary calendar
-        String calendarId = "primary";
-        Event createdEvent = service.events().insert(calendarId, event).execute();
+            // Insert event into the primary calendar
+            String calendarId = "primary";
+            Event createdEvent = service.events().insert(calendarId, event).execute();
 
-        return "Event created: " + createdEvent.getHtmlLink();
+            return "Event created: " + createdEvent.getHtmlLink();
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+            System.out.println(e.getMessage());
+            return "Error creating event";
+        }
     }
 }
