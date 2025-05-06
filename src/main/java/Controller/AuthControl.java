@@ -1,5 +1,8 @@
 package Controller;
 
+import Model.User;
+import Database.UserDatabase;
+
 import com.google.api.client.googleapis.auth.oauth2.GoogleAuthorizationCodeFlow;
 import com.google.api.client.googleapis.auth.oauth2.GoogleAuthorizationCodeTokenRequest;
 import com.google.api.client.googleapis.auth.oauth2.GoogleClientSecrets;
@@ -36,6 +39,7 @@ public class AuthControl {
     private static final List<String> SCOPES = Arrays.asList(
             "openid",
             "email",
+            "profile",
             "https://www.googleapis.com/auth/calendar"
     );
 
@@ -79,8 +83,13 @@ public class AuthControl {
             }
 
             GoogleIdToken idToken = GoogleIdToken.parse(JSON_FACTORY, idTokenString);
-            String userId = idToken.getPayload().getEmail();
-            System.out.println("*********************************Authenticated user: " + userId);
+
+            //Storing user in our Temp Database file
+            String userEmail = idToken.getPayload().getEmail();
+            String userName = idToken.getPayload().get("name").toString();
+            User newUser = new User(0, userName, userEmail, null);
+            UserDatabase.postUser(newUser);
+            System.out.println("\n Saved Authenticated user: " + newUser.getName() + ", ID: " + newUser.getUserId() + userEmail + "\n");
 
             // storing in googles flow
             NetHttpTransport httpTransport = GoogleNetHttpTransport.newTrustedTransport();
@@ -90,7 +99,7 @@ public class AuthControl {
                     .setAccessType("offline")
                     .build();
 
-            flow.createAndStoreCredential(tokenResponse, userId);
+            flow.createAndStoreCredential(tokenResponse, userEmail);
 
             response.sendRedirect("http://localhost:5174/homepage");
 

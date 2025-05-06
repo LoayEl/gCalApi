@@ -34,6 +34,7 @@ public class Authorization {
     private static final List<String> SCOPES = Arrays.asList(
             "openid",
             "email",
+            "profile",
             "https://www.googleapis.com/auth/calendar"
     );
 
