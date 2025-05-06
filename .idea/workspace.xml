@@ -5,10 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5d2decef-94a3-4672-be24-c279407ba90e" name="Changes" comment="Testing set upppppp&#10;need to work on functions">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Database/UserDatabase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ConfigAndUtil/Authorization.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ConfigAndUtil/Authorization.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ConfigAndUtil/CORSconfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ConfigAndUtil/CORSconfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Controller/AuthControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/AuthControl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Database/UserDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Database/UserDatabase.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/User.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

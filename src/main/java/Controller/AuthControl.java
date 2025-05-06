@@ -18,6 +18,8 @@ import com.google.api.client.auth.oauth2.Credential;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletResponse;
 
@@ -42,6 +44,9 @@ public class AuthControl {
             "profile",
             "https://www.googleapis.com/auth/calendar"
     );
+
+    @Value("${frontend.redirect-uri}")
+    private String frontredirectUri;
 
     @GetMapping("/auth/url")
     public String getAuthUrl() {
@@ -101,7 +106,8 @@ public class AuthControl {
 
             flow.createAndStoreCredential(tokenResponse, userEmail);
 
-            response.sendRedirect("http://localhost:5174/homepage");
+            response.sendRedirect(frontredirectUri);
+            //response.sendRedirect("http://localhost:5174/homepage");
 
         } catch (Exception e) {
             e.printStackTrace();
