@@ -2,6 +2,7 @@ package Controller;
 
 import ConfigAndUtil.Authorization;
 import Service.EventBuilder;
+import ConfigAndUtil.CalServiceBuilder;
 
 import com.google.api.client.auth.oauth2.Credential;
 import com.google.api.client.googleapis.javanet.GoogleNetHttpTransport;
@@ -20,6 +21,8 @@ import java.util.List;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.CrossOrigin;
+
 
 //***************************DELETE CLASS WHEN PHASED OUT ************************************************************
 @RestController
@@ -27,6 +30,7 @@ public class CalController {
 
     private static final String APPLICATION_NAME = "Gcal API TESTING";
     private static Calendar service;
+    //service = CalServiceBuilder.buildService();
 
     static {
         try {
@@ -42,6 +46,7 @@ public class CalController {
     }
 
     // Fetch upcoming events from the user's calendar
+    @CrossOrigin(origins = "http://localhost:5174", allowCredentials = "true")
     @GetMapping("/events")
     public String getUpcomingEvents() throws IOException {
         System.out.println("getUpcomingEvents called");

@@ -5,12 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5d2decef-94a3-4672-be24-c279407ba90e" name="Changes" comment="Testing set upppppp&#10;need to work on functions">
+      <change afterPath="$PROJECT_DIR$/edu-frontend/src/Navbar.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/edu-frontend/src/ProtectedRoute.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ConfigAndUtil/CalServiceBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/GoogleCaAPI.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/GoogleCaAPI.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/edu-frontend/src/App.jsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/edu-frontend/src/HomePage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/edu-frontend/src/HomePage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/edu-frontend/src/SignIn.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/edu-frontend/src/SignIn.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/edu-frontend/src/main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/edu-frontend/src/main.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/edu-frontend/vite.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/edu-frontend/vite.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ConfigAndUtil/Authorization.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ConfigAndUtil/Authorization.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ConfigAndUtil/CORSconfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ConfigAndUtil/CORSconfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Controller/AuthControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/AuthControl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Controller/CalController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/CalController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tokens/StoredCredential" beforeDir="false" afterPath="$PROJECT_DIR$/tokens/StoredCredential" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -206,16 +219,5 @@
     <MESSAGE value="Cal COntroller works w refactor lesgoooo" />
     <MESSAGE value="Testing set upppppp&#10;need to work on functions" />
     <option name="LAST_COMMIT_MESSAGE" value="Testing set upppppp&#10;need to work on functions" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/build.gradle</url>
-          <line>3</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

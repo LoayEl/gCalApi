@@ -1,5 +1,6 @@
 credentials.json
 tokens.json
+tokens/StoredCredential
 
 # Ignore Gradle project-specific cache directory
 .gradle

@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 
+
 export default function HomePage() {
     const [events, setEvents] = useState(null)
 
@@ -16,7 +17,13 @@ export default function HomePage() {
 
 
     return (
+
         <div style={{ padding: 20 }}>
+
+            <div>
+                <h1>Welcome to the Home Page!</h1>
+            </div>
+
             <h1>Calendar Events</h1>
             <button onClick={fetchEvents}>
                 Fetch Events
