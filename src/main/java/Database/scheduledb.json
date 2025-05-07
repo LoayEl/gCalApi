@@ -1,0 +1,28 @@
+{
+  "schedules": [
+    {
+      "id": 0,
+      "title": "Math Lecture",
+      "startTime": "2025-05-01T09:00:00",
+      "endTime": "2025-05-01T10:00:00",
+      "userEmail": "alice.smith@example.com",
+      "classroomId": 101
+    },
+    {
+      "id": 1,
+      "title": "Science Lab",
+      "startTime": "2025-05-01T11:00:00",
+      "endTime": "2025-05-01T12:30:00",
+      "userEmail": "bob.johnson@example.com",
+      "classroomId": 102
+    },
+    {
+      "id": 2,
+      "title": "Project Demo",
+      "startTime": "2025-05-02T14:00:00",
+      "endTime": "2025-05-02T15:00:00",
+      "userEmail": "carol.williams@example.com",
+      "classroomId": 103
+    }
+  ]
+}
