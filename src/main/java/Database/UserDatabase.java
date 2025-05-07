@@ -27,6 +27,14 @@ public class UserDatabase {
                 userMap.put(u.getEmail(), u);
                 idIndex = Math.max(idIndex, u.getUserId() + 1);
             }
+
+
+            User bob = userMap.get("bob.johnson@example.com");
+            if (bob != null) {
+                bob.getEnrolledClasses().add(new Model.Classroom(
+                        1003L, "Algebra I", "High School Algebra", "ALG1", bob
+                ));
+            }
         } catch (IOException e) {
             throw new UncheckedIOException("Failed to load userdb.json", e);
         }
@@ -40,6 +48,7 @@ public class UserDatabase {
     }
 
     public static User getUser(String email) {
+
         return userMap.get(email);
     }
 }

@@ -1,0 +1,25 @@
+{
+  "classrooms": [
+    {
+      "id": 1001,
+      "title": "Physics 101",
+      "description": "Intro to classical mechanics",
+      "code": "PHYS101",
+      "createdBy": "alice.smith@example.com"
+    },
+    {
+      "id": 1002,
+      "title": "Computer Science 101",
+      "description": "Intro to programming",
+      "code": "CS101",
+      "createdBy": "bob.johnson@example.com"
+    },
+    {
+      "id": 1003,
+      "title": "Algebra I",
+      "description": "High School Algebra",
+      "code": "ALG1",
+      "createdBy": "carol.williams@example.com"
+    }
+  ]
+}
