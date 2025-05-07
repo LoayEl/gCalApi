@@ -8,21 +8,10 @@ export default defineConfig({
     host: true,
     port: 5174,
     proxy: {
-      '/auth': {
-        target: 'http://localhost:8080/',
-        changeOrigin: true,
-        secure: false,
-      },
-      '/events': {
-        target: 'http://localhost:8080/',
-        changeOrigin: true,
-        secure: false,
-      },
-      '/oauth': {
-        target: 'http://localhost:8080/',
-        changeOrigin: true,
-        secure: false,
-      },
+      '/auth': { target: 'http://localhost:8080', changeOrigin: true, secure: false },
+      '/events': { target: 'http://localhost:8080', changeOrigin: true, secure: false },
+      '/oauth': { target: 'http://localhost:8080', changeOrigin: true, secure: false },
+      '/profile': { target: 'http://localhost:8080', changeOrigin: true, secure: false }, // ← ADD THIS
     },
   },
 })
