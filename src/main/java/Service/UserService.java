@@ -35,7 +35,15 @@ public class UserService {
             return false;
         }
 
-        return user.enroll(classroom);
+        boolean enrolled = user.enroll(classroom);
+        if (enrolled) {
+            UserDatabase.persistUser(user); //since user changed updating file
+        }
+        else{
+            System.out.println("already enrolled");
+        }
+        return enrolled;
+
     }
 
     public boolean leaveClassroom(HttpSession session, String code) {

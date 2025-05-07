@@ -6,6 +6,7 @@ import Model.Classroom;
 
 import javax.servlet.http.HttpSession;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -30,8 +31,13 @@ public class ClassroomControl {
     }
 
     @PostMapping("/join")
-    public boolean joinClass(HttpSession session, @RequestParam String code) {
-        return userService.enrollInClassroom(session, code);
+    public boolean joinClass(HttpSession session, @RequestBody Map<String, String> body) {
+        String code = body.get("code");
+
+        boolean enrolled = userService.enrollInClassroom(session, code);
+        System.out.println("Enrollment success: " + enrolled);
+
+        return enrolled;
     }
 
 }

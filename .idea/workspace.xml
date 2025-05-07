@@ -5,23 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5d2decef-94a3-4672-be24-c279407ba90e" name="Changes" comment="Testing set upppppp&#10;need to work on functions">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Controller/ClassroomControl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Database/ClassroomDatabase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Model/Classroom.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Service/ClassroomService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/clasroomdb.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/GoogleCaAPI.main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/GoogleCaAPI.main.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Application/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Application/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/ClassControl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/edu-frontend/src/JoinClassForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/edu-frontend/src/JoinClassForm.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/edu-frontend/vite.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/edu-frontend/vite.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/AuthControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/AuthControl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/ClassroomControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/ClassroomControl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Database/ClassroomDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Database/ClassroomDatabase.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Database/UserDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Database/UserDatabase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Database/clasroomdb.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Database/userdb.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/userdb.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Class.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Service/ClassService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Service/ClassroomService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Service/ClassroomService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/EventBuilderTest.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -1,27 +1,51 @@
 import React, { useState } from 'react';
 
-export default function JoinClassForm() {
-    const [classCode, setClassCode] = useState('');
+const JoinClassForm = () => {
+    const [code, setCode] = useState('');
+    const [message, setMessage] = useState('');
 
-    const handleSubmit = (e) => {
+    const handleJoin = async (e) => {
         e.preventDefault();
-        console.log("Joining class:", classCode);
-        // TODO: send POST request
+
+        try {
+            const response = await fetch('/join', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                credentials: 'include',
+                body: JSON.stringify({ code }),
+            });
+
+            const result = await response.json();
+
+            if(result)
+            {setMessage("joined sucessfully");}
+            else
+            {setMessage("could not join, or already joined");}
+
+        } catch (err) {
+            console.error(err);
+            setMessage("Server error");
+        }
     };
 
+
     return (
-        <div style={{ padding: 20 }}>
-            <h1>Join a Class</h1>
-            <form onSubmit={handleSubmit}>
+        <form onSubmit={handleJoin}>
+            <label>
+                Class Code:
                 <input
                     type="text"
-                    placeholder="Class Code"
-                    value={classCode}
-                    onChange={(e) => setClassCode(e.target.value)}
+                    value={code}
+                    onChange={(e) => setCode(e.target.value)}
                     required
                 />
-                <button type="submit">Join</button>
-            </form>
-        </div>
+            </label>
+            <button type="submit">Join</button>
+            {message && <p>{message}</p>}
+        </form>
     );
-}
+};
+
+export default JoinClassForm;

@@ -90,6 +90,11 @@ public class AuthControl {
             String userName = idToken.getPayload().get("name").toString();
             User newUser = new User(0, userName, userEmail, null);
             UserDatabase.postUser(newUser);
+            if (UserDatabase.getUser(userEmail) == null) {
+                UserDatabase.postUser(newUser);
+                UserDatabase.persistUser(newUser);
+            }
+
             System.out.println("\n Saved Authenticated user: " + newUser.getName() + ", ID: " + newUser.getUserId() + userEmail + "\n");
 
             //storing user email in tokens for call id in frontend

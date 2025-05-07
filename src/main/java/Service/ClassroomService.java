@@ -12,7 +12,7 @@ import java.util.List;
 @Service
 public class ClassroomService {
 
-    //TODO CALL ACTUAL DATABASE AND RETURN BASED ON USER
+
     public static List<Classroom> getUsersClasses(String email) {
 
         User user = UserDatabase.getUser(email);
