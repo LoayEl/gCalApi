@@ -12,6 +12,10 @@ import Navbar from './Navbar';
 import SignIn from './SignIn';
 import HomePage from './HomePage';
 import ProtectedRoute from "./ProtectedRoute.jsx";
+import CreateClassForm from "./CreateClassForm.jsx";
+import JoinClassForm from "./JoinClassForm.jsx";
+import Profile from "./Profile.jsx";
+
 
 const router = createBrowserRouter([
     {
@@ -30,6 +34,24 @@ const router = createBrowserRouter([
                 path: 'homepage',
                 element: (<ProtectedRoute>
                     <HomePage />
+                </ProtectedRoute>)
+            },
+            {
+                path: 'create-classform',
+                element: (<ProtectedRoute>
+                    <CreateClassForm/>
+                </ProtectedRoute>)
+            },
+            {
+                path: 'join-classform',
+                element: (<ProtectedRoute>
+                    <JoinClassForm/>
+                </ProtectedRoute>)
+            },
+            {
+                path: 'profile',
+                element: (<ProtectedRoute>
+                    <Profile/>
                 </ProtectedRoute>)
             },
             {

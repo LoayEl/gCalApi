@@ -14,6 +14,7 @@ export default function ProtectedRoute({children}) {
             } catch (error) {
                 console.error("Error checking authentication:", error);
                 setIsAuth(false); // Set false if there was an error
+                console.log("/isAuth is false");
             }
         };
 

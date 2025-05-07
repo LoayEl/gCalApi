@@ -1,5 +1,7 @@
 package ConfigAndUtil;
 
+import ConfigAndUtil.Authorization;
+
 import com.google.api.client.googleapis.javanet.GoogleNetHttpTransport;
 import com.google.api.client.json.gson.GsonFactory;
 import com.google.api.client.http.javanet.NetHttpTransport;
@@ -13,16 +15,11 @@ public class CalServiceBuilder {
 
     private static final String APPLICATION_NAME = "Gcal API TESTING";
 
-    public static Calendar buildService() throws GeneralSecurityException, IOException {
+    public static Calendar buildService(String userId) throws GeneralSecurityException, IOException {
         final NetHttpTransport HTTP_TRANSPORT = GoogleNetHttpTransport.newTrustedTransport();
+        Credential credentials = Authorization.getUserCredentials(userId);
 
-            Credential credentials = Authorization.getCredentials(HTTP_TRANSPORT);
-
-        return new Calendar.Builder(
-                HTTP_TRANSPORT,
-                GsonFactory.getDefaultInstance(),
-                credentials
-        )
+        return new Calendar.Builder(HTTP_TRANSPORT, GsonFactory.getDefaultInstance(), credentials)
                 .setApplicationName(APPLICATION_NAME)
                 .build();
     }
