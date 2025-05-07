@@ -1,0 +1,22 @@
+{
+  "users": [
+    {
+      "userId": 0,
+      "name": "Alice Smith",
+      "email": "alice.smith@example.com",
+      "password": "password123"
+    },
+    {
+      "userId": 1,
+      "name": "Bob Johnson",
+      "email": "bob.johnson@example.com",
+      "password": "securePass!@#"
+    },
+    {
+      "userId": 2,
+      "name": "Carol Williams",
+      "email": "carol.williams@example.com",
+      "password": "letMeIn2025"
+    }
+  ]
+}

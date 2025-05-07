@@ -1,0 +1,19 @@
+{
+  "classrooms": [
+    {
+      "id": 101,
+      "name": "Room A",
+      "location": "Building 1"
+    },
+    {
+      "id": 102,
+      "name": "Room B",
+      "location": "Building 2"
+    },
+    {
+      "id": 103,
+      "name": "Room C",
+      "location": "Building 3"
+    }
+  ]
+}
