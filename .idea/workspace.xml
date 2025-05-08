@@ -5,45 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5d2decef-94a3-4672-be24-c279407ba90e" name="Changes" comment="Testing set upppppp&#10;need to work on functions">
-      <change afterPath="$PROJECT_DIR$/src/test/java/AuthorizationTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/CalControllerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/DateAdapterTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/UserTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_api_client_google_api_client_2_0_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_apis_google_api_services_calendar_v3_rev20220715_2_0_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_code_findbugs_jsr305_3_0_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_code_gson_gson_2_9_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_errorprone_error_prone_annotations_2_11_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_guava_failureaccess_1_0_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_guava_guava_31_1_jre.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_guava_listenablefuture_9999_0_empty_to_avoid_conflict_with_guava.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_http_client_google_http_client_1_42_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_http_client_google_http_client_apache_v2_1_42_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_http_client_google_http_client_gson_1_42_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_j2objc_j2objc_annotations_1_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_oauth_client_google_oauth_client_1_34_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_oauth_client_google_oauth_client_java6_1_34_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_oauth_client_google_oauth_client_jetty_1_34_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__commons_codec_commons_codec_1_11.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__commons_logging_commons_logging_1_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__io_grpc_grpc_context_1_27_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__io_opencensus_opencensus_api_0_31_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__io_opencensus_opencensus_contrib_http_util_0_31_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_apache_httpcomponents_httpclient_4_5_13.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_apache_httpcomponents_httpcore_4_4_15.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_apiguardian_apiguardian_api_1_1_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_checkerframework_checker_qual_3_12_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_junit_jupiter_junit_jupiter_api_5_8_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_junit_jupiter_junit_jupiter_engine_5_8_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_junit_platform_junit_platform_commons_1_8_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_junit_platform_junit_platform_engine_1_8_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_opentest4j_opentest4j_1_2_0.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/edu-frontend/src/ClassPage.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/edu-frontend/src/ClassView.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/edu-frontend/src/MyClasses.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Database/GroupDatabase.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules/GoogleCaAPI.main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/GoogleCaAPI.main.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/GoogleCaAPI.test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/GoogleCaAPI.test.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/CalculatorTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/EventBuilderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/EventBuilderTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/edu-frontend/src/Navbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/edu-frontend/src/Navbar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/edu-frontend/src/Profile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/edu-frontend/src/Profile.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/edu-frontend/src/main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/edu-frontend/src/main.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/edu-frontend/vite.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/edu-frontend/vite.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/AuthControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/AuthControl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/ClassroomControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/ClassroomControl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/GroupControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/GroupControl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Database/UserDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Database/UserDatabase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Database/groupdb.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/groupdb.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Database/scheduledb.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/scheduledb.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Classroom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Classroom.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Group.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Group.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Service/GroupService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Service/GroupService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/userdb.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/userdb.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,35 +84,34 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.CalController.executor": "Run",
-    "Application.CalendarQuickstart.executor": "Profiler#1",
-    "Downloaded.Files.Path.Enabled": "false",
-    "Gradle.Build gCalApi.executor": "Run",
-    "Gradle.gCalApi [:CalController.main()].executor": "Run",
-    "Gradle.gCalApi [:CalendarQuickstart.main()].executor": "Run",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "testing",
-    "kotlin-language-version-configured": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.CalController.executor&quot;: &quot;Run&quot;,
+    &quot;Application.CalendarQuickstart.executor&quot;: &quot;Profiler#1&quot;,
+    &quot;Gradle.Build gCalApi.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.gCalApi [:CalController.main()].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.gCalApi [:CalendarQuickstart.main()].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;springReact&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\IntelliJ IDEA 2024.3.5\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\hwatt\IdeaProjects\gCalApi\src\main\resources" />
+      <recent name="C:\Users\hwatt\IdeaProjects\gCalApi\edu-frontend\src" />
       <recent name="C:\Users\hwatt\IdeaProjects\gCalApi\src" />
     </key>
   </component>
@@ -185,7 +165,6 @@
       <workItem from="1744153510179" duration="5170000" />
       <workItem from="1745798649624" duration="1012000" />
       <workItem from="1745864235262" duration="18550000" />
-      <workItem from="1746105344674" duration="2659000" />
     </task>
     <task id="LOCAL-00001" summary="Test add event works!">
       <option name="closed" value="true" />

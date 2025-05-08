@@ -1,0 +1,12 @@
+{
+  "groups": [
+    {
+      "id": 100,
+      "title": "Study Buddies",
+      "code": "SBUD",
+      "classCode": "CS101",
+      "createdBy": "alice@example.com",
+      "memberEmails": ["alice@example.com", "bob@example.com"]
+    }
+  ]
+}

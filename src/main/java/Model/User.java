@@ -1,11 +1,16 @@
 package Model;
 
-public abstract class User {
+import java.util.ArrayList;
+import java.util.List;
+
+public class User {
 
     protected int userId;
     protected String name;
     protected String email;
     protected String password;
+
+    private List<Classroom> enrolledClasses = new ArrayList<>();
 
     public User(int userId, String name, String email, String password) {
         this.userId = userId;
@@ -13,19 +18,12 @@ public abstract class User {
         this.email = email;
         this.password = password;
     }
-    public int getUserId() {
-        return userId;
-    }
-    public String getName() {
-        return name;
-    }
 
-    public String getEmail() {
-        return email;
-    }
-    public String getPassword() {
-        return password;
-    }
+    // Getters and setters
+    public int getUserId() { return userId; }
+    public String getName() { return name; }
+    public String getEmail() { return email; }
+    public String getPassword() { return password; }
 
     public User setPassword(String password) {
         this.password = password;
@@ -41,14 +39,24 @@ public abstract class User {
         this.name = name;
         return this;
     }
+
     public User setUserId(int userId) {
         this.userId = userId;
         return this;
     }
 
-    public void login(){}
+    public boolean enroll(Classroom classroom) {
+        if (!enrolledClasses.contains(classroom)) {
+            return enrolledClasses.add(classroom);
+        }
+        return false;
+    }
 
-    public void logout(){}
+
+
+    public List<Classroom> getEnrolledClasses() {
+        return enrolledClasses;
+    }
 
 
 }

@@ -1,0 +1,33 @@
+{
+  "users" : [ {
+    "userId" : 1,
+    "name" : "Bob Johnson",
+    "email" : "bob.johnson@example.com",
+    "password" : "securePass!@#",
+    "enrolledClasses" : [ ]
+  }, {
+    "userId" : 3,
+    "name" : "Hannah F",
+    "email" : "hannahbfearns@gmail.com",
+    "password" : null,
+    "enrolledClasses" : [ {
+      "id" : 1003,
+      "title" : "Algebra I",
+      "description" : "High School Algebra",
+      "code" : "ALG1",
+      "createdBy" : "carol.williams@example.com"
+    } ]
+  }, {
+    "userId" : 0,
+    "name" : "Alice Smith",
+    "email" : "alice.smith@example.com",
+    "password" : "password123",
+    "enrolledClasses" : [ ]
+  }, {
+    "userId" : 2,
+    "name" : "Carol Williams",
+    "email" : "carol.williams@example.com",
+    "password" : "letMeIn2025",
+    "enrolledClasses" : [ ]
+  } ]
+}
