@@ -9,13 +9,25 @@
     "userId" : 3,
     "name" : "Hannah F",
     "email" : "hannahbfearns@gmail.com",
-    "password" : null,
+    "password" : "null",
     "enrolledClasses" : [ {
       "id" : 1003,
       "title" : "Algebra I",
       "description" : "High School Algebra",
       "code" : "ALG1",
       "createdBy" : "carol.williams@example.com"
+    } ]
+  }, {
+    "userId" : 4,
+    "name" : "Loay Elasmar",
+    "email" : "elasmarloay@gmail.com",
+    "password" : null,
+    "enrolledClasses" : [ {
+      "id" : 1002,
+      "title" : "Computer Science 101",
+      "description" : "Intro to programming",
+      "code" : "CS101",
+      "createdBy" : "bob.johnson@example.com"
     } ]
   }, {
     "userId" : 0,
