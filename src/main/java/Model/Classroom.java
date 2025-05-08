@@ -1,4 +1,6 @@
 package Model;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Classroom {
     private Long id;
@@ -6,6 +8,7 @@ public class Classroom {
     private String description;
     private String code;
     private User createdBy;
+    private List<String> groupCodes = new ArrayList<>();
 
     public Classroom(Long id, String title, String description, String code, User createdBy) {
         this.id = id;
@@ -21,12 +24,24 @@ public class Classroom {
     public String getDescription() { return description; }
     public String getCode() { return code; }
     public User getCreatedBy() { return createdBy; }
+    public List<String> getGroupCodes() {return groupCodes;}
 
     public void setId(Long id) { this.id = id; }
     public void setTitle(String title) { this.title = title; }
     public void setDescription(String description) { this.description = description; }
     public void setCode(String code) { this.code = code; }
     public void setCreatedBy(User createdBy) { this.createdBy = createdBy; }
+    public void setGroupCodes(List<String> groupCodes) {this.groupCodes = groupCodes;}
 
+    public boolean addGroupCode(String groupCode) {
+        if (!groupCodes.contains(groupCode)) {
+            return groupCodes.add(groupCode);
+        }
+        return false;
+    }
+
+    public boolean removeGroupCode(String groupCode) {
+        return groupCodes.remove(groupCode);
+    }
 
 }

@@ -23,7 +23,6 @@ public class UserDatabase {
     private static int idIndex = 0;
     private static final File userDbFile = new File("src/main/resources/userdb.json");
 
-
     public static void fillHashMap() {
         try (InputStream in = UserDatabase.class.getResourceAsStream("/userdb.json")) {
             ObjectMapper mapper = new ObjectMapper();
@@ -35,6 +34,24 @@ public class UserDatabase {
                         uNode.get("email").asText(),
                         uNode.get("password").asText()
                 );
+
+                if (uNode.has("enrolledClasses")) {
+                    for (JsonNode cNode : uNode.get("enrolledClasses")) {
+                        String creatorEmail = cNode.get("createdBy").asText();
+                        User creator = userMap.getOrDefault(creatorEmail, new User(0, "Unknown", creatorEmail, null));
+
+                        Classroom classroom = new Classroom(
+                                cNode.get("id").asLong(),
+                                cNode.get("title").asText(),
+                                cNode.get("description").asText(),
+                                cNode.get("code").asText(),
+                                creator
+                        );
+
+                        u.getEnrolledClasses().add(classroom);
+                    }
+                }
+
                 userMap.put(u.getEmail(), u);
                 idIndex = Math.max(idIndex, u.getUserId() + 1);
             }
@@ -43,6 +60,7 @@ public class UserDatabase {
             throw new UncheckedIOException("Failed to load userdb.json", e);
         }
     }
+
 
     public static void postUser(User user) {
         if (!userMap.containsKey(user.getEmail())) {

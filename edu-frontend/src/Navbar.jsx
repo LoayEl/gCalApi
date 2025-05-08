@@ -15,10 +15,10 @@ export default function Navbar() {
                     <div className="collapse navbar-collapse" id="collapsibleNavbar">
                         <ul className="navbar-nav">
                             <li className="nav-item">
-                                <Link className="nav-link" to="/classes">My Classes</Link>
+                                <Link className="nav-link" to="/my-classes">My Classes</Link>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link" to="/groups">My Groups</Link>
+                                <Link className="nav-link" to="/my-groups">My Groups</Link>
                             </li>
                             <li className="nav-item">
                                 <Link className="nav-link" to="/link">Link</Link>

@@ -3,6 +3,8 @@ package Controller;
 import Service.ClassroomService;
 import Service.UserService;
 import Model.Classroom;
+import Model.User;
+import Database.UserDatabase;
 
 import javax.servlet.http.HttpSession;
 import java.util.List;
@@ -23,6 +25,11 @@ public class ClassroomControl {
 
     @GetMapping("/my-classes")
     public List<Classroom> getUserClasses(HttpSession session) {
+        System.out.println("Session email: " + session.getAttribute("userEmail"));
+        User u = UserDatabase.getUser((String) session.getAttribute("userEmail"));
+        System.out.println("Loaded user: " + u.getName() + " (" + u.getEmail() + ")");
+        System.out.println("Enrolled classes count: " + u.getEnrolledClasses().size());
+
         String email = (String) session.getAttribute("userEmail");
         if (email != null) {
             return classService.getUsersClasses(email);

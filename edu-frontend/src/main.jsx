@@ -15,6 +15,7 @@ import ProtectedRoute from "./ProtectedRoute.jsx";
 import CreateClassForm from "./CreateClassForm.jsx";
 import JoinClassForm from "./JoinClassForm.jsx";
 import Profile, {loader as profileLoader} from "./Profile.jsx";
+import MyClasses, {loader as myClassesLoader} from "./MyClasses.jsx";
 
 
 
@@ -55,6 +56,13 @@ const router = createBrowserRouter([
                     <Profile/>
                 </ProtectedRoute>),
                 loader: profileLoader,
+            },
+            {
+                path: 'my-classes',
+                element: (<ProtectedRoute>
+                    <MyClasses/>
+                </ProtectedRoute>),
+                loader: myClassesLoader,
             },
             {
                 path: '*',
