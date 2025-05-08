@@ -47,4 +47,20 @@ public class ClassroomControl {
         return enrolled;
     }
 
+    @GetMapping("/class/{code}")
+    public Classroom getClassByCode(@PathVariable String code) {
+        return classService.getClassroomByCode(code);
+    }
+
+    @PostMapping("/class/student-ids")
+    public List<Integer> getClassStudentIds(@RequestBody Map<String,String> body) {
+        String code = body.get("code");
+        return classService.getStudentIdsForClass(code);
+    }
+
+    @GetMapping("/user/{id}")
+    public User getUserById(@PathVariable int id) {
+        return UserDatabase.getUserById(id);
+    }
+
 }

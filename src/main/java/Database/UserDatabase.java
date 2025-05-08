@@ -7,6 +7,9 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.UncheckedIOException;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.Objects;
+import java.util.List;
+import java.util.stream.Collectors;
 import java.io.File;
 
 import com.fasterxml.jackson.databind.JsonNode;
@@ -72,6 +75,13 @@ public class UserDatabase {
     public static User getUser(String email) {
 
         return userMap.get(email);
+    }
+
+    public static User getUserById(int id) {
+        return userMap.values().stream()
+                .filter(u -> u.getUserId() == id)
+                .findFirst()
+                .orElse(null);
     }
 
     public static void persistUser(User user) {

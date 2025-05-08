@@ -1,12 +1,31 @@
 {
-  "groups": [
-    {
-      "id": 100,
-      "title": "Study Buddies",
-      "code": "SBUD",
-      "classCode": "CS101",
-      "createdBy": "alice@example.com",
-      "memberEmails": ["alice@example.com", "bob@example.com"]
-    }
-  ]
+  "groups" : [ {
+    "id" : 2,
+    "title" : "Science Team",
+    "code" : "MEMFIX",
+    "classCode" : "SCI101",
+    "createdBy" : "admin@example.com",
+    "memberEmails" : [ "mila@example.com" ]
+  }, {
+    "id" : 3,
+    "title" : "AI Group",
+    "code" : "JOIN01",
+    "classCode" : "CSC202",
+    "createdBy" : "someone@example.com",
+    "memberEmails" : [ "leo@example.com" ]
+  }, {
+    "id" : 0,
+    "title" : "Solo Group",
+    "code" : "UNIQUE01",
+    "classCode" : "SOLO101",
+    "createdBy" : "creator@example.com",
+    "memberEmails" : [ ]
+  }, {
+    "id" : 1,
+    "title" : "Final Project",
+    "code" : "89F3ED",
+    "classCode" : "CSC101",
+    "createdBy" : "dany@example.com",
+    "memberEmails" : [ ]
+  } ]
 }

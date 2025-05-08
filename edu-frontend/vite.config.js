@@ -15,6 +15,8 @@ export default defineConfig({
       '/profile': { target: 'http://localhost:8080', changeOrigin: true, secure: false },
       '/join' : {target: 'http://localhost:8080', changeOrigin: true, secure: false },
       '/my-classes' : {target: 'http://localhost:8080', changeOrigin: true, secure: false },
+      '/class':       { target: 'http://localhost:8080', changeOrigin: true, secure: false },
+      '/user':       { target: 'http://localhost:8080', changeOrigin: true, secure: false },
     },
   },
 })
