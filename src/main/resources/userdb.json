@@ -12,6 +12,12 @@
     "password" : "pw",
     "enrolledClasses" : [ ]
   }, {
+    "userId" : 7,
+    "name" : "Loay Elasmar",
+    "email" : "elasmarloay@gmail.com",
+    "password" : null,
+    "enrolledClasses" : [ ]
+  }, {
     "userId" : 1,
     "name" : "Dany",
     "email" : "dany@example.com",

@@ -1,23 +1,32 @@
-import {useLoaderData} from "react-router-dom";
+import { useLoaderData } from "react-router-dom";
+import "./Profile.css";
 
 export async function loader() {
     const res = await fetch("/profile", { credentials: "include" });
     if (!res.ok) throw new Error("Failed to fetch user data");
-    return await res.json();
+    return res.json();
 }
 
 export default function Profile() {
+    const { name, email } = useLoaderData();
 
-    const user = useLoaderData();
-    const { name, email, userId } = user;
-
-
+    // derive initials from name, e.g. "John Doe" → "JD"
+    const initials = name
+        .split(" ")
+        .map((word) => word[0])
+        .join("")
+        .toUpperCase();
 
     return (
-        <div style={{ padding: 20 }}>
-            <h1>My Profile</h1>
-            <p><strong>Name:</strong> {name}</p>
-            <p><strong>Email:</strong> {email}</p>
+        <div className="profile-page">
+            <div className="profile-card">
+                <div className="profile-avatar">{initials}</div>
+                <h2 className="profile-name">{name}</h2>
+                <p className="profile-email">{email}</p>
+
+                <button className="btn btn-outline">Edit Profile</button>
+                <button className="btn btn-filled">Sign Out</button>
+            </div>
         </div>
     );
 }

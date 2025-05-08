@@ -1,51 +1,77 @@
 import React, { useState } from 'react';
+import './JoinClass.css';
 
-const JoinClassForm = () => {
-    const [code, setCode] = useState('');
-    const [message, setMessage] = useState('');
+export default function HomePage() {
+    const [showModal, setShowModal] = useState(false);
+    const [code,      setCode]      = useState('');
+    const [message,   setMessage]   = useState('');
 
     const handleJoin = async (e) => {
         e.preventDefault();
-
         try {
-            const response = await fetch('/join', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
+            const res = await fetch('/join', {
+                method:      'POST',
+                headers:     { 'Content-Type': 'application/json' },
                 credentials: 'include',
-                body: JSON.stringify({ code }),
+                body:        JSON.stringify({ code }),
             });
-
-            const result = await response.json();
-
-            if(result)
-            {setMessage("joined sucessfully");}
-            else
-            {setMessage("could not join, or already joined");}
-
+            const joined = await res.json();
+            setMessage(joined
+                ? 'Joined successfully!'
+                : 'Could not join or already joined.'
+            );
         } catch (err) {
             console.error(err);
-            setMessage("Server error");
+            setMessage('Server error');
         }
     };
 
-
     return (
-        <form onSubmit={handleJoin}>
-            <label>
-                Class Code:
-                <input
-                    type="text"
-                    value={code}
-                    onChange={(e) => setCode(e.target.value)}
-                    required
-                />
-            </label>
-            <button type="submit">Join</button>
-            {message && <p>{message}</p>}
-        </form>
-    );
-};
+        <>
+            {/* — Homepage content — */}
+            <div className={`homepage${showModal ? ' blur' : ''}`}>
+                <h1 className="homepage-title">Welcome to ED-Group</h1>
+                {/* …other homepage elements… */}
+                <button
+                    className="join-btn"
+                    onClick={() => setShowModal(true)}
+                >
+                    Join Class
+                </button>
+            </div>
 
-export default JoinClassForm;
+            {/* — Modal overlay — */}
+            {showModal && (
+                <div
+                    className="join-modal-overlay"
+                    onClick={() => setShowModal(false)}
+                >
+                    <div
+                        className="join-modal"
+                        onClick={(e) => e.stopPropagation()}
+                    >
+                        <form onSubmit={handleJoin}>
+                            <label htmlFor="classCode">Enter Code:</label>
+                            <input
+                                id="classCode"
+                                type="text"
+                                value={code}
+                                onChange={(e) => setCode(e.target.value)}
+                                required
+                            />
+                            <button
+                                type="submit"
+                                className="btn btn-filled"
+                            >
+                                Join
+                            </button>
+                            {message && (
+                                <p className="message">{message}</p>
+                            )}
+                        </form>
+                    </div>
+                </div>
+            )}
+        </>
+    );
+}
