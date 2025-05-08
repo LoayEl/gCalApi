@@ -1,39 +1,57 @@
 {
   "users" : [ {
-    "userId" : 1,
-    "name" : "Bob Johnson",
-    "email" : "bob.johnson@example.com",
-    "password" : "securePass!@#",
-    "enrolledClasses" : [ ]
-  }, {
-    "userId" : 3,
-    "name" : "Hannah F",
-    "email" : "hannahbfearns@gmail.com",
-    "password" : "null",
-    "enrolledClasses" : [ {
-      "id" : 1002,
-      "title" : "Computer Science 101",
-      "description" : "Intro to programming",
-      "code" : "CS101",
-      "createdBy" : "bob.johnson@example.com"
-    }, {
-      "id" : 1001,
-      "title" : "Physics 101",
-      "description" : "Intro to classical mechanics",
-      "code" : "PHYS101",
-      "createdBy" : "alice.smith@example.com"
-    } ]
-  }, {
     "userId" : 0,
-    "name" : "Alice Smith",
-    "email" : "alice.smith@example.com",
-    "password" : "password123",
+    "name" : "Sam",
+    "email" : "sam@example.com",
+    "password" : "pw",
     "enrolledClasses" : [ ]
   }, {
     "userId" : 2,
-    "name" : "Carol Williams",
-    "email" : "carol.williams@example.com",
-    "password" : "letMeIn2025",
+    "name" : "Mila",
+    "email" : "mila@example.com",
+    "password" : "pw",
     "enrolledClasses" : [ ]
+  }, {
+    "userId" : 1,
+    "name" : "Dany",
+    "email" : "dany@example.com",
+    "password" : "pw",
+    "enrolledClasses" : [ ]
+  }, {
+    "userId" : 3,
+    "name" : "Leo",
+    "email" : "leo@example.com",
+    "password" : "pw",
+    "enrolledClasses" : [ ]
+  }, {
+    "userId" : 5,
+    "name" : "Alice",
+    "email" : "alice@example.com",
+    "password" : "pass",
+    "enrolledClasses" : [ ]
+  }, {
+    "userId" : 6,
+    "name" : "Bob",
+    "email" : "bob@example.com",
+    "password" : "pass",
+    "enrolledClasses" : [ {
+      "id" : 1,
+      "title" : "CS101",
+      "description" : "Intro",
+      "code" : "CS1",
+      "createdBy" : "bob@example.com"
+    } ]
+  }, {
+    "userId" : 4,
+    "name" : "Test",
+    "email" : "test@example.com",
+    "password" : "pass",
+    "enrolledClasses" : [ {
+      "id" : 1,
+      "title" : "Math",
+      "description" : "MATH101",
+      "code" : "Intro",
+      "createdBy" : "test@example.com"
+    } ]
   } ]
 }
