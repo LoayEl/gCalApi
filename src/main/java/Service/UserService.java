@@ -37,6 +37,8 @@ public class UserService {
 
         boolean enrolled = user.enroll(classroom);
         if (enrolled) {
+            classroom.addStudentId(user.getUserId());
+            ClassroomDatabase.persistAll();
             UserDatabase.persistUser(user); //since user changed updating file
         }
         else{

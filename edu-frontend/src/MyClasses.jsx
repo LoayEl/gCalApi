@@ -1,5 +1,6 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
+import ClassView from "./ClassView.jsx";
 
 export async function loader() {
     const res = await fetch("/my-classes", { credentials: "include" });
@@ -16,11 +17,9 @@ export default function MyClasses() {
             {classes.length === 0 ? (
                 <p>You are not enrolled in any classes.</p>
             ) : (
-                <ul>
+                <ul style={{ listStyle: 'none', padding: 0 }}>
                     {classes.map((c) => (
-                        <li key={c.id}>
-                            <strong>{c.title}</strong> — {c.description}
-                        </li>
+                        <ClassView key={c.id} singleClass={c} />
                     ))}
                 </ul>
             )}
