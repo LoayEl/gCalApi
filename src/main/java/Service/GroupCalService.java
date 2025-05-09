@@ -4,6 +4,7 @@ package Service;
 import ConfigAndUtil.CalServiceBuilder;
 import Model.GroupCal;
 import Model.User;
+import Model.Group;
 
 import com.google.api.services.calendar.Calendar;
 import com.google.api.services.calendar.model.Event;
@@ -16,6 +17,7 @@ import java.io.IOException;
 import java.security.GeneralSecurityException;
 import java.util.logging.Logger;
 
+
 @Service
 public class GroupCalService {
 
@@ -23,6 +25,26 @@ public class GroupCalService {
 
     @Autowired
     private GroupService groupService;
+
+    // gets group cal object
+    // build cal, builds calendar and saves in groupcal model
+    public String buildCalendarForGroup(String groupCode, String ownerEmail) throws IOException, GeneralSecurityException {
+        Calendar service = CalServiceBuilder.buildService(ownerEmail);
+
+        com.google.api.services.calendar.model.Calendar calendar = new com.google.api.services.calendar.model.Calendar();
+        calendar.setSummary("Group " + groupCode + " Calendar");
+
+        com.google.api.services.calendar.model.Calendar createdCalendar = service.calendars().insert(calendar).execute();
+        return createdCalendar.getId(); // this is what gets stored in Group
+    }
+
+
+
+    // get from group cal model or maybe move this to group cal model
+    private GroupCal retrieveGroupCal(String groupCode) {
+        // TODO: Replace this stub with actual DB lookup
+        return new GroupCal(1L, groupCode, "primary");
+    }
 
     public GroupCal displayCalendar(String groupCode, HttpSession session) throws IOException, GeneralSecurityException {
         String userEmail = (String) session.getAttribute("userEmail");
@@ -76,7 +98,6 @@ public class GroupCalService {
             }
         }
 
-
         return true;
     }
 
@@ -98,8 +119,5 @@ public class GroupCalService {
         }
     }
 
-    private GroupCal retrieveGroupCal(String groupCode) {
-        // TODO: Replace this stub with actual DB lookup
-        return new GroupCal(1L, groupCode, "primary");
-    }
+
 }

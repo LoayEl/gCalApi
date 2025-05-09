@@ -5,22 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5d2decef-94a3-4672-be24-c279407ba90e" name="Changes" comment="Testing set upppppp&#10;need to work on functions">
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_fasterxml_jackson_core_jackson_annotations_2_13_4.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_fasterxml_jackson_core_jackson_core_2_13_4.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_code_gson_gson_2_9_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__commons_codec_commons_codec_1_11.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__commons_logging_commons_logging_1_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_junit_platform_junit_platform_commons_1_8_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_junit_platform_junit_platform_engine_1_8_1.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/GoogleCaAPI.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/GoogleCaAPI.main.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/GoogleCaAPI.test.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/GroupCal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/GroupCal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Database/GroupDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Database/GroupDatabase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Group.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Group.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Service/GroupCalService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Service/GroupCalService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Service/GroupService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Service/GroupService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,16 +57,19 @@
     &quot;assignee&quot;: &quot;Hfear&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/Hfear/gCalApi.git",
-    "accountId": "debda7da-0d23-4ca8-977a-3b66d971bde5"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Hfear/gCalApi.git&quot;,
+    &quot;accountId&quot;: &quot;debda7da-0d23-4ca8-977a-3b66d971bde5&quot;
   }
-}]]></component>
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 1
 }</component>
   <component name="ProjectId" id="2uV5DfqFE7tuhBHsamS0WxoYMX5" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />

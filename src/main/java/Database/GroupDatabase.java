@@ -36,6 +36,9 @@ public class GroupDatabase {
                         g.addMemberEmail(emailNode.asText());
                     }
                 }
+                if (n.has("groupCalId")) {
+                    g.setGroupCalId(n.get("groupCalId").asText());
+                }
                 groupMap.put(g.getCode(), g);
                 idIndex = Math.max(idIndex, g.getId() + 1);
             }
@@ -74,6 +77,7 @@ public class GroupDatabase {
             gNode.put("code", group.getCode());
             gNode.put("classCode", group.getClassCode());
             gNode.put("createdBy", group.getCreatedBy());
+            gNode.put("groupCalId", group.getGroupCalId());
 
             ArrayNode members = mapper.createArrayNode();
             for (String email : group.getMemberEmails()) {

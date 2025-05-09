@@ -12,6 +12,8 @@ public class Group {
     private String classCode;    // the Classroom.code this group belongs to
     private String createdBy;    // email of the creator
     private List<String> memberEmails = new ArrayList<>();
+    // group cal object id
+    private String groupCalId;
 
     public Group() {
     }
@@ -24,7 +26,18 @@ public class Group {
         this.createdBy = createdBy;
     }
 
+    //when group is made build a group cal model and save its id here
+
     // Getters and setters
+
+    public String getGroupCalId() {
+        return groupCalId;
+    }
+
+    public void setGroupCalId(String groupCalId) {
+        this.groupCalId = groupCalId;
+    }
+
     public Long getId() {
         return id;
     }

@@ -2,9 +2,12 @@ package Service;
 
 import Database.GroupDatabase;
 import Database.UserDatabase;
+import Service.GroupCalService;
 import Model.Group;
 import Model.User;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
+import org.springframework.beans.factory.annotation.Autowired;
 import javax.servlet.http.HttpSession;
 import java.util.List;
 import java.util.UUID;
@@ -13,10 +16,13 @@ import java.util.stream.Collectors;
 @Service
 public class GroupService {
 
+    @Autowired
+    @Lazy
+    private GroupCalService groupCalService;
+
     public List<Group> getGroupsForClass(String classCode) {
         return GroupDatabase.getGroupsForClass(classCode);
     }
-
 
     public Group createGroup(String classCode, String title, HttpSession session) {
         String userEmail = (String) session.getAttribute("userEmail");
@@ -25,6 +31,14 @@ public class GroupService {
         }
         String groupCode = UUID.randomUUID().toString().substring(0, 6).toUpperCase();
         Group group = new Group(null, title, groupCode, classCode, userEmail);
+
+        try {
+            String calendarId = groupCalService.buildCalendarForGroup(groupCode, userEmail);
+            group.setGroupCalId(calendarId);
+        } catch (Exception e) {
+            throw new RuntimeException("Failed to create calendar for group: " + e.getMessage());
+        }
+
         GroupDatabase.addGroup(group);
         return group;
     }
