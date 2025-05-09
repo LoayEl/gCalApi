@@ -1,61 +1,42 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 
-//TODO implement event list component etc
-import EventList from './EventList';
+// the schedule show when implemented
+//import EventList from './EventList';
 
 export async function loader({ params }) {
-    const groupCode = params.code;
+    const { classCode, groupCode } = params;
 
-    // TODO fill with group fetch endpoint
-    const res = await fetch(`/group/${groupCode}/details`, { credentials: 'include' });
-    if (!res.ok) throw new Error('Failed to fetch group details');
-    const groupData = await res.json();
+    const res = await fetch(`/class/${classCode}/groups/${groupCode}/details`, {
+        credentials: 'include'
+    });
+    if (!res.ok) throw new Error('Failed to load group details');
 
-    return groupData;
+    return await res.json();
 }
 
+
 export default function GroupPage() {
-    const { name, activityLog, members, events } = useLoaderData();
+    const { title, memberNames, createdBy } = useLoaderData();
 
     return (
-        <div>
+        <div style={{ padding: 20 }}>
             <header>
-                <h1>ED Group</h1>
-                <div>[icon]</div>
+                <h1>{title}</h1>
+                <p><strong>Created by:</strong> {createdBy}</p>
             </header>
 
-            <h2>{name}</h2>
+            <section>
+                <h2>Members</h2>
+                <ul>
+                    {memberNames.map((name, i) => (
+                        <li key={i}>• {name}</li>
+                    ))}
+                </ul>
+            </section>
 
-            <div style={{ display: 'flex', gap: 20 }}>
-                {/* Left side */}
-                <div style={{ flex: 1 }}>
-                    <section>
-                        <h3>ACTIVITY LOG:</h3>
-                        <ul>
-                            {activityLog.map((entry, i) => (
-                                <li key={i}>• {entry}</li>
-                            ))}
-                        </ul>
-                    </section>
-
-                    <button>Create Event</button>
-
-                    <EventList events={events} />
-                </div>
-
-                {/* Right side */}
-                <div style={{ width: 200 }}>
-                    <h3>Members</h3>
-                    <ul>
-                        {members.map((m, i) => (
-                            <li key={i}>• {m}</li>
-                        ))}
-                    </ul>
-
-                    <button>Leave Group →</button>
-                </div>
-            </div>
+            <button>Leave Group</button>
         </div>
     );
 }
+

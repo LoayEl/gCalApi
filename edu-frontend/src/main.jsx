@@ -17,8 +17,7 @@ import JoinClassForm from "./JoinClassForm.jsx";
 import Profile, {loader as profileLoader} from "./Profile.jsx";
 import MyClasses, {loader as myClassesLoader} from "./MyClasses.jsx";
 import ClassPage, { loader as classPageLoader } from './ClassPage.jsx';
-
-
+import GroupPage, { loader as groupLoader } from './GroupPage';
 
 const router = createBrowserRouter([
     {
@@ -73,6 +72,15 @@ const router = createBrowserRouter([
                     </ProtectedRoute>
                 ),
                 loader: classPageLoader
+            },
+            {
+                path: 'class/:classCode/group/:groupCode',
+                element: (
+                    <ProtectedRoute>
+                        <GroupPage />
+                    </ProtectedRoute>
+                ),
+                loader: groupLoader
             },
             {
                 path: '*',

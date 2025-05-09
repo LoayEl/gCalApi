@@ -17,6 +17,8 @@ export default defineConfig({
       '/my-classes' : {target: 'http://localhost:8080', changeOrigin: true, secure: false },
       '/class':       { target: 'http://localhost:8080', changeOrigin: true, secure: false },
       '/user':       { target: 'http://localhost:8080', changeOrigin: true, secure: false },
+      '/group': { target: 'http://localhost:8080', changeOrigin: true, secure: false }
+
     },
   },
 })

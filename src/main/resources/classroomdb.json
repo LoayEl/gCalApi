@@ -1,31 +1,27 @@
 {
-  "classrooms": [
-    {
-      "id": 1002,
-      "title": "Computer Science 101",
-      "description": "Intro to programming",
-      "code": "CS101",
-      "createdBy": "bob.johnson@example.com",
-      "studentIds": [3, 6],
-      "groupCodes": ["CS101-A", "CS101-B"]
-    },
-    {
-      "id": 1003,
-      "title": "Algebra I",
-      "description": "High School Algebra",
-      "code": "ALG1",
-      "createdBy": "carol.williams@example.com",
-      "studentIds": [5],
-      "groupCodes": []
-    },
-    {
-      "id": 1001,
-      "title": "Physics 101",
-      "description": "Intro to classical mechanics",
-      "code": "PHYS101",
-      "createdBy": "alice.smith@example.com",
-      "studentIds": [3, 2],
-      "groupCodes": ["PHYS101-A"]
-    }
-  ]
+  "classrooms" : [ {
+    "id" : 1002,
+    "title" : "Computer Science 101",
+    "description" : "Intro to programming",
+    "code" : "CS101",
+    "createdBy" : "unknown@example.com",
+    "studentIds" : [ 3, 6, 8 ],
+    "groupCodes" : [ "CS101-A", "CS101-B" ]
+  }, {
+    "id" : 1003,
+    "title" : "Algebra I",
+    "description" : "High School Algebra",
+    "code" : "ALG1",
+    "createdBy" : "unknown@example.com",
+    "studentIds" : [ 5 ],
+    "groupCodes" : [ ]
+  }, {
+    "id" : 1001,
+    "title" : "Physics 101",
+    "description" : "Intro to classical mechanics",
+    "code" : "PHYS101",
+    "createdBy" : "unknown@example.com",
+    "studentIds" : [ 3, 2 ],
+    "groupCodes" : [ "PHYS101-A" ]
+  } ]
 }

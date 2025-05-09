@@ -8,7 +8,7 @@
     "userId" : 8,
     "name" : "Hannah F",
     "email" : "hannahbfearns@gmail.com",
-    "enrolledClassCodes" : [ ]
+    "enrolledClassCodes" : [ "CS101" ]
   }, {
     "userId" : 2,
     "name" : "Mila",

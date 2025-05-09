@@ -68,7 +68,7 @@ import GroupView from './GroupView';
                         <h2>Groups</h2>
                         <ul style={{ listStyle: 'none', paddingLeft: 0 }}>
                             {groups.map(g => (
-                                <GroupView key={g.code} singleGroup={g} />
+                                <GroupView key={g.code} singleGroup={g} classCode={classroom.code} />
                             ))}
                         </ul>
                     </div>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-export default function GroupView({ singleGroup }) {
+export default function GroupView({ singleGroup, classCode  }) {
     if (!singleGroup) return null;
 
     const memberCount = singleGroup.memberIds?.length ?? 0;
@@ -9,7 +9,7 @@ export default function GroupView({ singleGroup }) {
     return (
         <li style={{ marginBottom: 12 }}>
             <Link
-                to={`/group/${singleGroup.code}`}
+                to={`/class/${classCode}/group/${singleGroup.code}`}
                 style={{ textDecoration: 'none', color: '#1e90ff' }}
             >
                 <strong>{singleGroup.title}</strong>

@@ -70,4 +70,13 @@ public class GroupControl {
         System.out.println("Listing members of group: " + groupCode);
         return groupService.getGroupMembers(groupCode);
     }
+
+    @GetMapping("/{groupCode}/details")
+    public Map<String, Object> getGroupDetails(
+            @PathVariable String classCode,
+            @PathVariable String groupCode
+    ) {
+        return groupService.getGroupDetails(groupCode);
+    }
+
 }

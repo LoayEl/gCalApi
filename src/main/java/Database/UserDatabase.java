@@ -32,26 +32,33 @@ public class UserDatabase {
             JsonNode users = mapper.readTree(in).get("users");
 
             for (JsonNode uNode : users) {
-                int userId = uNode.get("userId").asInt();
-                String name = uNode.get("name").asText();
-                String email = uNode.get("email").asText();
+                try {
+                    int userId = uNode.has("userId") ? uNode.get("userId").asInt() : -1;
+                    String name = uNode.has("name") ? uNode.get("name").asText() : "Unknown";
+                    String email = uNode.has("email") ? uNode.get("email").asText() : "unknown@example.com";
 
-                User u = new User(userId, name, email);
+                    User user = new User(userId, name, email);
 
-                if (uNode.has("enrolledClassCodes")) {
-                    for (JsonNode codeNode : uNode.get("enrolledClassCodes")) {
-                        u.enroll(codeNode.asText());
+                    if (uNode.has("enrolledClassCodes") && uNode.get("enrolledClassCodes").isArray()) {
+                        for (JsonNode codeNode : uNode.get("enrolledClassCodes")) {
+                            user.enroll(codeNode.asText());
+                        }
                     }
-                }
 
-                userMap.put(email, u);
-                idIndex = Math.max(idIndex, userId + 1);
+                    userMap.put(email, user);
+                    idIndex = Math.max(idIndex, userId + 1);
+
+                } catch (Exception e) {
+                    System.err.println(" Failed to load user: " + uNode);
+                    e.printStackTrace();
+                }
             }
 
         } catch (IOException e) {
             throw new UncheckedIOException("Failed to load userdb.json", e);
         }
     }
+
 
 
     public static void postUser(User user) {

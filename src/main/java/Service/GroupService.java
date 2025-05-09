@@ -7,6 +7,9 @@ import Model.User;
 import org.springframework.stereotype.Service;
 import javax.servlet.http.HttpSession;
 import java.util.List;
+import java.util.Map;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.UUID;
 import java.util.stream.Collectors;
 
@@ -59,7 +62,6 @@ public class GroupService {
         return removed;
     }
 
-
     public List<User> getGroupMembers(String groupCode) {
         Group group = GroupDatabase.getByCode(groupCode);
         if (group == null) return List.of(); //empty list
@@ -69,6 +71,28 @@ public class GroupService {
                 .filter(u -> u != null)
                 .collect(Collectors.toList());
     }
+
+
+    // eventually add group calendar and maybe notes?
+    public Map<String, Object> getGroupDetails(String groupCode) {
+        Group group = GroupDatabase.getByCode(groupCode);
+        if (group == null) throw new RuntimeException("Group not found");
+
+        List<String> memberNames = new ArrayList<>();
+        for (int id : group.getMemberIds()) {
+            User u = UserDatabase.getUserById(id);
+            if (u != null) memberNames.add(u.getName());
+        }
+
+        Map<String, Object> groupDetails = new HashMap<>();
+        groupDetails.put("title", group.getTitle());
+        groupDetails.put("memberNames", memberNames);
+        groupDetails.put("code", group.getCode());
+        groupDetails.put("createdBy", group.getCreatedBy());
+
+        return groupDetails;
+    }
+
 
 
 }
