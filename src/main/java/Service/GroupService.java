@@ -31,10 +31,13 @@ public class GroupService {
 
     public boolean joinGroup(String groupCode, HttpSession session) {
         String userEmail = (String) session.getAttribute("userEmail");
-        if (userEmail == null) return false;
+        User user = UserDatabase.getUser(userEmail);
+        if (user == null) return false;
+
         Group group = GroupDatabase.getByCode(groupCode);
         if (group == null) return false;
-        boolean added = group.addMemberEmail(userEmail);
+
+        boolean added = group.addMemberId(user.getUserId());
         if (added) {
             GroupDatabase.persistGroup(group);
         }
@@ -43,22 +46,29 @@ public class GroupService {
 
     public boolean leaveGroup(String groupCode, HttpSession session) {
         String userEmail = (String) session.getAttribute("userEmail");
-        if (userEmail == null) return false;
+        User user = UserDatabase.getUser(userEmail);
+        if (user == null) return false;
+
         Group group = GroupDatabase.getByCode(groupCode);
         if (group == null) return false;
-        boolean removed = group.removeMemberEmail(userEmail);
+
+        boolean removed = group.removeMemberId(user.getUserId());
         if (removed) {
             GroupDatabase.persistGroup(group);
         }
         return removed;
     }
 
+
     public List<User> getGroupMembers(String groupCode) {
         Group group = GroupDatabase.getByCode(groupCode);
-        if (group == null) return List.of();
-        return group.getMemberEmails().stream()
-                .map(UserDatabase::getUser)
+        if (group == null) return List.of(); //empty list
+
+        return group.getMemberIds().stream()
+                .map(UserDatabase::getUserById)
                 .filter(u -> u != null)
                 .collect(Collectors.toList());
     }
+
+
 }

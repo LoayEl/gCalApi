@@ -88,11 +88,11 @@ public class AuthControl {
             //storing user in our temp Database file
             String userEmail = idToken.getPayload().getEmail();
             String userName = idToken.getPayload().get("name").toString();
-            User newUser = new User(0, userName, userEmail, null);
+            User newUser = new User(0, userName, userEmail);
             if (UserDatabase.getUser(userEmail) == null) {
                 UserDatabase.postUser(newUser);
                 UserDatabase.persistUser(newUser);
-                System.out.println("\n Saved Authenticated user: " + newUser.getName() + ", ID: " + newUser.getUserId() + userEmail + "\n");
+                System.out.println("\n Saved Authenticated user: " + newUser.getName() + ", ID+Email: " + newUser.getUserId() + userEmail + "\n");
             }
             else {
                 System.out.println("Returning user: " + userEmail);

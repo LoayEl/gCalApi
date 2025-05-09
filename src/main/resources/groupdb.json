@@ -1,31 +1,28 @@
 {
-  "groups" : [ {
-    "id" : 2,
-    "title" : "Science Team",
-    "code" : "MEMFIX",
-    "classCode" : "SCI101",
-    "createdBy" : "admin@example.com",
-    "memberEmails" : [ "mila@example.com" ]
-  }, {
-    "id" : 3,
-    "title" : "AI Group",
-    "code" : "JOIN01",
-    "classCode" : "CSC202",
-    "createdBy" : "someone@example.com",
-    "memberEmails" : [ "leo@example.com" ]
-  }, {
-    "id" : 0,
-    "title" : "Solo Group",
-    "code" : "UNIQUE01",
-    "classCode" : "SOLO101",
-    "createdBy" : "creator@example.com",
-    "memberEmails" : [ ]
-  }, {
-    "id" : 1,
-    "title" : "Final Project",
-    "code" : "89F3ED",
-    "classCode" : "CSC101",
-    "createdBy" : "dany@example.com",
-    "memberEmails" : [ ]
-  } ]
+  "groups": [
+    {
+      "id": 2001,
+      "classCode": "CS101",
+      "title": "Study Buddies",
+      "code": "CS101-A",
+      "createdBy": "admin1@example.com",
+      "memberIds": [3, 6]
+    },
+    {
+      "id": 2002,
+      "classCode": "CS101",
+      "title": "Project Team",
+      "code": "CS101-B",
+      "createdBy": "admin2@example.com",
+      "memberIds": [6]
+    },
+    {
+      "id": 2003,
+      "classCode": "PHYS101",
+      "title": "Lab Partners",
+      "code": "PHYS101-A",
+      "createdBy": "admin3@example.com",
+      "memberIds": [2]
+    }
+  ]
 }

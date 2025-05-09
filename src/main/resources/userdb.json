@@ -1,57 +1,12 @@
 {
-  "users" : [ {
-    "userId" : 0,
-    "name" : "Sam",
-    "email" : "sam@example.com",
-    "password" : "pw",
-    "enrolledClasses" : [ ]
-  }, {
-    "userId" : 2,
-    "name" : "Mila",
-    "email" : "mila@example.com",
-    "password" : "pw",
-    "enrolledClasses" : [ ]
-  }, {
-    "userId" : 1,
-    "name" : "Dany",
-    "email" : "dany@example.com",
-    "password" : "pw",
-    "enrolledClasses" : [ ]
-  }, {
-    "userId" : 3,
-    "name" : "Leo",
-    "email" : "leo@example.com",
-    "password" : "pw",
-    "enrolledClasses" : [ ]
-  }, {
-    "userId" : 5,
-    "name" : "Alice",
-    "email" : "alice@example.com",
-    "password" : "pass",
-    "enrolledClasses" : [ ]
-  }, {
-    "userId" : 6,
-    "name" : "Bob",
-    "email" : "bob@example.com",
-    "password" : "pass",
-    "enrolledClasses" : [ {
-      "id" : 1,
-      "title" : "CS101",
-      "description" : "Intro",
-      "code" : "CS1",
-      "createdBy" : "bob@example.com"
-    } ]
-  }, {
-    "userId" : 4,
-    "name" : "Test",
-    "email" : "test@example.com",
-    "password" : "pass",
-    "enrolledClasses" : [ {
-      "id" : 1,
-      "title" : "Math",
-      "description" : "MATH101",
-      "code" : "Intro",
-      "createdBy" : "test@example.com"
-    } ]
-  } ]
+  "users": [
+    { "userId": 0, "name": "Sam",    "email": "sam@example.com",    "enrolledClassCodes": ["CS101"] },
+    { "userId": 1, "name": "Dany",   "email": "dany@example.com",   "enrolledClassCodes": [] },
+    { "userId": 2, "name": "Mila",   "email": "mila@example.com",   "enrolledClassCodes": ["PHYS101"] },
+    { "userId": 3, "name": "Leo",    "email": "leo@example.com",    "enrolledClassCodes": [] },
+    { "userId": 4, "name": "Test",   "email": "test@example.com",   "enrolledClassCodes": ["CS101"] },
+    { "userId": 5, "name": "Alice",  "email": "alice@example.com",  "enrolledClassCodes": [] },
+    { "userId": 6, "name": "Bob",    "email": "bob@example.com",    "enrolledClassCodes": ["PHYS101"] },
+    { "userId": 7, "name": "Hannah", "email": "hannahbfearns@gmail.com", "enrolledClassCodes": ["CS101", "PHYS101"] }
+  ]
 }

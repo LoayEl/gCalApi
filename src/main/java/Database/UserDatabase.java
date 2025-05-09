@@ -19,7 +19,7 @@ import com.fasterxml.jackson.databind.node.ArrayNode;
 
 
 
-//fake database using HashMap until we add a real one
+//fake database using HashMap and json persistance until we add a real one
 public class UserDatabase {
 
     private static final ConcurrentHashMap<String, User> userMap = new ConcurrentHashMap<>();
@@ -30,33 +30,22 @@ public class UserDatabase {
         try (InputStream in = UserDatabase.class.getResourceAsStream("/userdb.json")) {
             ObjectMapper mapper = new ObjectMapper();
             JsonNode users = mapper.readTree(in).get("users");
+
             for (JsonNode uNode : users) {
-                User u = new User(
-                        uNode.get("userId").asInt(),
-                        uNode.get("name").asText(),
-                        uNode.get("email").asText(),
-                        uNode.get("password").asText()
-                );
+                int userId = uNode.get("userId").asInt();
+                String name = uNode.get("name").asText();
+                String email = uNode.get("email").asText();
 
-                if (uNode.has("enrolledClasses")) {
-                    for (JsonNode cNode : uNode.get("enrolledClasses")) {
-                        String creatorEmail = cNode.get("createdBy").asText();
-                        User creator = userMap.getOrDefault(creatorEmail, new User(0, "Unknown", creatorEmail, null));
+                User u = new User(userId, name, email);
 
-                        Classroom classroom = new Classroom(
-                                cNode.get("id").asLong(),
-                                cNode.get("title").asText(),
-                                cNode.get("description").asText(),
-                                cNode.get("code").asText(),
-                                creator
-                        );
-
-                        u.getEnrolledClasses().add(classroom);
+                if (uNode.has("enrolledClassCodes")) {
+                    for (JsonNode codeNode : uNode.get("enrolledClassCodes")) {
+                        u.enroll(codeNode.asText());
                     }
                 }
 
-                userMap.put(u.getEmail(), u);
-                idIndex = Math.max(idIndex, u.getUserId() + 1);
+                userMap.put(email, u);
+                idIndex = Math.max(idIndex, userId + 1);
             }
 
         } catch (IOException e) {
@@ -99,32 +88,24 @@ public class UserDatabase {
             userNode.put("userId", user.getUserId());
             userNode.put("name", user.getName());
             userNode.put("email", user.getEmail());
-            userNode.put("password", user.getPassword());
 
-            ArrayNode enrolled = mapper.createArrayNode();
-            for (Classroom c : user.getEnrolledClasses()) {
-                ObjectNode cNode = mapper.createObjectNode();
-                cNode.put("id", c.getId());
-                cNode.put("title", c.getTitle());
-                cNode.put("description", c.getDescription());
-                cNode.put("code", c.getCode());
-                cNode.put("createdBy", c.getCreatedBy().getEmail());
-                enrolled.add(cNode);
+            ArrayNode classCodes = mapper.createArrayNode();
+            for (String code : user.getEnrolledClassCodes()) {
+                classCodes.add(code);
             }
-
-            userNode.set("enrolledClasses", enrolled);
+            userNode.set("enrolledClassCodes", classCodes);
             usersArray.add(userNode);
         }
-
         root.set("users", usersArray);
 
         try {
             mapper.writerWithDefaultPrettyPrinter().writeValue(userDbFile, root);
-            System.out.println(" userdb.json updated.");
+            System.out.println("userdb.json updated.");
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
+
 
 
 

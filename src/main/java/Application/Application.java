@@ -2,6 +2,7 @@ package Application;
 
 import Database.UserDatabase;
 import Database.ClassroomDatabase;
+import Database.GroupDatabase;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
@@ -22,6 +23,7 @@ public class Application {
     public void init() {
         UserDatabase.fillHashMap();
         ClassroomDatabase.fillHashMap();
-        System.out.println("User and Classroom databases loaded.");
+        GroupDatabase.fillHashMap();
+        System.out.println("user,group,classroom databases loaded .");
     }
 }

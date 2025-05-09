@@ -10,16 +10,25 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Collections;
-import java.util.Objects;
-import java.util.stream.Collectors;
+
 
 @Service
 public class ClassroomService {
 
-    public static List<Classroom> getUsersClasses(String email) {
-
+    public List<Classroom> getUsersClasses(String email) {
         User user = UserDatabase.getUser(email);
-        return user != null ? user.getEnrolledClasses() : new ArrayList<>();
+
+        List<Classroom> classList = new ArrayList<>();
+
+        if (user == null) return classList;
+
+        for (String code : user.getEnrolledClassCodes()) {
+            Classroom classroom = ClassroomDatabase.getClassroomByCode(code);
+            if (classroom != null) {
+                classList.add(classroom);
+            }
+        }
+        return classList;
     }
 
     public Classroom getClassroomByCode(String code) {
@@ -27,9 +36,9 @@ public class ClassroomService {
     }
 
     public List<Integer> getStudentIdsForClass(String classCode) {
-        Classroom cls = ClassroomDatabase.getClassroomByCode(classCode);
-        if (cls == null) return Collections.emptyList();
-        return cls.getStudentIds();
+        Classroom curClass = ClassroomDatabase.getClassroomByCode(classCode);
+        if (curClass == null) return Collections.emptyList();
+        return curClass.getStudentIds();
     }
 
     // Placeholder
