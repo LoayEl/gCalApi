@@ -1,13 +1,31 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-export default function CreateClassForm(){
-
+export default function CreateClassForm() {
     const [className, setClassName] = useState('');
+    const [error, setError] = useState(null);
+    const navigate = useNavigate();
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log("Creating class:", className);
-        // TODO: send POST request***
+        setError(null);
+
+        try {
+            const res = await fetch('/class/create', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                credentials: 'include',
+                body: JSON.stringify({ title: className })
+            });
+
+            if (!res.ok) throw new Error("Failed to create class");
+
+            const newClass = await res.json();
+            navigate(`/class/${newClass.code}`);
+        } catch (err) {
+            console.error(err);
+            setError("Could not create class. Try again.");
+        }
     };
 
     return (
@@ -20,10 +38,11 @@ export default function CreateClassForm(){
                     value={className}
                     onChange={(e) => setClassName(e.target.value)}
                     required
+                    style={{ marginRight: 10 }}
                 />
                 <button type="submit">Submit</button>
             </form>
+            {error && <p style={{ color: 'red' }}>{error}</p>}
         </div>
     );
-
 }
