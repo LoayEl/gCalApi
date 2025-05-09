@@ -32,12 +32,10 @@ public class User {
         }
         return false;
     }
+
     public boolean leaveClass(String classCode) {
         return enrolledClassCodes.remove(classCode);
     }
-
-
-
 
 
 }
