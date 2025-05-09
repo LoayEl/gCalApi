@@ -3,61 +3,46 @@
     "userId" : 0,
     "name" : "Sam",
     "email" : "sam@example.com",
-    "password" : "pw",
-    "enrolledClasses" : [ ]
+    "enrolledClassCodes" : [ ]
+  }, {
+    "userId" : 8,
+    "name" : "Hannah F",
+    "email" : "hannahbfearns@gmail.com",
+    "enrolledClassCodes" : [ ]
   }, {
     "userId" : 2,
     "name" : "Mila",
     "email" : "mila@example.com",
-    "password" : "pw",
-    "enrolledClasses" : [ ]
+    "enrolledClassCodes" : [ ]
   }, {
     "userId" : 7,
     "name" : "Loay Elasmar",
     "email" : "elasmarloay@gmail.com",
-    "password" : null,
-    "enrolledClasses" : [ ]
+    "enrolledClassCodes" : [ ]
   }, {
     "userId" : 1,
     "name" : "Dany",
     "email" : "dany@example.com",
-    "password" : "pw",
-    "enrolledClasses" : [ ]
+    "enrolledClassCodes" : [ ]
   }, {
     "userId" : 3,
     "name" : "Leo",
     "email" : "leo@example.com",
-    "password" : "pw",
-    "enrolledClasses" : [ ]
+    "enrolledClassCodes" : [ ]
   }, {
     "userId" : 5,
     "name" : "Alice",
     "email" : "alice@example.com",
-    "password" : "pass",
-    "enrolledClasses" : [ ]
+    "enrolledClassCodes" : [ ]
   }, {
     "userId" : 6,
     "name" : "Bob",
     "email" : "bob@example.com",
-    "password" : "pass",
-    "enrolledClasses" : [ {
-      "id" : 1,
-      "title" : "CS101",
-      "description" : "Intro",
-      "code" : "CS1",
-      "createdBy" : "bob@example.com"
-    } ]
+    "enrolledClassCodes" : [ ]
   }, {
     "userId" : 4,
     "name" : "Test",
     "email" : "test@example.com",
-    "password" : "pass",
-    "enrolledClasses" : [ {
-      "id" : 1,
-      "title" : "Math",
-      "description" : "MATH101",
-      "code" : "Intro",
-      "createdBy" : "test@example.com"
-    } ]
+    "enrolledClassCodes" : [ ]
   } ]
 }
