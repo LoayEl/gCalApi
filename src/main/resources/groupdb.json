@@ -14,6 +14,13 @@
     "createdBy" : "hannahbfearns@gmail.com",
     "memberIds" : [ ]
   }, {
+    "id" : 2009,
+    "title" : "sheep",
+    "code" : "E4C2FE",
+    "classCode" : "CS101",
+    "createdBy" : "elasmarloay@gmail.com",
+    "memberIds" : [ ]
+  }, {
     "id" : 2003,
     "title" : "Lab Partners",
     "code" : "PHYS101-A",
