@@ -1,6 +1,6 @@
 {
   "classrooms" : [ {
-    "id" : null,
+    "id" : 0,
     "title" : "01CADD",
     "description" : "test classss",
     "code" : "hannahbfearns@gmail.com",
@@ -13,8 +13,16 @@
     "description" : "Intro to programming",
     "code" : "CS101",
     "createdBy" : "unknown@example.com",
-    "studentIds" : [ 3, 6, 8 ],
+    "studentIds" : [ 3, 6, 8, 7 ],
     "groupCodes" : [ "CS101-A", "CS101-B" ]
+  }, {
+    "id" : null,
+    "title" : "EDB47B",
+    "description" : "shjd",
+    "code" : "elasmarloay@gmail.com",
+    "createdBy" : "elasmarloay@gmail.com",
+    "studentIds" : [ 7 ],
+    "groupCodes" : [ ]
   }, {
     "id" : 1003,
     "title" : "Algebra I",
