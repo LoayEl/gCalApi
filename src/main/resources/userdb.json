@@ -9,7 +9,7 @@
     "userId" : 3,
     "name" : "Hannah F",
     "email" : "hannahbfearns@gmail.com",
-    "password" : null,
+    "password" : "null",
     "enrolledClasses" : [ {
       "id" : 1003,
       "title" : "Algebra I",
@@ -29,5 +29,17 @@
     "email" : "carol.williams@example.com",
     "password" : "letMeIn2025",
     "enrolledClasses" : [ ]
+  }, {
+    "userId" : 4,
+    "name" : "andrew li",
+    "email" : "liandrew375@gmail.com",
+    "password" : null,
+    "enrolledClasses" : [ {
+      "id" : 1002,
+      "title" : "Computer Science 101",
+      "description" : "Intro to programming",
+      "code" : "CS101",
+      "createdBy" : "bob.johnson@example.com"
+    } ]
   } ]
 }
