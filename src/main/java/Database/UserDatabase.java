@@ -112,8 +112,7 @@ public class UserDatabase {
             e.printStackTrace();
         }
     }
-
-
-
-
+    public static void clear() {
+        userMap.clear();
+    }
 }
