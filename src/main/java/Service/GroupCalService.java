@@ -5,6 +5,7 @@ import ConfigAndUtil.CalServiceBuilder;
 import Model.GroupCal;
 import Model.User;
 import Model.Group;
+import Database.GroupDatabase;
 
 import com.google.api.services.calendar.Calendar;
 import com.google.api.services.calendar.model.Event;
@@ -26,6 +27,7 @@ public class GroupCalService {
     @Autowired
     private GroupService groupService;
 
+
     // gets group cal object
     // build cal, builds calendar and saves in groupcal model
     public String buildCalendarForGroup(String groupCode, String ownerEmail) throws IOException, GeneralSecurityException {
@@ -38,13 +40,35 @@ public class GroupCalService {
         return createdCalendar.getId(); // this is what gets stored in Group
     }
 
+    public String getOrCreateCalendar(String groupCode, String ownerEmail) {
+        Group group = GroupDatabase.getByCode(groupCode);
+        if (group == null) {
+            throw new RuntimeException("Group not found");
+        }
 
+        String existingId = group.getGroupCalId();
+        if (existingId != null && !existingId.isBlank()) {
+            return existingId;
+        }
 
-    // get from group cal model or maybe move this to group cal model
-    private GroupCal retrieveGroupCal(String groupCode) {
-        // TODO: Replace this stub with actual DB lookup
-        return new GroupCal(1L, groupCode, "primary");
+        try {
+            String newCalId = buildCalendarForGroup(groupCode, ownerEmail);
+            group.setGroupCalId(newCalId);
+            GroupDatabase.persistGroup(group);
+            return newCalId;
+        } catch (Exception e) {
+            throw new RuntimeException("Failed to create calendar for group " + groupCode, e);
+        }
     }
+
+    private GroupCal retrieveGroupCal(String groupCode) {
+        Group group = GroupDatabase.getByCode(groupCode);
+        if (group == null || group.getGroupCalId() == null) {
+            throw new RuntimeException("Group or calendar not found for group: " + groupCode);
+        }
+        return new GroupCal(group.getId(), groupCode, group.getGroupCalId());
+    }
+
 
     public GroupCal displayCalendar(String groupCode, HttpSession session) throws IOException, GeneralSecurityException {
         String userEmail = (String) session.getAttribute("userEmail");

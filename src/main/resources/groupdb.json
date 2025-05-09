@@ -5,6 +5,7 @@
     "code" : "1F7742",
     "classCode" : "hannahbfearns@gmail.com",
     "createdBy" : "hannahbfearns@gmail.com",
+    "groupCalId" : null,
     "memberIds" : [ ]
   }, {
     "id" : 2004,
@@ -12,6 +13,7 @@
     "code" : "AF340C",
     "classCode" : "CS101",
     "createdBy" : "hannahbfearns@gmail.com",
+    "groupCalId" : null,
     "memberIds" : [ ]
   }, {
     "id" : 2003,
@@ -19,6 +21,7 @@
     "code" : "PHYS101-A",
     "classCode" : "PHYS101",
     "createdBy" : "admin3@example.com",
+    "groupCalId" : null,
     "memberIds" : [ 2 ]
   }, {
     "id" : 2005,
@@ -26,6 +29,7 @@
     "code" : "58A748",
     "classCode" : "hannahbfearns@gmail.com",
     "createdBy" : "hannahbfearns@gmail.com",
+    "groupCalId" : null,
     "memberIds" : [ ]
   }, {
     "id" : 2001,
@@ -33,6 +37,7 @@
     "code" : "CS101-A",
     "classCode" : "CS101",
     "createdBy" : "admin1@example.com",
+    "groupCalId" : null,
     "memberIds" : [ 3, 6 ]
   }, {
     "id" : 2002,
@@ -40,6 +45,7 @@
     "code" : "CS101-B",
     "classCode" : "CS101",
     "createdBy" : "admin2@example.com",
+    "groupCalId" : null,
     "memberIds" : [ 6 ]
   }, {
     "id" : 2006,
@@ -47,6 +53,15 @@
     "code" : "761850",
     "classCode" : "CS101",
     "createdBy" : "hannahbfearns@gmail.com",
+    "groupCalId" : null,
+    "memberIds" : [ ]
+  }, {
+    "id" : 2008,
+    "title" : "calgroup ",
+    "code" : "1CC036",
+    "classCode" : "CS101",
+    "createdBy" : "hannahbfearns@gmail.com",
+    "groupCalId" : null,
     "memberIds" : [ ]
   } ]
 }
