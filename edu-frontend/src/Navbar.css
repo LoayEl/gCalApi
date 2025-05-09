@@ -1,0 +1,34 @@
+/* Navbar.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
+
+
+.navbar-royal {
+    background-color: #4169E1 !important;
+}
+
+.navbar-royal .nav-link {
+    color: #fff !important;
+}
+
+.navbar-brand {
+    color: #fff;
+    margin-bottom: 2rem;
+    font-weight: 600;
+
+
+         /* extra bold */
+    font-size: 1.5rem;     /* bump it up if you like */
+    text-transform: uppercase;
+    letter-spacing: 1px;   /* tight tracking to match your mock */
+}
+
+.navbar-royal .nav-link:hover {
+    color: #e0e0e0 !important;
+}
+
+.navbar-bottom {
+    width: 100%;
+    height: 6px;              /* adjust thickness as you like */
+    background-color: #4169E1;
+}
