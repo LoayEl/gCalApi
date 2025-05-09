@@ -1,5 +1,13 @@
 {
   "classrooms" : [ {
+    "id" : null,
+    "title" : "01CADD",
+    "description" : "test classss",
+    "code" : "hannahbfearns@gmail.com",
+    "createdBy" : "hannahbfearns@gmail.com",
+    "studentIds" : [ 8 ],
+    "groupCodes" : [ ]
+  }, {
     "id" : 1002,
     "title" : "Computer Science 101",
     "description" : "Intro to programming",

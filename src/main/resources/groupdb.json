@@ -1,5 +1,12 @@
 {
   "groups" : [ {
+    "id" : 2007,
+    "title" : "test group ooo",
+    "code" : "1F7742",
+    "classCode" : "hannahbfearns@gmail.com",
+    "createdBy" : "hannahbfearns@gmail.com",
+    "memberIds" : [ ]
+  }, {
     "id" : 2004,
     "title" : " Hannahs Group",
     "code" : "AF340C",
@@ -14,6 +21,13 @@
     "createdBy" : "admin3@example.com",
     "memberIds" : [ 2 ]
   }, {
+    "id" : 2005,
+    "title" : "lllll",
+    "code" : "58A748",
+    "classCode" : "hannahbfearns@gmail.com",
+    "createdBy" : "hannahbfearns@gmail.com",
+    "memberIds" : [ ]
+  }, {
     "id" : 2001,
     "title" : "Study Buddies",
     "code" : "CS101-A",
@@ -27,5 +41,12 @@
     "classCode" : "CS101",
     "createdBy" : "admin2@example.com",
     "memberIds" : [ 6 ]
+  }, {
+    "id" : 2006,
+    "title" : "oooo h ",
+    "code" : "761850",
+    "classCode" : "CS101",
+    "createdBy" : "hannahbfearns@gmail.com",
+    "memberIds" : [ ]
   } ]
 }
