@@ -58,6 +58,13 @@ public class ClassroomControl {
         return classService.getStudentIdsForClass(code);
     }
 
+    @PostMapping("/class/create")
+    public Classroom createClass(@RequestBody Map<String, String> body, HttpSession session) {
+        String title = body.get("title");
+        return classService.createClass(title, session);
+    }
+
+
     @GetMapping("/user/{id}")
     public User getUserById(@PathVariable int id) {
         return UserDatabase.getUserById(id);
