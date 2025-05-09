@@ -10,10 +10,6 @@ public class GroupCal {
     private String calendarId; // Google Calendar ID
     private List<Event> events; // List of events in this calendar
 
-    public GroupCal() {
-        this.events = new ArrayList<>();
-    }
-
     public GroupCal(Long id, String groupCode, String calendarId) {
         this.id = id;
         this.groupCode = groupCode;
@@ -30,24 +26,8 @@ public class GroupCal {
         this.id = id;
     }
 
-    public String getGroupCode() {
-        return groupCode;
-    }
-
-    public void setGroupCode(String groupCode) {
-        this.groupCode = groupCode;
-    }
-
     public String getCalendarId() {
         return calendarId;
-    }
-
-    public void setCalendarId(String calendarId) {
-        this.calendarId = calendarId;
-    }
-
-    public List<Event> getEvents() {
-        return events;
     }
 
     public void setEvents(List<Event> events) {
@@ -62,3 +42,4 @@ public class GroupCal {
         return this.events.remove(event);
     }
 }
+

@@ -1,22 +1,28 @@
 package Service;
 
+
 import ConfigAndUtil.CalServiceBuilder;
 import Model.GroupCal;
+import Model.User;
+
 import com.google.api.services.calendar.Calendar;
 import com.google.api.services.calendar.model.Event;
 import com.google.api.services.calendar.model.Events;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.security.GeneralSecurityException;
-import java.util.List;
 import java.util.logging.Logger;
 
 @Service
 public class GroupCalService {
 
     private static final Logger logger = Logger.getLogger(GroupCalService.class.getName());
+
+    @Autowired
+    private GroupService groupService;
 
     public GroupCal displayCalendar(String groupCode, HttpSession session) throws IOException, GeneralSecurityException {
         String userEmail = (String) session.getAttribute("userEmail");
@@ -25,9 +31,6 @@ public class GroupCalService {
         }
 
         GroupCal groupCal = retrieveGroupCal(groupCode);
-        if (groupCal == null) {
-            throw new RuntimeException("Group calendar not found");
-        }
 
         Calendar service = CalServiceBuilder.buildService(userEmail);
         Events events = service.events().list(groupCal.getCalendarId())
@@ -49,11 +52,7 @@ public class GroupCalService {
         }
 
         GroupCal groupCal = retrieveGroupCal(groupCode);
-        if (groupCal == null) {
-            throw new RuntimeException("Group calendar not found");
-        }
 
-        // Use EventBuilder to create the event
         Event event = new EventBuilder()
                 .setSummary(summary)
                 .setLocation(location)
@@ -64,8 +63,20 @@ public class GroupCalService {
 
         Calendar service = CalServiceBuilder.buildService(userEmail);
         Event createdEvent = service.events().insert(groupCal.getCalendarId(), event).execute();
-
         groupCal.addEvent(createdEvent);
+
+        // Add event to each student's personal calendar
+        for (User user : groupService.getGroupMembers(groupCode)) {
+            String studentEmail = user.getEmail();
+            try {
+                Calendar studentService = CalServiceBuilder.buildService(studentEmail);
+                studentService.events().insert("primary", event).execute();
+            } catch (Exception e) {
+                logger.warning("Failed to add event for student: " + studentEmail + " - " + e.getMessage());
+            }
+        }
+
+
         return true;
     }
 
@@ -76,9 +87,6 @@ public class GroupCalService {
         }
 
         GroupCal groupCal = retrieveGroupCal(groupCode);
-        if (groupCal == null) {
-            throw new RuntimeException("Group calendar not found");
-        }
 
         Calendar service = CalServiceBuilder.buildService(userEmail);
         try {
@@ -91,8 +99,7 @@ public class GroupCalService {
     }
 
     private GroupCal retrieveGroupCal(String groupCode) {
-        // Example implementation: Retrieve a GroupCal object based on groupCode
-        // This is a placeholder; implement this method based on your data storage solution
-        return new GroupCal(1L, groupCode, "primary"); // Example: Return a mock GroupCal with a calendarId
+        // TODO: Replace this stub with actual DB lookup
+        return new GroupCal(1L, groupCode, "primary");
     }
 }
