@@ -1,27 +1,19 @@
 {
   "classrooms" : [ {
-    "id" : 1002,
-    "title" : "Computer Science 101",
-    "description" : "Intro to programming",
-    "code" : "CS101",
-    "createdBy" : "bob.johnson@example.com",
-    "studentIds" : [ 3 ],
+    "id" : 1,
+    "title" : "CS101",
+    "description" : "Intro",
+    "code" : "CS1",
+    "createdBy" : "bob@example.com",
+    "studentIds" : [ 6 ],
     "groupCodes" : [ ]
   }, {
-    "id" : 1003,
-    "title" : "Algebra I",
-    "description" : "High School Algebra",
-    "code" : "ALG1",
-    "createdBy" : "carol.williams@example.com",
+    "id" : 2,
+    "title" : "Math",
+    "description" : "Basic Math",
+    "code" : "MATH101",
+    "createdBy" : "charlie@example.com",
     "studentIds" : [ ],
-    "groupCodes" : [ ]
-  }, {
-    "id" : 1001,
-    "title" : "Physics 101",
-    "description" : "Intro to classical mechanics",
-    "code" : "PHYS101",
-    "createdBy" : "alice.smith@example.com",
-    "studentIds" : [ 3 ],
     "groupCodes" : [ ]
   } ]
 }

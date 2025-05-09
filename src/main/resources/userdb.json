@@ -1,12 +1,12 @@
 {
   "users" : [ {
-    "userId" : 0,
+    "userId" : 1,
     "name" : "Sam",
     "email" : "sam@example.com",
     "password" : "pw",
     "enrolledClasses" : [ ]
   }, {
-    "userId" : 2,
+    "userId" : 3,
     "name" : "Mila",
     "email" : "mila@example.com",
     "password" : "pw",
@@ -18,13 +18,13 @@
     "password" : null,
     "enrolledClasses" : [ ]
   }, {
-    "userId" : 1,
+    "userId" : 2,
     "name" : "Dany",
     "email" : "dany@example.com",
     "password" : "pw",
     "enrolledClasses" : [ ]
   }, {
-    "userId" : 3,
+    "userId" : 4,
     "name" : "Leo",
     "email" : "leo@example.com",
     "password" : "pw",
@@ -48,7 +48,7 @@
       "createdBy" : "bob@example.com"
     } ]
   }, {
-    "userId" : 4,
+    "userId" : 0,
     "name" : "Test",
     "email" : "test@example.com",
     "password" : "pass",

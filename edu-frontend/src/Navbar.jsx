@@ -1,5 +1,6 @@
 import React from 'react';
 import { Outlet, Link } from 'react-router-dom';
+import { FaUserCircle } from 'react-icons/fa';      // ← import the icon
 import './Navbar.css';
 
 export default function Navbar() {
@@ -7,9 +8,8 @@ export default function Navbar() {
         <>
             <nav className="navbar navbar-expand-sm navbar-royal">
                 <div className="container-fluid">
-                    {/* mx-auto will center it horizontally */}
                     <Link className="navbar-brand mx-auto" to="/homepage">
-                        ED Group     |
+                        ED Group  |
                     </Link>
 
                     <button
@@ -25,24 +25,29 @@ export default function Navbar() {
                         <ul className="navbar-nav me-auto">
                             <li className="nav-item">
                                 <Link className="nav-link" to="/my-classes">
-                                    My Classes     |
+                                    My Classes  |
                                 </Link>
                             </li>
                             <li className="nav-item">
                                 <Link className="nav-link" to="/my-groups">
-                                    My Groups     |
+                                    My Groups  |
                                 </Link>
                             </li>
                             <li className="nav-item">
                                 <Link className="nav-link" to="/link">
-                                    Link     |
+                                    Link  |
                                 </Link>
                             </li>
                         </ul>
+
                         <ul className="navbar-nav ms-auto">
                             <li className="nav-item">
-                                <Link className="nav-link" to="/profile">
-                                    My Profile
+                                <Link
+                                    className="nav-link profile-icon"
+                                    to="/profile"
+                                    aria-label="My Profile"
+                                >
+                                    <FaUserCircle size={28} />
                                 </Link>
                             </li>
                         </ul>
