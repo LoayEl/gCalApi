@@ -18,6 +18,8 @@ import Profile, {loader as profileLoader} from "./Profile.jsx";
 import MyClasses, {loader as myClassesLoader} from "./MyClasses.jsx";
 import ClassPage, { loader as classPageLoader } from './ClassPage.jsx';
 import GroupPage, { loader as groupLoader } from './GroupPage';
+import MyGroups, { loader as myGroupsLoader } from './MyGroups.jsx';
+import CreateGroupForm from './CreateGroupForm.jsx';
 
 const router = createBrowserRouter([
     {
@@ -81,6 +83,23 @@ const router = createBrowserRouter([
                     </ProtectedRoute>
                 ),
                 loader: groupLoader
+            },
+            {
+                path: 'my-groups',
+                element: (
+                    <ProtectedRoute>
+                        <MyGroups />
+                    </ProtectedRoute>
+                ),
+                loader: myGroupsLoader,
+            },
+            {
+                path: 'class/:classCode/create-group',
+                element: (
+                    <ProtectedRoute>
+                        <CreateGroupForm />
+                    </ProtectedRoute>
+                )
             },
             {
                 path: '*',

@@ -10,6 +10,8 @@ import javax.servlet.http.HttpSession;
 import java.util.List;
 import java.util.Map;
 
+
+//ROUTES FOR CLASS SPECIFIC GROUPS
 @RestController
 @RequestMapping("/class/{classCode}/groups")
 public class GroupControl {
@@ -17,6 +19,7 @@ public class GroupControl {
     @Autowired
     private GroupService groupService;
 
+    //groups for a specific class
     @GetMapping("/listgroups")
     public List<Group> listGroups(
             @PathVariable String classCode,
@@ -78,5 +81,6 @@ public class GroupControl {
     ) {
         return groupService.getGroupDetails(groupCode);
     }
+
 
 }

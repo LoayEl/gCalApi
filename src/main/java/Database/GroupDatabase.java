@@ -11,6 +11,7 @@ import java.io.InputStream;
 import java.io.UncheckedIOException;
 import java.util.List;
 import java.util.UUID;
+import java.util.Collection;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.stream.Collectors;
 
@@ -71,6 +72,11 @@ public class GroupDatabase {
         groupMap.put(group.getCode(), group);
         persistGroup(group);
     }
+
+    public static Collection<Group> getAllGroups() {
+        return groupMap.values();
+    }
+
 
     public static void persistGroup(Group g) {
         ObjectMapper mapper = new ObjectMapper();

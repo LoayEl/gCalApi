@@ -93,6 +93,18 @@ public class GroupService {
         return groupDetails;
     }
 
+    public List<Group> getGroupsForCurrentUser(HttpSession session) {
+        String userEmail = (String) session.getAttribute("userEmail");
+        User user = UserDatabase.getUser(userEmail);
+        if (user == null) return List.of();
+
+        int userId = user.getUserId();
+        return GroupDatabase.getAllGroups().stream()
+                .filter(g -> g.getMemberIds().contains(userId))
+                .collect(Collectors.toList());
+    }
+
+
 
 
 }

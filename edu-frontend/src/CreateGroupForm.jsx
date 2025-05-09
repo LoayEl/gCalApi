@@ -1,0 +1,50 @@
+import React, { useState } from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
+
+export default function CreateGroupForm() {
+    const { classCode } = useParams();
+    const [title, setTitle] = useState('');
+    const [error, setError] = useState(null);
+    const navigate = useNavigate();
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        try {
+            const res = await fetch(`/class/${classCode}/groups/creategroup`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                credentials: 'include',
+                body: JSON.stringify({ title })
+            });
+
+            if (!res.ok) throw new Error('Failed to create group');
+            const group = await res.json();
+
+            navigate(`/class/${classCode}/group/${group.code}`);
+        } catch (err) {
+            console.error(err);
+            setError("Could not create group.");
+        }
+    };
+
+    return (
+        <div style={{ padding: 20 }}>
+            <h1>Create Group</h1>
+            <form onSubmit={handleSubmit}>
+                <label>
+                    Group Title:
+                    <input
+                        type="text"
+                        value={title}
+                        onChange={(e) => setTitle(e.target.value)}
+                        required
+                    />
+                </label>
+                <br /><br />
+                <button type="submit">Create</button>
+                {error && <p style={{ color: 'red' }}>{error}</p>}
+            </form>
+        </div>
+    );
+}

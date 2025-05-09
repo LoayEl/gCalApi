@@ -51,10 +51,6 @@ import GroupView from './GroupView';
             //shows a list of the current classes groups and u can click join on them to join
         };
 
-        const handleCreateGroup = async () => {
-            //redirect to create group page who knoews what class ur making a group in
-            //class/create-group
-        };
 
         return (
             <div>
@@ -62,6 +58,10 @@ import GroupView from './GroupView';
                     <h1>{classroom.title}</h1>
                     <p>Class Code: {classroom.code}</p>
                 </header>
+
+                <button onClick={() => navigate(`/class/${code}/create-group`)}>
+                    Create Group
+                </button>
 
                 <section style={{ display: 'flex', gap: 32, padding: 16 }}>
                     <div style={{ flex: 2 }}>
