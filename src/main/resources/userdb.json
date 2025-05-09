@@ -1,48 +1,48 @@
 {
   "users" : [ {
-    "userId" : 0,
+    "userId" : 2,
     "name" : "Sam",
     "email" : "sam@example.com",
     "enrolledClassCodes" : [ ]
   }, {
-    "userId" : 8,
-    "name" : "Hannah F",
-    "email" : "hannahbfearns@gmail.com",
-    "enrolledClassCodes" : [ "CS101", "3AA71C", "01CADD" ]
+    "userId" : 9,
+    "name" : "Charlie",
+    "email" : "charlie@example.com",
+    "enrolledClassCodes" : [ ]
   }, {
-    "userId" : 2,
+    "userId" : 5,
     "name" : "Mila",
     "email" : "mila@example.com",
     "enrolledClassCodes" : [ ]
   }, {
-    "userId" : 7,
-    "name" : "Loay Elasmar",
-    "email" : "elasmarloay@gmail.com",
-    "enrolledClassCodes" : [ "EDB47B", "CS101" ]
+    "userId" : 3,
+    "name" : "Eva",
+    "email" : "eva@example.com",
+    "enrolledClassCodes" : [ ]
   }, {
-    "userId" : 1,
+    "userId" : 4,
     "name" : "Dany",
     "email" : "dany@example.com",
     "enrolledClassCodes" : [ ]
   }, {
-    "userId" : 3,
+    "userId" : 6,
     "name" : "Leo",
     "email" : "leo@example.com",
     "enrolledClassCodes" : [ ]
   }, {
-    "userId" : 5,
+    "userId" : 7,
     "name" : "Alice",
     "email" : "alice@example.com",
     "enrolledClassCodes" : [ ]
   }, {
-    "userId" : 6,
+    "userId" : 8,
     "name" : "Bob",
     "email" : "bob@example.com",
-    "enrolledClassCodes" : [ ]
+    "enrolledClassCodes" : [ "CS1" ]
   }, {
-    "userId" : 4,
+    "userId" : 1,
     "name" : "Test",
     "email" : "test@example.com",
-    "enrolledClassCodes" : [ ]
+    "enrolledClassCodes" : [ "Intro" ]
   } ]
 }

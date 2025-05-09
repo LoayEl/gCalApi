@@ -42,6 +42,9 @@ public class GroupDatabase {
                             g.addMemberId(m.asInt());
                         }
                     }
+                    if (n.has("groupCalId")) {
+                        g.setGroupCalId(n.get("groupCalId").asText());
+                    }
 
                     groupMap.put(g.getCode(), g);
                     idIndex = Math.max(idIndex, g.getId() + 1);
@@ -85,11 +88,12 @@ public class GroupDatabase {
 
         for (Group group : groupMap.values()) {
             ObjectNode gNode = mapper.createObjectNode();
-            gNode.put("id",        group.getId());
-            gNode.put("title",     group.getTitle());
-            gNode.put("code",      group.getCode());
+            gNode.put("id", group.getId());
+            gNode.put("title", group.getTitle());
+            gNode.put("code", group.getCode());
             gNode.put("classCode", group.getClassCode());
             gNode.put("createdBy", group.getCreatedBy());
+            gNode.put("groupCalId", group.getGroupCalId());
 
             // write out memberIds
             ArrayNode mems = mapper.createArrayNode();
@@ -102,8 +106,7 @@ public class GroupDatabase {
         root.set("groups", arr);
 
         try {
-            mapper.writerWithDefaultPrettyPrinter()
-                    .writeValue(groupDbFile, root);
+            mapper.writerWithDefaultPrettyPrinter().writeValue(groupDbFile, root);
             System.out.println("groupdb.json updated.");
         } catch (IOException e) {
             e.printStackTrace();

@@ -1,59 +1,38 @@
 {
   "groups" : [ {
-    "id" : 2007,
-    "title" : "test group ooo",
-    "code" : "1F7742",
-    "classCode" : "hannahbfearns@gmail.com",
-    "createdBy" : "hannahbfearns@gmail.com",
-    "memberIds" : [ ]
+    "id" : 3,
+    "title" : "Science Team",
+    "code" : "MEMFIX",
+    "classCode" : "SCI101",
+    "createdBy" : "admin@example.com",
+    "memberIds" : [ 5 ]
   }, {
-    "id" : 2004,
-    "title" : " Hannahs Group",
-    "code" : "AF340C",
-    "classCode" : "CS101",
-    "createdBy" : "hannahbfearns@gmail.com",
-    "memberIds" : [ ]
+    "id" : 1,
+    "title" : "TestGroup",
+    "code" : "GRP01",
+    "classCode" : "CSC999",
+    "createdBy" : "eva@example.com",
+    "memberIds" : [ 3 ]
   }, {
-    "id" : 2003,
-    "title" : "Lab Partners",
-    "code" : "PHYS101-A",
-    "classCode" : "PHYS101",
-    "createdBy" : "admin3@example.com",
-    "memberIds" : [ 2 ]
-  }, {
-    "id" : 2005,
-    "title" : "lllll",
-    "code" : "58A748",
-    "classCode" : "hannahbfearns@gmail.com",
-    "createdBy" : "hannahbfearns@gmail.com",
-    "memberIds" : [ ]
-  }, {
-    "id" : 2001,
-    "title" : "Study Buddies",
-    "code" : "CS101-A",
-    "classCode" : "CS101",
-    "createdBy" : "admin1@example.com",
-    "memberIds" : [ 3, 6 ]
-  }, {
-    "id" : 2002,
-    "title" : "Project Team",
-    "code" : "CS101-B",
-    "classCode" : "CS101",
-    "createdBy" : "admin2@example.com",
+    "id" : 4,
+    "title" : "AI Group",
+    "code" : "JOIN01",
+    "classCode" : "CSC202",
+    "createdBy" : "someone@example.com",
     "memberIds" : [ 6 ]
   }, {
-    "id" : 2006,
-    "title" : "oooo h ",
-    "code" : "761850",
-    "classCode" : "CS101",
-    "createdBy" : "hannahbfearns@gmail.com",
+    "id" : 0,
+    "title" : "Solo Group",
+    "code" : "UNIQUE01",
+    "classCode" : "SOLO101",
+    "createdBy" : "creator@example.com",
     "memberIds" : [ ]
   }, {
-    "id" : 2008,
-    "title" : "water",
-    "code" : "1BEBE9",
-    "classCode" : "CS101",
-    "createdBy" : "elasmarloay@gmail.com",
+    "id" : 2,
+    "title" : "Final Project",
+    "code" : "363E02",
+    "classCode" : "CSC101",
+    "createdBy" : "dany@example.com",
     "memberIds" : [ ]
   } ]
 }
