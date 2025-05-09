@@ -8,29 +8,12 @@
     "studentIds" : [ 8 ],
     "groupCodes" : [ ]
   }, {
-<<<<<<< HEAD
-    "id" : 1002,
-    "title" : "Computer Science 101",
-    "description" : "Intro to programming",
-    "code" : "CS101",
-    "createdBy" : "unknown@example.com",
-    "studentIds" : [ 3, 6, 8, 7 ],
-    "groupCodes" : [ "CS101-A", "CS101-B" ]
-  }, {
-    "id" : null,
-    "title" : "8D1F7A",
-    "description" : "qqq",
-    "code" : "elasmarloay@gmail.com",
-    "createdBy" : "elasmarloay@gmail.com",
-    "studentIds" : [ 7 ],
-=======
     "id" : 1,
     "title" : "Math",
     "description" : "MATH101",
     "code" : "Intro",
     "createdBy" : "test@example.com",
     "studentIds" : [ 1 ],
->>>>>>> main
     "groupCodes" : [ ]
   }, {
     "id" : 2,
