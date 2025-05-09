@@ -15,7 +15,7 @@ import java.util.Arrays;
 // do we want getters?
 
 
-public class EventBuilder {
+public class  EventBuilder {
     private Event event;
 
     public EventBuilder() {

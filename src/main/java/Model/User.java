@@ -10,6 +10,7 @@ public class User {
     protected String email;
     protected String password;
 
+
     private List<Classroom> enrolledClasses = new ArrayList<>();
 
     public User(int userId, String name, String email, String password) {
