@@ -86,7 +86,10 @@ public class ClassroomDatabase {
             obj.put("title", c.getTitle());
             obj.put("description", c.getDescription());
             obj.put("code", c.getCode());
-            obj.put("createdBy", c.getCreatedBy().getEmail());
+
+            String creatorEmail = c.getCreatedBy() != null ? c.getCreatedBy().getEmail() : "unknown@example.com";
+            obj.put("createdBy", creatorEmail);
+
 
             ArrayNode idsArr = mapper.createArrayNode();
             for (Integer id : c.getStudentIds()) {

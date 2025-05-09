@@ -25,16 +25,16 @@ public class ClassroomControl {
 
     @GetMapping("/my-classes")
     public List<Classroom> getUserClasses(HttpSession session) {
-        System.out.println("Session email: " + session.getAttribute("userEmail"));
-        User u = UserDatabase.getUser((String) session.getAttribute("userEmail"));
-        System.out.println("Loaded user: " + u.getName() + " (" + u.getEmail() + ")");
-        System.out.println("Enrolled classes count: " + u.getEnrolledClasses().size());
-
-        String email = (String) session.getAttribute("userEmail");
-        if (email != null) {
-            return classService.getUsersClasses(email);
+        User user = userService.getCurrentUser(session);
+        if (user == null) {
+            System.out.println("No user in session.");
+            return null;
         }
-        return null;
+
+        System.out.println("Loaded user: " + user.getName() + " (" + user.getEmail() + ")");
+        System.out.println("Enrolled class codes: " + user.getEnrolledClassCodes());
+
+        return classService.getUsersClasses(user.getEmail());
     }
 
     @PostMapping("/join")
@@ -57,6 +57,13 @@ public class ClassroomControl {
         String code = body.get("code");
         return classService.getStudentIdsForClass(code);
     }
+
+    @PostMapping("/class/create")
+    public Classroom createClass(@RequestBody Map<String, String> body, HttpSession session) {
+        String title = body.get("title");
+        return classService.createClass(title, session);
+    }
+
 
     @GetMapping("/user/{id}")
     public User getUserById(@PathVariable int id) {
