@@ -1,34 +1,55 @@
 /* Navbar.css */
 
+/* 1️⃣ Orbitron for the brand, Poppins for links */
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
 
-
+/* 2️⃣ Main nav background */
 .navbar-royal {
     background-color: #4169E1 !important;
 }
 
-.navbar-royal .nav-link {
-    color: #fff !important;
-}
-
-.navbar-brand {
-    color: #fff;
-    margin-bottom: 2rem;
-    font-weight: 600;
-
-
-         /* extra bold */
-    font-size: 1.5rem;     /* bump it up if you like */
+/* 3️⃣ Brand styling */
+.navbar-royal .navbar-brand {
+    margin: 0 auto; /* center */
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
     text-transform: uppercase;
-    letter-spacing: 1px;   /* tight tracking to match your mock */
+    letter-spacing: 2px;
+    color: #fff !important;
+    padding: 0.5rem 0;
 }
 
+/* 4️⃣ Links styling */
+.navbar-royal .nav-link {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    color: #fff !important;
+    transition: color 0.2s;
+}
 .navbar-royal .nav-link:hover {
     color: #e0e0e0 !important;
 }
 
+/* 5️⃣ Bottom stripe */
 .navbar-bottom {
     width: 100%;
-    height: 6px;              /* adjust thickness as you like */
-    background-color: #4169E1;
+    height: 6px;
+    background-color: #5A8DEE;
+}
+
+/* 6️⃣ Profile‐icon link */
+.navbar-royal .nav-link.profile-icon {
+    padding: 0.5rem;          /* match other links */
+    color: #fff !important;
+}
+.navbar-royal .nav-link.profile-icon:hover {
+    color: #e0e0e0 !important;
+}
+
+/* Ensure the SVG icon inherits the link color */
+.navbar-royal .nav-link.profile-icon svg {
+    vertical-align: middle;
+    fill: currentColor;
 }

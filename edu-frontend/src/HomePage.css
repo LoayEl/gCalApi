@@ -1,160 +1,111 @@
-/* HomePage.css */
-
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
-
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+:root {
+    --color-sky:    #87CEEB;   /* sky blue */
+    --color-royal:  #4169E1;   /* royal blue */
+    --color-white:  #ffffff;
+    --color-gray:   #555555;
 }
 
-body, html {
-    font-family: 'Poppins', sans-serif;
-}
-
-/* —— Container —— */
+/* PAGE & BLUR */
 .homepage-container {
+    min-height: 100vh;
+    background-color: var(--color-sky);
+    padding: 2rem;
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #87CEEB;
-    min-height: 100vh;
+    transition: filter 0.3s ease;
+}
+.homepage-container.blur {
+    filter: blur(6px);
 }
 
-/* —— Navbars —— */
-.navbar-top {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #4169E1; /* dark red */
-    padding: 0 1rem;
-    height: 56px;
-}
-
-.navbar-title {
-    color: #fff;
-    font-size: 1.25rem;
-    font-weight: 600;
-}
-
-.navbar-icon {
-    width: 24px;
-    height: 24px;
-    filter: invert(1); /* white icon */
-}
-
-.navbar-bottom {
-    width: 100%;
-    height: 8px;
-    background-color: #4169E1; /* slightly lighter stripe */
-}
-
-/* —— Welcome Card —— */
+/* WELCOME CARD */
 .welcome-card {
-    background-color: #fff;
-    border-radius: 12px;
+    background: var(--color-white);
+    border-radius: 1rem;
     padding: 2rem;
-    margin: 2rem 1rem;
-    max-width: 600px;
+    max-width: 500px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    margin-bottom: 2rem;
+}
+.card-title {
+    margin: 0 0 0.5rem;
+    color: var(--color-royal);
+}
+.card-subtext {
+    margin: 0 0 1.5rem;
+    color: var(--color-gray);
+}
+
+/* BUTTON GROUP & BUTTONS */
+.button-group {
+    display: flex;
+    gap: 1rem;
+}
+.button-primary,
+.button-outline {
+    flex: 1;                      /* both take equal width */
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+.button-primary {
+    background: var(--color-royal);
+    color: var(--color-white);
+    border: none;
+}
+.button-primary:hover {
+    background: #3658b3;
+}
+.button-outline {
+    background: transparent;
+    color: var(--color-royal);
+    border: 2px solid var(--color-royal);
+}
+.button-outline:hover {
+    background: var(--color-royal);
+    color: var(--color-white);
+}
+
+/* EVENTS SECTION */
+.events-section {
+    background: var(--color-white);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    max-width: 500px;
     width: 100%;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    text-align: center;
+    margin-top: 2rem;
 }
-
-.card-title {
-    font-size: 1.75rem;
-    margin-bottom: 0.5rem;
-    color: #222;
-}
-
-.card-subtext {
-    font-size: 1rem;
-    color: #555;
-    margin-bottom: 1.5rem;
-}
-
-.button-group > * {
-    margin: 0 0.5rem;
-}
-
-/* Primary (filled) button */
-.button-primary {
-    background-color: #4169E1;
-    color: #fff;
-    border: none;
-    padding: 0.75rem 1.5rem;
-    border-radius: 6px;
-    font-size: 1rem;
-    cursor: pointer;
-}
-
-/* Outline button */
-.button-outline {
-    background-color: transparent;
-    color: #4169E1;
-    border: 2px solid #4169E1;
-    padding: 0.75rem 1.5rem;
-    border-radius: 6px;
-    font-size: 1rem;
-    cursor: pointer;
-}
-
-/* —— Events Section —— */
-.events-section {
-    background-color: #fff;
-    border-radius: 12px;
-    padding: 1.5rem 2rem;
-    margin: 1rem;
-    max-width: 600px;
-    width: 100%;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-}
-
 .events-section h2 {
-    margin-bottom: 0.75rem;
-    color: #333;
+    margin-top: 0;
+    color: var(--color-royal);
 }
-
 .button-small {
-    background-color: #4169E1;
-    color: #fff;
+    background: var(--color-royal);
+    color: var(--color-white);
     border: none;
     padding: 0.4rem 0.8rem;
-    border-radius: 4px;
-    font-size: 0.9rem;
+    border-radius: 0.5rem;
     cursor: pointer;
-    margin-bottom: 1rem;
-}
-/* events section already exists—add these at the bottom */
-
-.events-list {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    margin-top: 1rem;
-}
-
-.event-item {
-    background-color: #fff;
-    border-radius: 8px;
-    padding: 1rem;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-}
-
-.event-item h3 {
-    margin: 0 0 0.25rem;
-    font-size: 1.1rem;
-    color: #222;
-}
-
-.event-item p {
-    margin: 0;
     font-size: 0.9rem;
-    color: #555;
+    transition: background 0.2s ease;
 }
-
-.no-events {
+.button-small:hover {
+    background: #3658b3;
+}
+.events-list {
     margin-top: 1rem;
-    color: #888;
+}
+.event-item + .event-item {
+    margin-top: 0.75rem;
+}
+.no-events {
+    color: var(--color-gray);
+    margin-top: 1rem;
 }

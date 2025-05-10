@@ -27,7 +27,7 @@ public class UserServiceTest {
 
     @Test
     void testGetCurrentUser_returnsUser() {
-        User user = new User(99, "Alice", "alice@example.com", "pass");
+        User user = new User(99, "Alice", "alice@example.com");
         UserDatabase.postUser(user);
 
         when(session.getAttribute("userEmail")).thenReturn("alice@example.com");
@@ -39,7 +39,7 @@ public class UserServiceTest {
 
     @Test
     void testEnrollInClassroom_success() {
-        User user = new User(100, "Bob", "bob@example.com", "pass");
+        User user = new User(100, "Bob", "bob@example.com");
         UserDatabase.postUser(user);
 
         Classroom classroom = new Classroom(1L, "CS101", "Intro", "CS1", user);
@@ -50,16 +50,15 @@ public class UserServiceTest {
         Boolean enrolled = service.enrollInClassroom(session, "CS1");
         assertTrue(enrolled);
 
-        List<Classroom> enrolledClasses = UserDatabase.getUser("bob@example.com").getEnrolledClasses();
-        assertEquals(1, enrolledClasses.size());
-        assertEquals("CS101", enrolledClasses.get(0).getTitle());
+        List<String> enrolledCodes = UserDatabase.getUser("bob@example.com").getEnrolledClassCodes();
+        assertTrue(enrolledCodes.contains("CS1"));
     }
 
     @Test
     void testLeaveClassroom_success() {
-        User user = new User(101, "Charlie", "charlie@example.com", "pass");
+        User user = new User(101, "Charlie", "charlie@example.com");
         Classroom classroom = new Classroom(2L, "Math", "Basic Math", "MATH101", user);
-        user.getEnrolledClasses().add(classroom);
+        user.enroll("MATH101");
 
         UserDatabase.postUser(user);
         ClassroomDatabase.addClassroom(classroom);
@@ -69,7 +68,7 @@ public class UserServiceTest {
         boolean result = service.leaveClassroom(session, "MATH101");
         assertTrue(result);
 
-        List<Classroom> remaining = UserDatabase.getUser("charlie@example.com").getEnrolledClasses();
-        assertTrue(remaining.isEmpty());
+        List<String> remainingCodes = UserDatabase.getUser("charlie@example.com").getEnrolledClassCodes();
+        assertFalse(remainingCodes.contains("MATH101"));
     }
 }

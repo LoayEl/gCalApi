@@ -113,4 +113,8 @@ public class ClassroomDatabase {
             e.printStackTrace();
         }
     }
+    public static void clear() {
+        classroomMap.clear();
+    }
+
 }
