@@ -5,7 +5,7 @@
     "code" : "1F7742",
     "classCode" : "hannahbfearns@gmail.com",
     "createdBy" : "hannahbfearns@gmail.com",
-    "groupCalId" : null,
+    "groupCalId" : "null",
     "memberIds" : [ ]
   }, {
     "id" : 2004,
@@ -13,7 +13,15 @@
     "code" : "AF340C",
     "classCode" : "CS101",
     "createdBy" : "hannahbfearns@gmail.com",
-    "groupCalId" : null,
+    "groupCalId" : "null",
+    "memberIds" : [ ]
+  }, {
+    "id" : 2010,
+    "title" : "caaaaaaaaaaaal",
+    "code" : "CC1554",
+    "classCode" : "CS101",
+    "createdBy" : "hannahbfearns@gmail.com",
+    "groupCalId" : "2591d5112410fa041380d2c05042d8b4968df07b1b6d9a0e9fcdcd32b6535776@group.calendar.google.com",
     "memberIds" : [ ]
   }, {
     "id" : 2003,
@@ -21,7 +29,7 @@
     "code" : "PHYS101-A",
     "classCode" : "PHYS101",
     "createdBy" : "admin3@example.com",
-    "groupCalId" : null,
+    "groupCalId" : "null",
     "memberIds" : [ 2 ]
   }, {
     "id" : 2005,
@@ -29,7 +37,7 @@
     "code" : "58A748",
     "classCode" : "hannahbfearns@gmail.com",
     "createdBy" : "hannahbfearns@gmail.com",
-    "groupCalId" : null,
+    "groupCalId" : "null",
     "memberIds" : [ ]
   }, {
     "id" : 2001,
@@ -37,7 +45,7 @@
     "code" : "CS101-A",
     "classCode" : "CS101",
     "createdBy" : "admin1@example.com",
-    "groupCalId" : null,
+    "groupCalId" : "null",
     "memberIds" : [ 3, 6 ]
   }, {
     "id" : 2002,
@@ -45,7 +53,7 @@
     "code" : "CS101-B",
     "classCode" : "CS101",
     "createdBy" : "admin2@example.com",
-    "groupCalId" : null,
+    "groupCalId" : "null",
     "memberIds" : [ 6 ]
   }, {
     "id" : 2006,
@@ -53,7 +61,7 @@
     "code" : "761850",
     "classCode" : "CS101",
     "createdBy" : "hannahbfearns@gmail.com",
-    "groupCalId" : null,
+    "groupCalId" : "null",
     "memberIds" : [ ]
   }, {
     "id" : 2008,
@@ -61,7 +69,15 @@
     "code" : "1CC036",
     "classCode" : "CS101",
     "createdBy" : "hannahbfearns@gmail.com",
-    "groupCalId" : null,
+    "groupCalId" : "null",
+    "memberIds" : [ ]
+  }, {
+    "id" : 2009,
+    "title" : "caaaaaaaaaaaal",
+    "code" : "BAEF71",
+    "classCode" : "CS101",
+    "createdBy" : "hannahbfearns@gmail.com",
+    "groupCalId" : "29e62ede6b3d9d01663e9840570b46f31b24a1ca49f752ab22d5bd00095bbcb6@group.calendar.google.com",
     "memberIds" : [ ]
   } ]
 }

@@ -2,23 +2,23 @@ package Service;
 
 import Database.GroupDatabase;
 import Database.UserDatabase;
-import Service.GroupCalService;
 import Model.Group;
 import Model.User;
+import Service.GroupCalService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
-import org.springframework.beans.factory.annotation.Autowired;
+
 import javax.servlet.http.HttpSession;
-import java.util.List;
-import java.util.Map;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.UUID;
+import java.util.*;
 import java.util.stream.Collectors;
 
 @Service
 public class GroupService {
 
+    @Autowired
+    @Lazy
+    private GroupCalService groupCalService;
 
     public List<Group> getGroupsForClass(String classCode) {
         return GroupDatabase.getGroupsForClass(classCode);
@@ -31,6 +31,13 @@ public class GroupService {
         }
         String groupCode = UUID.randomUUID().toString().substring(0, 6).toUpperCase();
         Group group = new Group(null, title, groupCode, classCode, userEmail);
+
+        try {
+            String calendarId = groupCalService.buildGroupCal(groupCode, userEmail);
+            group.setGroupCalId(calendarId);
+        } catch (Exception e) {
+            throw new RuntimeException("Failed to create calendar for group: " + e.getMessage());
+        }
 
         GroupDatabase.addGroup(group);
         return group;
@@ -68,16 +75,14 @@ public class GroupService {
 
     public List<User> getGroupMembers(String groupCode) {
         Group group = GroupDatabase.getByCode(groupCode);
-        if (group == null) return List.of(); //empty list
+        if (group == null) return List.of(); // empty list
 
         return group.getMemberIds().stream()
                 .map(UserDatabase::getUserById)
-                .filter(u -> u != null)
+                .filter(Objects::nonNull)
                 .collect(Collectors.toList());
     }
 
-
-    // eventually add group calendar and maybe notes?
     public Map<String, Object> getGroupDetails(String groupCode) {
         Group group = GroupDatabase.getByCode(groupCode);
         if (group == null) throw new RuntimeException("Group not found");
@@ -107,8 +112,4 @@ public class GroupService {
                 .filter(g -> g.getMemberIds().contains(userId))
                 .collect(Collectors.toList());
     }
-
-
-
-
 }

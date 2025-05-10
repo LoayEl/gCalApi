@@ -27,6 +27,7 @@ export default function GroupPage() {
     const [calendarEvents, setCalendarEvents] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    const [calendarId, setCalendarId] = useState(null);
 
     const isPartOfGroup =
         profile.email === createdBy || memberNames.includes(profile.name);
@@ -39,7 +40,7 @@ export default function GroupPage() {
                 });
                 if (!res.ok) throw new Error('Calendar fetch failed');
                 const data = await res.json();
-                setCalendarEvents(data.events || []);
+                setCalendarEvents(data || []);
             } catch (err) {
                 console.error("Calendar fetch error:", err);
                 setError("Could not load group calendar.");
@@ -48,8 +49,24 @@ export default function GroupPage() {
             }
         };
 
+        const fetchCalendarId = async () => {
+            try {
+                const res = await fetch(`/group/${groupCode}/calendar/info`, {
+                    credentials: 'include'
+                });
+                if (!res.ok) throw new Error('Failed to load calendar info');
+                const data = await res.json();
+                setCalendarId(data.calendarId);
+            } catch (err) {
+                console.error("Failed to load calendar ID:", err);
+            }
+        };
+
         fetchCalendar();
+        fetchCalendarId();
     }, [groupCode]);
+
+
 
     const handleShare = () => {
         navigator.clipboard.writeText(code);
@@ -78,6 +95,24 @@ export default function GroupPage() {
 
             <section>
                 <h2>Group Calendar</h2>
+
+                <section>
+                    <h2>Google Calendar View</h2>
+                    {calendarId ? (
+                        <iframe
+                            src={`https://calendar.google.com/calendar/embed?src=${encodeURIComponent(calendarId)}&ctz=America/New_York`}
+                            style={{ border: 0 }}
+                            width="800"
+                            height="600"
+                            frameBorder="0"
+                            scrolling="no"
+                            title="Group Calendar"
+                        ></iframe>
+                    ) : (
+                        <p>Loading calendar...</p>
+                    )}
+                </section>
+
                 {loading ? (
                     <p>Loading events...</p>
                 ) : error ? (
@@ -87,15 +122,26 @@ export default function GroupPage() {
                 ) : (
                     <ul>
                         {calendarEvents.map((event, i) => (
-                            <li key={i}>
+                            <li key={event.id || `${event.summary}${event.start?.dateTime}`}>
                                 <strong>{event.summary}</strong><br />
                                 {new Date(event.start?.dateTime).toLocaleString()} → {new Date(event.end?.dateTime).toLocaleString()}<br />
                                 {event.location && <em>{event.location}</em>}
                             </li>
                         ))}
+
                     </ul>
                 )}
             </section>
+            {calendarId && (
+                <a
+                    href={`https://calendar.google.com/calendar/embed?src=${encodeURIComponent(calendarId)}&ctz=America/New_York`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    View Full Calendar in Google
+                </a>
+            )}
+
 
             <button>Leave Group</button>
         </div>

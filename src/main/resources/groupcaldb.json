@@ -1,0 +1,23 @@
+{
+  "groupCals" : [ {
+    "id" : 2,
+    "groupCode" : "ENG202-GROUP2",
+    "calendarId" : "def456@group.calendar.google.com",
+    "ownerEmail" : "bob@example.com"
+  }, {
+    "id" : 1,
+    "groupCode" : "MATH101-GROUP1",
+    "calendarId" : "abc123@group.calendar.google.com",
+    "ownerEmail" : "alice@example.com"
+  }, {
+    "id" : 4,
+    "groupCode" : "CC1554",
+    "calendarId" : "2591d5112410fa041380d2c05042d8b4968df07b1b6d9a0e9fcdcd32b6535776@group.calendar.google.com",
+    "ownerEmail" : "hannahbfearns@gmail.com"
+  }, {
+    "id" : 3,
+    "groupCode" : "BAEF71",
+    "calendarId" : "29e62ede6b3d9d01663e9840570b46f31b24a1ca49f752ab22d5bd00095bbcb6@group.calendar.google.com",
+    "ownerEmail" : "hannahbfearns@gmail.com"
+  } ]
+}
