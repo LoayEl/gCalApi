@@ -5,6 +5,11 @@
     "email" : "sam@example.com",
     "enrolledClassCodes" : [ ]
   }, {
+    "userId" : 11,
+    "name" : "Hannah F",
+    "email" : "hannahbfearns@gmail.com",
+    "enrolledClassCodes" : [ "2BD79F" ]
+  }, {
     "userId" : 9,
     "name" : "Charlie",
     "email" : "charlie@example.com",
