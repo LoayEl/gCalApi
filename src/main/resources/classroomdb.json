@@ -23,5 +23,13 @@
     "createdBy" : "charlie@example.com",
     "studentIds" : [ ],
     "groupCodes" : [ ]
+  }, {
+    "id" : 3,
+    "title" : "Volley",
+    "description" : "",
+    "code" : "29CB70",
+    "createdBy" : "elasmarloay@gmail.com",
+    "studentIds" : [ 10 ],
+    "groupCodes" : [ ]
   } ]
 }

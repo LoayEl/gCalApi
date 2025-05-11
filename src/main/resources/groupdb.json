@@ -64,6 +64,14 @@
     "groupCalId" : "e9934a1f355d275c577bac1bd7e39861bb358368837b93e62b6afb14592b8b13@group.calendar.google.com",
     "memberIds" : [ 8 ]
   }, {
+    "id" : 2018,
+    "title" : "Fire",
+    "code" : "0F13F9",
+    "classCode" : "undefined",
+    "createdBy" : "elasmarloay@gmail.com",
+    "groupCalId" : "727c1a0ac3040bea959616eb0e048c2504219a72ea308a5be6fda6e7b5a1feec@group.calendar.google.com",
+    "memberIds" : [ 10 ]
+  }, {
     "id" : 2010,
     "title" : "tstgrp3",
     "code" : "A849E4",
@@ -71,6 +79,14 @@
     "createdBy" : "hannahbfearns@gmail.com",
     "groupCalId" : "b4c4f86b9a80e8ec890ef472729d5df5c2194d4c12a92c61ed064ac7c2cc45e7@group.calendar.google.com",
     "memberIds" : [ ]
+  }, {
+    "id" : 2017,
+    "title" : "Data",
+    "code" : "737990",
+    "classCode" : "undefined",
+    "createdBy" : "elasmarloay@gmail.com",
+    "groupCalId" : "e9594243fee4e4bfa1987f2d32432a6ba635ad8bb2c01c0878dfb5655bcf329d@group.calendar.google.com",
+    "memberIds" : [ 10 ]
   }, {
     "id" : 2003,
     "title" : "Lab Partners",
