@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useLoaderData, useParams } from 'react-router-dom';
+import { useLoaderData, useParams, Link, useNavigate } from 'react-router-dom';
 
 export async function loader({ params }) {
     const { classCode, groupCode } = params;
@@ -21,16 +21,15 @@ export default function GroupPage() {
     const { group, profile } = useLoaderData();
     const params = useParams();
     const groupCode = params.groupCode || group.code;
-
+    const classCode = params.classCode || group.classCode;
     const { title, memberNames, createdBy, code } = group;
+    const [userInGroup, setUserInGroup] = useState(profile.email === createdBy || memberNames.includes(profile.name));
+    const navigate = useNavigate();
 
     const [calendarEvents, setCalendarEvents] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
     const [calendarId, setCalendarId] = useState(null);
-
-    const isPartOfGroup =
-        profile.email === createdBy || memberNames.includes(profile.name);
 
     useEffect(() => {
         const fetchCalendar = async () => {
@@ -66,12 +65,31 @@ export default function GroupPage() {
         fetchCalendarId();
     }, [groupCode]);
 
-
-
     const handleShare = () => {
         navigator.clipboard.writeText(code);
         alert("Group code copied!");
     };
+
+    const handleLeave = async () => {
+        try {
+            const res = await fetch(`/class/${classCode}/groups/group/${groupCode}/leave`, {
+                method: 'POST',
+                credentials: 'include'
+            });
+
+            if (res.ok) {
+                alert("You left the group.");
+                setUserInGroup(false);
+                navigate("/my-groups");
+            } else {
+                alert("Failed to leave group.");
+            }
+        } catch (err) {
+            console.error("Leave group error:", err);
+            alert("An error occurred.");
+        }
+    };
+
 
     return (
         <div style={{ padding: 20 }}>
@@ -89,7 +107,7 @@ export default function GroupPage() {
                 </ul>
             </section>
 
-            {isPartOfGroup && (
+            {userInGroup && (
                 <button onClick={handleShare}>Share Group Invite</button>
             )}
 
@@ -128,10 +146,10 @@ export default function GroupPage() {
                                 {event.location && <em>{event.location}</em>}
                             </li>
                         ))}
-
                     </ul>
                 )}
             </section>
+
             {calendarId && (
                 <a
                     href={`https://calendar.google.com/calendar/embed?src=${encodeURIComponent(calendarId)}&ctz=America/New_York`}
@@ -142,8 +160,13 @@ export default function GroupPage() {
                 </a>
             )}
 
-
-            <button>Leave Group</button>
+            {userInGroup ? (
+                <button onClick={handleLeave}>Leave Group</button>
+            ) : (
+                <Link to={`/class/${classCode}/groups/${groupCode}/join`}>
+                    <button>Join Group</button>
+                </Link>
+            )}
         </div>
     );
 }

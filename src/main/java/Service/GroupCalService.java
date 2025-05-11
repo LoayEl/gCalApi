@@ -31,11 +31,11 @@ public class GroupCalService {
 
     // gets group cal object
     // build cal and saves in groupcal model
-    public String buildGroupCal(String groupCode, String ownerEmail) throws IOException, GeneralSecurityException {
+    public String buildGroupCal(String groupCode, String groupTitle, String ownerEmail) throws IOException, GeneralSecurityException {
         Calendar service = CalServiceBuilder.buildService(ownerEmail);
 
         com.google.api.services.calendar.model.Calendar calendar = new com.google.api.services.calendar.model.Calendar();
-        calendar.setSummary("Group " + groupCode + " Calendar");
+        calendar.setSummary(groupTitle + " Calendar");
 
         com.google.api.services.calendar.model.Calendar created = service.calendars().insert(calendar).execute();
 

@@ -42,27 +42,16 @@ public class GroupControl {
         return groupService.createGroup(classCode, title, session);
     }
 
-    @PostMapping("/joingroup")
-    public boolean joinGroup(
-            @PathVariable String classCode,
-            @RequestBody Map<String, String> body,
-            HttpSession session
-    ) {
-        String groupCode = body.get("groupCode");
-        System.out.println("Joining group: " + groupCode + " in class: " + classCode);
+    @PostMapping("/group/{groupCode}/join")
+    public boolean joinGroup(@PathVariable String groupCode, HttpSession session) {
         return groupService.joinGroup(groupCode, session);
     }
 
-    @PostMapping("/leavegroup")
-    public boolean leaveGroup(
-            @PathVariable String classCode,
-            @RequestBody Map<String, String> body,
-            HttpSession session
-    ) {
-        String groupCode = body.get("groupCode");
-        System.out.println("Leaving group: " + groupCode + " in class: " + classCode);
+    @PostMapping("/group/{groupCode}/leave")
+    public boolean leaveGroup(@PathVariable String groupCode, HttpSession session) {
         return groupService.leaveGroup(groupCode, session);
     }
+
 
     @GetMapping("/{groupCode}/members")
     public List<User> listMembers(
@@ -81,6 +70,7 @@ public class GroupControl {
     ) {
         return groupService.getGroupDetails(groupCode);
     }
+
 
 
 }

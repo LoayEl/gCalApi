@@ -29,19 +29,30 @@ public class GroupService {
         if (userEmail == null) {
             throw new RuntimeException("Not authenticated");
         }
+
+        User creator = UserDatabase.getUser(userEmail);
+        if (creator == null) {
+            throw new RuntimeException("User not found");
+        }
+
         String groupCode = UUID.randomUUID().toString().substring(0, 6).toUpperCase();
         Group group = new Group(null, title, groupCode, classCode, userEmail);
+        group.addMemberId(creator.getUserId());
 
+        // build group cal
         try {
-            String calendarId = groupCalService.buildGroupCal(groupCode, userEmail);
+            String calendarId = groupCalService.buildGroupCal(groupCode, title, userEmail);
             group.setGroupCalId(calendarId);
         } catch (Exception e) {
             throw new RuntimeException("Failed to create calendar for group: " + e.getMessage());
         }
 
         GroupDatabase.addGroup(group);
+        GroupDatabase.persistGroup(group);
+
         return group;
     }
+
 
     public boolean joinGroup(String groupCode, HttpSession session) {
         String userEmail = (String) session.getAttribute("userEmail");

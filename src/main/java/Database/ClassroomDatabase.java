@@ -17,6 +17,7 @@ import java.util.concurrent.ConcurrentHashMap;
 public class ClassroomDatabase {
     private static final ConcurrentHashMap<String, Classroom> classroomMap = new ConcurrentHashMap<>();
     private static final File classroomDbFile = new File("src/main/resources/classroomdb.json");
+    private static long idCounter = 1;
 
     public static void fillHashMap() {
         try (InputStream in = ClassroomDatabase.class.getResourceAsStream("/classroomdb.json")) {
@@ -28,13 +29,15 @@ public class ClassroomDatabase {
                 String creatorEmail = cNode.get("createdBy").asText();
                 User creator = UserDatabase.getUser(creatorEmail);
 
+                long id = cNode.get("id").asLong();
                 Classroom classroom = new Classroom(
-                        cNode.get("id").asLong(),
+                        id,
                         cNode.get("title").asText(),
                         cNode.get("description").asText(),
                         cNode.get("code").asText(),
                         creator
                 );
+                idCounter = Math.max(idCounter, id + 1); // finds highest id +1
 
                 //loading userids into array
                 if (cNode.has("studentIds")) {
@@ -66,9 +69,13 @@ public class ClassroomDatabase {
     }
 
     public static void addClassroom(Classroom classroom) {
+        if (classroom.getId() == null) {
+            classroom.setId(idCounter++);
+        }
         classroomMap.put(classroom.getCode(), classroom);
         persistAll();
     }
+
 
     public static boolean classroomExists(String code) {
         return classroomMap.containsKey(code);
