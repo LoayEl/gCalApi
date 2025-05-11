@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Loading from "./Loading.jsx";
 
 export default function JoinGroupForm() {
     const { classCode, groupCode } = useParams();
@@ -34,7 +35,7 @@ export default function JoinGroupForm() {
             <form onSubmit={handleSubmit}>
                 <p>You're about to join group: <strong>{groupCode}</strong></p>
                 <button type="submit" disabled={loading}>
-                    {loading ? "Joining..." : "Confirm Join"}
+                    {loading && <Loading message="Joining group..." />}
                 </button>
                 <button type="button" onClick={() => navigate(-1)}>Cancel</button>
             </form>

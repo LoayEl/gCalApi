@@ -20,6 +20,7 @@ import GroupPage, { loader as groupLoader } from './GroupPage';
 import MyGroups, { loader as myGroupsLoader } from './MyGroups.jsx';
 import CreateGroupForm from './CreateGroupForm.jsx';
 import JoinGroupForm from "./JoinGroupForm.jsx";
+import AddEventForm from "./AddEventForm.jsx"
 
 const router = createBrowserRouter([
     {
@@ -109,6 +110,14 @@ const router = createBrowserRouter([
                     </ProtectedRoute>
                 )
             },
+            {
+                path: 'class/:classCode/groups/:groupCode/add-event',
+                element: (
+                    <ProtectedRoute>
+                      <AddEventForm />
+                    </ProtectedRoute>
+                  )
+              },
             {
                 path: '*',
                 element: <Navigate to="/signin" />
