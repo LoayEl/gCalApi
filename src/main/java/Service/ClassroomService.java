@@ -55,7 +55,7 @@ public class ClassroomService {
         }
 
         String code = UUID.randomUUID().toString().substring(0, 6).toUpperCase();
-        Classroom newClass = new Classroom(null, code, title, creatorEmail, creator);
+        Classroom newClass = new Classroom(null, title, "", code, creator);
 
         ClassroomDatabase.addClassroom(newClass);
 

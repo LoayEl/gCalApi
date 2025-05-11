@@ -1,4 +1,3 @@
-// main.jsx or index.jsx
 
 import React from 'react';
 import ReactDOM from 'react-dom/client';
@@ -20,6 +19,7 @@ import ClassPage, { loader as classPageLoader } from './ClassPage.jsx';
 import GroupPage, { loader as groupLoader } from './GroupPage';
 import MyGroups, { loader as myGroupsLoader } from './MyGroups.jsx';
 import CreateGroupForm from './CreateGroupForm.jsx';
+import JoinGroupForm from "./JoinGroupForm.jsx";
 
 const router = createBrowserRouter([
     {
@@ -98,6 +98,14 @@ const router = createBrowserRouter([
                 element: (
                     <ProtectedRoute>
                         <CreateGroupForm />
+                    </ProtectedRoute>
+                )
+            },
+            {
+                path: 'class/:classCode/groups/:groupCode/join',
+                element: (
+                    <ProtectedRoute>
+                        <JoinGroupForm />
                     </ProtectedRoute>
                 )
             },

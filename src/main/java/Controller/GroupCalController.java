@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.security.GeneralSecurityException;
+import java.util.List;
 
 @RestController
 @RequestMapping("/group/{groupCode}/calendar")
@@ -22,7 +23,7 @@ public class GroupCalController {
     }
 
     @GetMapping("/display")
-    public GroupCal displayCalendar(
+    public List<Event> displayCalendar(
             @PathVariable String groupCode,
             HttpSession session
     ) throws IOException, GeneralSecurityException {
@@ -38,6 +39,11 @@ public class GroupCalController {
         return groupCalService.addEvent(groupCode, event.getSummary(), event.getLocation(), event.getDescription(),
                 event.getStart().getDateTime().toString(), event.getStart().getTimeZone(),
                 event.getEnd().getDateTime().toString(), event.getEnd().getTimeZone(), session);
+    }
+
+    @GetMapping("/info")
+    public GroupCal getCalendarInfo(@PathVariable String groupCode) {
+        return groupCalService.getGroupCal(groupCode);
     }
 
     @PostMapping("/removeevent")

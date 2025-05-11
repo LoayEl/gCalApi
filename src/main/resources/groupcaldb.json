@@ -1,0 +1,58 @@
+{
+  "groupCals" : [ {
+    "id" : 5,
+    "groupCode" : "ENG101-A",
+    "calendarId" : "29e62ede6b3d9d01663e9840570b46f31b24a1ca49f752ab22d5bd00095bbcb6@group.calendar.google.com",
+    "ownerEmail" : "hannahbfearns@gmail.com"
+  }, {
+    "id" : 8,
+    "groupCode" : "A849E4",
+    "calendarId" : "b4c4f86b9a80e8ec890ef472729d5df5c2194d4c12a92c61ed064ac7c2cc45e7@group.calendar.google.com",
+    "ownerEmail" : "hannahbfearns@gmail.com"
+  }, {
+    "id" : 2,
+    "groupCode" : "AF340C",
+    "calendarId" : "29e62ede6b3d9d01663e9840570b46f31b24a1ca49f752ab22d5bd00095bbcb6@group.calendar.google.com",
+    "ownerEmail" : "hannahbfearns@gmail.com"
+  }, {
+    "id" : 3,
+    "groupCode" : "PHYS101-A",
+    "calendarId" : "5d71065e4db425eef11e54c454f7feeb7a6e6d8a0784741f0f7ebfd8ba8d9f0c@group.calendar.google.com",
+    "ownerEmail" : "hannahbfearns@gmail.com"
+  }, {
+    "id" : 7,
+    "groupCode" : "595556",
+    "calendarId" : "2262aee89c014c8242c69060da418c250f446306ee9a460ef274090a9ba2352c@group.calendar.google.com",
+    "ownerEmail" : "hannahbfearns@gmail.com"
+  }, {
+    "id" : 1,
+    "groupCode" : "CS101-A",
+    "calendarId" : "2591d5112410fa041380d2c05042d8b4968df07b1b6d9a0e9fcdcd32b6535776@group.calendar.google.com",
+    "ownerEmail" : "hannahbfearns@gmail.com"
+  }, {
+    "id" : 10,
+    "groupCode" : "4DF31E",
+    "calendarId" : "bd0db3b23560a01f5abc8c2c4d3c8f8188f26f899f414317629b62c835be3cc3@group.calendar.google.com",
+    "ownerEmail" : "hannahbfearns@gmail.com"
+  }, {
+    "id" : 11,
+    "groupCode" : "55861A",
+    "calendarId" : "6ec34c85ef4e419ffe7b4adc4d6dd81c3c4d4e5dcc6d26ea330ead09f11ee2f8@group.calendar.google.com",
+    "ownerEmail" : "hannahbfearns@gmail.com"
+  }, {
+    "id" : 9,
+    "groupCode" : "829B26",
+    "calendarId" : "be11913b0ac7be13141dfbc06ebd791a78b82299e7ea8cdc992213c61282ad1a@group.calendar.google.com",
+    "ownerEmail" : "hannahbfearns@gmail.com"
+  }, {
+    "id" : 4,
+    "groupCode" : "MATH101-G1",
+    "calendarId" : "2591d5112410fa041380d2c05042d8b4968df07b1b6d9a0e9fcdcd32b6535776@group.calendar.google.com",
+    "ownerEmail" : "hannahbfearns@gmail.com"
+  }, {
+    "id" : 6,
+    "groupCode" : "FDA356",
+    "calendarId" : "ecd80a0a0c0a4fb6ca05301cd5e2fc832bac51791762bc8a0aac72cd1a5a805e@group.calendar.google.com",
+    "ownerEmail" : "hannahbfearns@gmail.com"
+  } ]
+}
