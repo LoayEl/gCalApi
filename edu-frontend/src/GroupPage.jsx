@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useLoaderData, useParams, Link, useNavigate } from 'react-router-dom';
+import Loading from "./Loading.jsx";
 
 export async function loader({ params }) {
     const { classCode, groupCode } = params;
@@ -127,12 +128,12 @@ export default function GroupPage() {
                             title="Group Calendar"
                         ></iframe>
                     ) : (
-                        <p>Loading calendar...</p>
+                        <Loading message="Loading calendar..." />
                     )}
                 </section>
 
                 {loading ? (
-                    <p>Loading events...</p>
+                    <Loading message="Loading events..." />
                 ) : error ? (
                     <p style={{ color: 'red' }}>{error}</p>
                 ) : calendarEvents.length === 0 ? (
@@ -148,6 +149,7 @@ export default function GroupPage() {
                         ))}
                     </ul>
                 )}
+
             </section>
 
             {calendarId && (

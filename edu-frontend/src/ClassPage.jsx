@@ -46,11 +46,6 @@ import GroupView from './GroupView';
         const navigate = useNavigate();
         const { code } = useParams();
 
-        const handleJoinGroup = async () => {
-            // class/join-group page
-            //shows a list of the current classes groups and u can click join on them to join
-        };
-
 
         return (
             <div>

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import ClassView from "./ClassView.jsx";
+import Loading from "./Loading.jsx";
 
 export async function loader() {
     const res = await fetch("/my-classes", { credentials: "include" });
@@ -12,9 +13,11 @@ export default function MyClasses() {
     const [myEmail, setMyEmail] = useState('');
     const [created, setCreated] = useState([]);
     const [joined, setJoined] = useState([]);
+    const [loading, setLoading] = useState(true);
     const classes = useLoaderData();
 
     useEffect(() => {
+        setLoading(true);
         fetch('/profile', { credentials: 'include' })
             .then(res => res.json())
             .then(profile => {
@@ -23,10 +26,14 @@ export default function MyClasses() {
                 const joinedList = classes.filter(c => c.createdBy?.email !== profile.email);
                 setCreated(createdList);
                 setJoined(joinedList);
-            });
+            })
+            .catch(err => console.error("Profile fetch failed", err))
+            .finally(() => setLoading(false));
     }, [classes]);
 
-    return (
+    return loading ? (
+        <Loading message="Loading your classes..." />
+    ) : (
         <div style={{ padding: 20 }}>
             <h1>My Classes</h1>
 
