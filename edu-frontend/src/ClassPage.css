@@ -4,8 +4,6 @@
     --color-white:   #ffffff;
     --color-gray:    #555555;
     --color-text:    #333333;
-    --color-roya:    #4e73e3;
-
     --spacing:       1rem;
 }
 
@@ -22,31 +20,28 @@
 .class-header {
     background: var(--color-royal);
     color: var(--color-white);
-    padding: calc(var(--spacing) * 1.5);
     border-radius: 0.5rem;
+    padding: calc(var(--spacing) * 1.5);
     text-align: center;
     margin-bottom: var(--spacing);
 }
-.class-header h1 {
+.class-title {
     margin: 0 0 0.5rem;
 }
-.class-header p {
-    margin: 0;
-    font-size: 1rem;
-}
-.class-code {
-    font-weight: 600;
+.class-code-row {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 .copy-btn {
-    margin-left: 0.5rem;
     background: transparent;
     border: none;
     color: var(--color-white);
     cursor: pointer;
-    font-size: 1rem;
+    font-size: 1.1rem;
 }
 
-/* ACTIONS */
+/* CREATE GROUP BUTTON */
 .class-actions {
     text-align: right;
     margin-bottom: var(--spacing);
@@ -57,18 +52,20 @@
     border: none;
     padding: 0.6rem 1.2rem;
     border-radius: 0.5rem;
-    cursor: pointer;
     font-weight: 500;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
+    cursor: pointer;
 }
-.btn-create-group .icon {
-    font-size: 1.2rem;
+
+/* GROUPS TITLE (outside white box) */
+.groups-title {
+    margin: 0 0 var(--spacing) var(--spacing);
+    color: var(--color-royal);
+    font-size: 1.25rem;
+    font-weight: 600;
 }
 
 /* MAIN LAYOUT */
-.class-main {
+.class-content {
     display: flex;
     gap: var(--spacing);
 }
@@ -81,15 +78,10 @@
     padding: var(--spacing);
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
-
-.groups-panel h2 {
-    margin-top: 0;
-    color: var(--color-roya);
-}
 .groups-list {
     list-style: none;
-    padding: 0;
     margin: 0;
+    padding: 0;
 }
 
 /* STUDENTS PANEL */
@@ -100,23 +92,21 @@
     padding: var(--spacing);
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
-.students-panel h2 {
+.panel-title {
     margin-top: 0;
-    color: var(--color-roya);
+    color: var(--color-royal);
 }
 .students-list {
     list-style: none;
-    padding: 0;
     margin: 0;
+    padding: 0;
 }
 .students-list li {
     padding: 0.4rem 0;
     color: var(--color-text);
 }
 
-/* target only that Groups: heading */
-.groups-title {
-    margin-top: 0;
-    color: var(--color-white);
-    margin-left: 1.1rem;
+/* BLUR UTILITY */
+.blur {
+    filter: blur(6px);
 }
