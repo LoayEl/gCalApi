@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useLoaderData, useParams, Link, useNavigate } from 'react-router-dom';
+import Loading from "./Loading.jsx";
+import AddEventForm from "./AddEventForm.jsx"
 
 export async function loader({ params }) {
     const { classCode, groupCode } = params;
@@ -127,27 +129,33 @@ export default function GroupPage() {
                             title="Group Calendar"
                         ></iframe>
                     ) : (
-                        <p>Loading calendar...</p>
+                        <Loading message="Loading calendar..." />
                     )}
                 </section>
 
-                {loading ? (
-                    <p>Loading events...</p>
-                ) : error ? (
-                    <p style={{ color: 'red' }}>{error}</p>
-                ) : calendarEvents.length === 0 ? (
-                    <p>No upcoming events.</p>
-                ) : (
-                    <ul>
-                        {calendarEvents.map((event, i) => (
-                            <li key={event.id || `${event.summary}${event.start?.dateTime}`}>
-                                <strong>{event.summary}</strong><br />
-                                {new Date(event.start?.dateTime).toLocaleString()} → {new Date(event.end?.dateTime).toLocaleString()}<br />
-                                {event.location && <em>{event.location}</em>}
-                            </li>
-                        ))}
-                    </ul>
+                {!loading && !error && calendarEvents.length > 0 && (
+                  <ul>
+                    {calendarEvents.map(ev => {
+                      // raw time
+                      const rawStart = ev.start?.dateTime?.value ?? ev.start?.dateTime;
+                      const rawEnd   = ev.end  ?.dateTime?.value ?? ev.end  ?.dateTime;
+
+                      // convert to js format for display
+                      const startDate = new Date(rawStart);
+                      const endDate   = new Date(rawEnd);
+
+                      return (
+                        <li key={ev.id}>
+                          <strong>{ev.summary}</strong><br/>
+                          Starts: {startDate.toLocaleString()}<br/>
+                          Ends:   {endDate.toLocaleString()}<br/>
+                          {ev.location && <em>{ev.location}</em>}
+                        </li>
+                      );
+                    })}
+                  </ul>
                 )}
+
             </section>
 
             {calendarId && (
@@ -161,7 +169,12 @@ export default function GroupPage() {
             )}
 
             {userInGroup ? (
+                <>
                 <button onClick={handleLeave}>Leave Group</button>
+                  <Link to={`/class/${classCode}/groups/${groupCode}/add-event`}>
+                    <button>Add Event</button>
+                  </Link>
+                </>
             ) : (
                 <Link to={`/class/${classCode}/groups/${groupCode}/join`}>
                     <button>Join Group</button>

@@ -1,15 +1,22 @@
 package Controller;
 
+import ConfigAndUtil.DateAdapter;
 import Model.GroupCal;
 import Service.GroupCalService;
+import ConfigAndUtil.CalServiceBuilder;
+
 import com.google.api.services.calendar.model.Event;
+import com.google.api.services.calendar.model.EventDateTime;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.security.GeneralSecurityException;
+import java.time.ZoneId;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/group/{groupCode}/calendar")
@@ -31,14 +38,13 @@ public class GroupCalController {
     }
 
     @PostMapping("/addevent")
-    public boolean addEvent(
+    public ResponseEntity<?> addEvent(
             @PathVariable String groupCode,
-            @RequestBody Event event,
+            @RequestBody Map<String,Object> data,
             HttpSession session
     ) throws IOException, GeneralSecurityException {
-        return groupCalService.addEvent(groupCode, event.getSummary(), event.getLocation(), event.getDescription(),
-                event.getStart().getDateTime().toString(), event.getStart().getTimeZone(),
-                event.getEnd().getDateTime().toString(), event.getEnd().getTimeZone(), session);
+        Event created = groupCalService.addEvent(groupCode, data, session);
+        return ResponseEntity.ok(created);
     }
 
     @GetMapping("/info")
