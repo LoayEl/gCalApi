@@ -24,6 +24,14 @@
     "groupCalId" : "813237287d2ca0b9856d3b733c17a768d2bb3f24ea56dd3f6976ae058d152bab@group.calendar.google.com",
     "memberIds" : [ ]
   }, {
+    "id" : 13,
+    "title" : "Watermelon",
+    "code" : "923D2A",
+    "classCode" : "undefined",
+    "createdBy" : "elasmarloay@gmail.com",
+    "groupCalId" : "ab77cf888a4d7835228262a891ac17469e2e7d111b8a03982f6c3c0bf39a36f3@group.calendar.google.com",
+    "memberIds" : [ 10 ]
+  }, {
     "id" : 11,
     "title" : "Blade",
     "code" : "BBBD25",
