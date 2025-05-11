@@ -5,6 +5,8 @@ import Model.GroupCal;
 import Model.User;
 import Model.Group;
 import Database.GroupDatabase;
+import ConfigAndUtil.DateAdapter;
+import com.google.api.services.calendar.model.EventDateTime;
 import Database.GroupCalDatabase;
 
 import com.google.api.services.calendar.Calendar;
@@ -19,6 +21,8 @@ import java.io.IOException;
 import java.security.GeneralSecurityException;
 import java.util.List;
 import java.util.logging.Logger;
+import java.time.ZoneId;
+import java.util.Map;
 
 
 @Service
@@ -98,35 +102,38 @@ public class GroupCalService {
     }
 
 
+    public Event addEvent(String groupCode, Map<String,Object> data, HttpSession session
+    ) throws IOException, GeneralSecurityException {
+        //  get group calendar info
+        GroupCal gc = getGroupCal(groupCode);
+        String ownerEmail = gc.getOwnerEmail();
+        String calendarId = gc.getCalendarId();
 
-    public boolean addEvent(String groupCode, String summary, String location, String description, String startDateTime,
-                            String startTimeZone, String endDateTime, String endTimeZone, HttpSession session) throws IOException, GeneralSecurityException {
-        String userEmail = (String) session.getAttribute("userEmail");
-        if (userEmail == null) throw new RuntimeException("Not authenticated");
+        //  build cal w client as owner
+        com.google.api.services.calendar.Calendar service =
+                CalServiceBuilder.buildService(ownerEmail);
 
-        GroupCal groupCal = getGroupCal(groupCode);
-        Calendar service = CalServiceBuilder.buildService(userEmail);
+        // extract and adapt payload
+        String summary     = (String) data.get("summary");
+        String location    = (String) data.get("location");
+        String description = (String) data.get("description");
+        String startRaw    = ((Map<?,?>)data.get("start")).get("dateTime").toString();
+        String endRaw      = ((Map<?,?>)data.get("end")).get("dateTime").toString();
 
-        Event event = new EventBuilder()
+        EventDateTime start = DateAdapter.parseEventDateTime(startRaw, ZoneId.of("America/New_York"));
+        EventDateTime end   = DateAdapter.parseEventDateTime(endRaw,   ZoneId.of("America/New_York"));
+
+        Event e = new Event()
                 .setSummary(summary)
                 .setLocation(location)
                 .setDescription(description)
-                .setStart(startDateTime, startTimeZone)
-                .setEnd(endDateTime, endTimeZone)
-                .build();
+                .setStart(start)
+                .setEnd(end);
 
-        Event createdEvent = service.events().insert(groupCal.getCalendarId(), event).execute();
-
-        for (User user : groupService.getGroupMembers(groupCode)) {
-            try {
-                Calendar studentService = CalServiceBuilder.buildService(user.getEmail());
-                studentService.events().insert("primary", event).execute();
-            } catch (Exception e) {
-                logger.warning("Failed to add event for " + user.getEmail() + ": " + e.getMessage());
-            }
-        }
-
-        return true;
+        // 4) insert into the group’s calendar
+        return service.events()
+                .insert(calendarId, e)
+                .execute();
     }
 
 

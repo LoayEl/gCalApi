@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 
 export default function AddEventForm() {
-  const { groupCode } = useParams();
+  const { classCode, groupCode } = useParams();
+  const navigate = useNavigate();
+
   const [summary, setSummary] = useState('');
   const [start, setStart] = useState('');
   const [end, setEnd] = useState('');
@@ -35,8 +37,10 @@ export default function AddEventForm() {
         }
       );
       if (!res.ok) throw new Error(await res.text() || 'Failed to add event');
-      setSuccess(true);
-      setSummary(''); setStart(''); setEnd(''); setLocation(''); setDescription('');
+         setSuccess(true);
+         alert('Event added successfully!');
+         setSummary(''); setStart(''); setEnd(''); setLocation(''); setDescription('');
+         navigate(`/class/${classCode}/group/${groupCode}`);
     } catch (err) {
       setError(err.message);
     }
@@ -78,7 +82,6 @@ export default function AddEventForm() {
         /><br/>
         <button type="submit">Add Event</button>
       </form>
-      {success && <p style={{ color: 'green' }}>Event added!</p>}
       {error   && <p style={{ color: 'red' }}>{error}</p>}
     </div>
   );
