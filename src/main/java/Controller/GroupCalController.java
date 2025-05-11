@@ -43,33 +43,7 @@ public class GroupCalController {
             @RequestBody Map<String,Object> data,
             HttpSession session
     ) throws IOException, GeneralSecurityException {
-
-        // build cal service for user
-        String userId = (String) session.getAttribute("userEmail");
-        com.google.api.services.calendar.Calendar service =
-                CalServiceBuilder.buildService(userId);
-
-        // extract and adapt
-        String summary = (String) data.get("summary");
-        String location = (String) data.get("location");
-        String description = (String) data.get("description");
-        String startRaw = ((Map<?,?>)data.get("start")).get("dateTime").toString();
-        String endRaw = ((Map<?,?>)data.get("end")).get("dateTime").toString();
-
-        EventDateTime start = DateAdapter.parseEventDateTime(startRaw, ZoneId.of("America/New_York"));
-        EventDateTime end   = DateAdapter.parseEventDateTime(endRaw,   ZoneId.of("America/New_York"));
-
-        Event e = new Event()
-                .setSummary(summary)
-                .setLocation(location)
-                .setDescription(description)
-                .setStart(start)
-                .setEnd(end);
-
-        Event created = service.events()
-                .insert("primary", e)
-                .execute();
-
+        Event created = groupCalService.addEvent(groupCode, data, session);
         return ResponseEntity.ok(created);
     }
 
