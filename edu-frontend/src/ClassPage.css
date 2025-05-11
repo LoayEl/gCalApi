@@ -1,0 +1,122 @@
+:root {
+    --color-sky:     #87CEEB;
+    --color-royal:   #4169E1;
+    --color-white:   #ffffff;
+    --color-gray:    #555555;
+    --color-text:    #333333;
+    --color-roya:    #4e73e3;
+
+    --spacing:       1rem;
+}
+
+/* PAGE WRAPPER */
+.class-page {
+    background: var(--color-sky);
+    min-height: 100vh;
+    padding: var(--spacing);
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* HEADER */
+.class-header {
+    background: var(--color-royal);
+    color: var(--color-white);
+    padding: calc(var(--spacing) * 1.5);
+    border-radius: 0.5rem;
+    text-align: center;
+    margin-bottom: var(--spacing);
+}
+.class-header h1 {
+    margin: 0 0 0.5rem;
+}
+.class-header p {
+    margin: 0;
+    font-size: 1rem;
+}
+.class-code {
+    font-weight: 600;
+}
+.copy-btn {
+    margin-left: 0.5rem;
+    background: transparent;
+    border: none;
+    color: var(--color-white);
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+/* ACTIONS */
+.class-actions {
+    text-align: right;
+    margin-bottom: var(--spacing);
+}
+.btn-create-group {
+    background: var(--color-royal);
+    color: var(--color-white);
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.btn-create-group .icon {
+    font-size: 1.2rem;
+}
+
+/* MAIN LAYOUT */
+.class-main {
+    display: flex;
+    gap: var(--spacing);
+}
+
+/* GROUPS PANEL */
+.groups-panel {
+    flex: 2;
+    background: var(--color-white);
+    border-radius: 0.75rem;
+    padding: var(--spacing);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.groups-panel h2 {
+    margin-top: 0;
+    color: var(--color-roya);
+}
+.groups-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* STUDENTS PANEL */
+.students-panel {
+    flex: 1;
+    background: var(--color-white);
+    border-radius: 0.75rem;
+    padding: var(--spacing);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.students-panel h2 {
+    margin-top: 0;
+    color: var(--color-roya);
+}
+.students-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.students-list li {
+    padding: 0.4rem 0;
+    color: var(--color-text);
+}
+
+/* target only that Groups: heading */
+.groups-title {
+    margin-top: 0;
+    color: var(--color-white);
+    margin-left: 1.1rem;
+}

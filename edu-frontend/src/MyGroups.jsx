@@ -1,25 +1,32 @@
+// MyGroups.jsx
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 import GroupView from './GroupView';
+import './myGroups.css';
 
 export async function loader() {
     const res = await fetch('/my-groups', { credentials: 'include' });
     if (!res.ok) throw new Error('Failed to fetch groups');
-    return await res.json();
+    return res.json();
 }
 
 export default function MyGroups() {
     const groups = useLoaderData();
 
     return (
-        <div style={{ padding: 20 }}>
-            <h1>My Groups</h1>
+        <div className="mygroups-page">
+            <h1 className="page-title">My Groups: </h1>
+
             {groups.length === 0 ? (
-                <p>You are not in any groups.</p>
+                <p className="empty-state">You are not in any groups.</p>
             ) : (
-                <ul style={{ listStyle: 'none', padding: 0 }}>
+                <ul className="groups-list">
                     {groups.map(g => (
-                        <GroupView key={g.code} singleGroup={g} classCode={g.classCode} />
+                        <GroupView
+                            key={g.code}
+                            singleGroup={g}
+                            classCode={g.classCode}
+                        />
                     ))}
                 </ul>
             )}

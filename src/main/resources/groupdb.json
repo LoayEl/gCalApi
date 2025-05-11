@@ -1,12 +1,12 @@
 {
   "groups" : [ {
-    "id" : 2005,
-    "title" : "Essay Editors",
-    "code" : "ENG101-A",
-    "classCode" : "ENG101",
-    "createdBy" : "test@example.com",
-    "groupCalId" : "null",
-    "memberIds" : [ 4, 5 ]
+    "id" : 2019,
+    "title" : "The Group",
+    "code" : "06CC74",
+    "classCode" : "85B349",
+    "createdBy" : "elasmarloay@gmail.com",
+    "groupCalId" : "19da810df68050a3c6220f1e492bd1ad7206a0aa790aa580250a6e7325efd336@group.calendar.google.com",
+    "memberIds" : [ ]
   }, {
     "id" : 2004,
     "title" : "Hannahs Group",
@@ -16,13 +16,45 @@
     "groupCalId" : "null",
     "memberIds" : [ 8 ]
   }, {
+    "id" : 2027,
+    "title" : "The Group",
+    "code" : "118E01",
+    "classCode" : "85B349",
+    "createdBy" : "elasmarloay@gmail.com",
+    "groupCalId" : "a2863201c45341f14b4570391655f48aab6e5d9028216276735df45838301108@group.calendar.google.com",
+    "memberIds" : [ ]
+  }, {
+    "id" : 2026,
+    "title" : "The Group",
+    "code" : "9E172B",
+    "classCode" : "85B349",
+    "createdBy" : "elasmarloay@gmail.com",
+    "groupCalId" : "e8477df38c388c3608eb38808248f3ede8cd1c5b2d108617c43da71e0f935d48@group.calendar.google.com",
+    "memberIds" : [ ]
+  }, {
+    "id" : 2030,
+    "title" : "Number uno",
+    "code" : "95F2BD",
+    "classCode" : "CS101",
+    "createdBy" : "elasmarloay@gmail.com",
+    "groupCalId" : "bf48e8d9903f6284587e02adfa8769a3a43c732a85c81b0cd259b334348e3413@group.calendar.google.com",
+    "memberIds" : [ 7 ]
+  }, {
     "id" : 2007,
     "title" : "Final Review",
     "code" : "PHYS101-R",
     "classCode" : "PHYS101",
     "createdBy" : "mila@example.com",
     "groupCalId" : "null",
-    "memberIds" : [ 2, 7 ]
+    "memberIds" : [ 2 ]
+  }, {
+    "id" : 2018,
+    "title" : "The Group",
+    "code" : "206550",
+    "classCode" : "85B349",
+    "createdBy" : "elasmarloay@gmail.com",
+    "groupCalId" : "7284258f0bf408ec0ff340c2c8172ffae896145a7f5e7a1a5195cbb5af7e6793@group.calendar.google.com",
+    "memberIds" : [ ]
   }, {
     "id" : 2009,
     "title" : "testgroup2",
@@ -32,12 +64,20 @@
     "groupCalId" : "2262aee89c014c8242c69060da418c250f446306ee9a460ef274090a9ba2352c@group.calendar.google.com",
     "memberIds" : [ 8 ]
   }, {
-    "id" : 2012,
-    "title" : "ohmygod",
-    "code" : "4DF31E",
-    "classCode" : "908E47",
-    "createdBy" : "hannahbfearns@gmail.com",
-    "groupCalId" : "bd0db3b23560a01f5abc8c2c4d3c8f8188f26f899f414317629b62c835be3cc3@group.calendar.google.com",
+    "id" : 2028,
+    "title" : "The Group",
+    "code" : "E1A218",
+    "classCode" : "85B349",
+    "createdBy" : "elasmarloay@gmail.com",
+    "groupCalId" : "79158f534b736c5dd015bced800c42f4e267aa9fbe60f2dba89d79e69178883e@group.calendar.google.com",
+    "memberIds" : [ ]
+  }, {
+    "id" : 2034,
+    "title" : "i didnt spam the create button this time",
+    "code" : "987EF8",
+    "classCode" : "PHYS101",
+    "createdBy" : "elasmarloay@gmail.com",
+    "groupCalId" : "a0f7b5f54063713a64e9273a7b62f1b171202a09eae4b42287b56fb86cf1b5ed@group.calendar.google.com",
     "memberIds" : [ ]
   }, {
     "id" : 2011,
@@ -48,21 +88,29 @@
     "groupCalId" : "be11913b0ac7be13141dfbc06ebd791a78b82299e7ea8cdc992213c61282ad1a@group.calendar.google.com",
     "memberIds" : [ ]
   }, {
-    "id" : 2010,
-    "title" : "tstgrp3",
-    "code" : "A849E4",
-    "classCode" : "80955F",
-    "createdBy" : "hannahbfearns@gmail.com",
-    "groupCalId" : "b4c4f86b9a80e8ec890ef472729d5df5c2194d4c12a92c61ed064ac7c2cc45e7@group.calendar.google.com",
-    "memberIds" : [ 8 ]
+    "id" : 2025,
+    "title" : "The Group",
+    "code" : "91B32A",
+    "classCode" : "85B349",
+    "createdBy" : "elasmarloay@gmail.com",
+    "groupCalId" : "e8d1a83779dc6d75c421f4f90171d7e4b16dfda90223faa37996dc6916d907f5@group.calendar.google.com",
+    "memberIds" : [ ]
   }, {
-    "id" : 2003,
-    "title" : "Lab Partners",
-    "code" : "PHYS101-A",
-    "classCode" : "PHYS101",
-    "createdBy" : "admin3@example.com",
-    "groupCalId" : "null",
-    "memberIds" : [ 2, 7 ]
+    "id" : 2024,
+    "title" : "The Group",
+    "code" : "1FA62A",
+    "classCode" : "85B349",
+    "createdBy" : "elasmarloay@gmail.com",
+    "groupCalId" : "aee4aa91fd1701194c65d7bc95e1242faa6670e867cef189098c0dba8252eb6f@group.calendar.google.com",
+    "memberIds" : [ ]
+  }, {
+    "id" : 2035,
+    "title" : "didnt spam create button",
+    "code" : "CF564A",
+    "classCode" : "CS101",
+    "createdBy" : "elasmarloay@gmail.com",
+    "groupCalId" : "50fb01555103737bb53733df66615336557619b5046bb1e275f4aa81b47d1e7e@group.calendar.google.com",
+    "memberIds" : [ 7 ]
   }, {
     "id" : 2001,
     "title" : "Study Buddies",
@@ -80,12 +128,148 @@
     "groupCalId" : "null",
     "memberIds" : [ 6 ]
   }, {
+    "id" : 2015,
+    "title" : "The Group",
+    "code" : "9FA659",
+    "classCode" : "85B349",
+    "createdBy" : "elasmarloay@gmail.com",
+    "groupCalId" : "53979a306a9c239415d25e2c7c60216a403363f41dc1ddeb12879f3f3a999a27@group.calendar.google.com",
+    "memberIds" : [ ]
+  }, {
+    "id" : 2021,
+    "title" : "The Group",
+    "code" : "7807D4",
+    "classCode" : "85B349",
+    "createdBy" : "elasmarloay@gmail.com",
+    "groupCalId" : "7a45b7d401d3f41fa9acc3f23e4d078b2d0dd617081c7cc4346183cc39aa8223@group.calendar.google.com",
+    "memberIds" : [ ]
+  }, {
+    "id" : 2005,
+    "title" : "Essay Editors",
+    "code" : "ENG101-A",
+    "classCode" : "ENG101",
+    "createdBy" : "test@example.com",
+    "groupCalId" : "null",
+    "memberIds" : [ 4, 5 ]
+  }, {
+    "id" : 2017,
+    "title" : "The Group",
+    "code" : "73B90E",
+    "classCode" : "85B349",
+    "createdBy" : "elasmarloay@gmail.com",
+    "groupCalId" : "941f9be5944039d83eabb65870e91669dde697ff279bc8294bbc01f3fea37be1@group.calendar.google.com",
+    "memberIds" : [ ]
+  }, {
+    "id" : 2029,
+    "title" : "The Group",
+    "code" : "8544D9",
+    "classCode" : "85B349",
+    "createdBy" : "elasmarloay@gmail.com",
+    "groupCalId" : "1f12450ca44ea9057bbb8bdb6a2d68eb02416c5edf80c4151f5d7608495db679@group.calendar.google.com",
+    "memberIds" : [ ]
+  }, {
+    "id" : 2023,
+    "title" : "The Group",
+    "code" : "FB149C",
+    "classCode" : "85B349",
+    "createdBy" : "elasmarloay@gmail.com",
+    "groupCalId" : "cc004b67b29166137c903dcb25e484efd26bb582597f0921fb0be05887acd390@group.calendar.google.com",
+    "memberIds" : [ ]
+  }, {
+    "id" : 2022,
+    "title" : "The Group",
+    "code" : "FFA65E",
+    "classCode" : "85B349",
+    "createdBy" : "elasmarloay@gmail.com",
+    "groupCalId" : "d2009166eb108b95855e266c99b7a62571b01cb9422bf25b41ca8164943fc44f@group.calendar.google.com",
+    "memberIds" : [ ]
+  }, {
+    "id" : 2032,
+    "title" : "Number uno",
+    "code" : "56F8E5",
+    "classCode" : "CS101",
+    "createdBy" : "elasmarloay@gmail.com",
+    "groupCalId" : "b9556e67c26940756fba845b6875042e485df0725e9af5a44c837bd3de9da5b8@group.calendar.google.com",
+    "memberIds" : [ ]
+  }, {
+    "id" : 2012,
+    "title" : "ohmygod",
+    "code" : "4DF31E",
+    "classCode" : "908E47",
+    "createdBy" : "hannahbfearns@gmail.com",
+    "groupCalId" : "bd0db3b23560a01f5abc8c2c4d3c8f8188f26f899f414317629b62c835be3cc3@group.calendar.google.com",
+    "memberIds" : [ ]
+  }, {
+    "id" : 2016,
+    "title" : "The Group",
+    "code" : "DC6F3B",
+    "classCode" : "85B349",
+    "createdBy" : "elasmarloay@gmail.com",
+    "groupCalId" : "69f1176fe2d73110ae30be6c70ed3206f1896c7cf9de6346bb234b192018a6b7@group.calendar.google.com",
+    "memberIds" : [ ]
+  }, {
+    "id" : 2031,
+    "title" : "Number uno",
+    "code" : "A3514B",
+    "classCode" : "CS101",
+    "createdBy" : "elasmarloay@gmail.com",
+    "groupCalId" : "57253d8ecfa709db6319e1a409095e1209845f299f14e7fe057254eab8f0e122@group.calendar.google.com",
+    "memberIds" : [ ]
+  }, {
+    "id" : 2010,
+    "title" : "tstgrp3",
+    "code" : "A849E4",
+    "classCode" : "80955F",
+    "createdBy" : "hannahbfearns@gmail.com",
+    "groupCalId" : "b4c4f86b9a80e8ec890ef472729d5df5c2194d4c12a92c61ed064ac7c2cc45e7@group.calendar.google.com",
+    "memberIds" : [ 8 ]
+  }, {
+    "id" : 2033,
+    "title" : "Number uno",
+    "code" : "C89429",
+    "classCode" : "CS101",
+    "createdBy" : "elasmarloay@gmail.com",
+    "groupCalId" : "38f0d74d1fefd07bc5c0e1ccc924ca6530b5ecda188663cf15ec4a4fef0ecd7e@group.calendar.google.com",
+    "memberIds" : [ ]
+  }, {
+    "id" : 2020,
+    "title" : "The Group",
+    "code" : "AC0F4F",
+    "classCode" : "85B349",
+    "createdBy" : "elasmarloay@gmail.com",
+    "groupCalId" : "b7239a1a8614d09b497e2f96a01f9e1c091e1a1dd2c800bf086a5c01e40775cb@group.calendar.google.com",
+    "memberIds" : [ ]
+  }, {
+    "id" : 2003,
+    "title" : "Lab Partners",
+    "code" : "PHYS101-A",
+    "classCode" : "PHYS101",
+    "createdBy" : "admin3@example.com",
+    "groupCalId" : "null",
+    "memberIds" : [ 2 ]
+  }, {
+    "id" : 2014,
+    "title" : "The Group",
+    "code" : "56040D",
+    "classCode" : "85B349",
+    "createdBy" : "elasmarloay@gmail.com",
+    "groupCalId" : "eb2ba6d8c23fbf8fee3dfe0bad0a295de7d219e562a4e377cfcb681a0dd3bab6@group.calendar.google.com",
+    "memberIds" : [ ]
+  }, {
     "id" : 2013,
     "title" : "oookkkk",
     "code" : "55861A",
     "classCode" : "2BDEB2",
     "createdBy" : "hannahbfearns@gmail.com",
     "groupCalId" : "6ec34c85ef4e419ffe7b4adc4d6dd81c3c4d4e5dcc6d26ea330ead09f11ee2f8@group.calendar.google.com",
+    "memberIds" : [ ]
+  }, {
+    "id" : 2008,
+    "title" : "testgroup",
+    "code" : "FDA356",
+    "classCode" : "6695D9",
+    "createdBy" : "hannahbfearns@gmail.com",
+    "groupCalId" : "ecd80a0a0c0a4fb6ca05301cd5e2fc832bac51791762bc8a0aac72cd1a5a805e@group.calendar.google.com",
     "memberIds" : [ ]
   }, {
     "id" : 2006,
@@ -95,13 +279,5 @@
     "createdBy" : "alice@example.com",
     "groupCalId" : "null",
     "memberIds" : [ 1, 5 ]
-  }, {
-    "id" : 2008,
-    "title" : "testgroup",
-    "code" : "FDA356",
-    "classCode" : "6695D9",
-    "createdBy" : "hannahbfearns@gmail.com",
-    "groupCalId" : "ecd80a0a0c0a4fb6ca05301cd5e2fc832bac51791762bc8a0aac72cd1a5a805e@group.calendar.google.com",
-    "memberIds" : [ ]
   } ]
 }

@@ -1,24 +1,29 @@
+// MyClasses.jsx
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
-import ClassView from "./ClassView.jsx";
+import ClassView from './ClassView';
+import './myClasses.css';
 
 export async function loader() {
-    const res = await fetch("/my-classes", { credentials: "include" });
-    if (!res.ok) throw new Error("Failed to fetch classes");
-    return await res.json();
+    const res = await fetch('/my-classes', { credentials: 'include' });
+    if (!res.ok) throw new Error('Failed to fetch classes');
+    return res.json();
 }
 
 export default function MyClasses() {
     const classes = useLoaderData();
 
     return (
-        <div style={{ padding: 20 }}>
-            <h1>My Classes</h1>
+        <div className="myclasses-page">
+            <h1 className="page-title">My Classes: </h1>
+
             {classes.length === 0 ? (
-                <p>You are not enrolled in any classes.</p>
+                <p className="empty-state">
+                    You are not enrolled in any classes.
+                </p>
             ) : (
-                <ul style={{ listStyle: 'none', padding: 0 }}>
-                    {classes.map((c) => (
+                <ul className="classes-list">
+                    {classes.map(c => (
                         <ClassView key={c.id} singleClass={c} />
                     ))}
                 </ul>

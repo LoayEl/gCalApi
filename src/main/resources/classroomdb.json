@@ -21,7 +21,7 @@
     "description" : "CS1",
     "code" : "CS101",
     "createdBy" : "bob@example.com",
-    "studentIds" : [ ],
+    "studentIds" : [ 7 ],
     "groupCodes" : [ ]
   }, {
     "id" : 9,
@@ -54,6 +54,14 @@
     "code" : "6695D9",
     "createdBy" : "hannahbfearns@gmail.com",
     "studentIds" : [ 8 ],
+    "groupCodes" : [ ]
+  }, {
+    "id" : 11,
+    "title" : "lol",
+    "description" : "",
+    "code" : "85B349",
+    "createdBy" : "elasmarloay@gmail.com",
+    "studentIds" : [ 7 ],
     "groupCodes" : [ ]
   }, {
     "id" : 7,

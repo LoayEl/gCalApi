@@ -1,58 +1,168 @@
 {
   "groupCals" : [ {
-    "id" : 5,
-    "groupCode" : "ENG101-A",
-    "calendarId" : "29e62ede6b3d9d01663e9840570b46f31b24a1ca49f752ab22d5bd00095bbcb6@group.calendar.google.com",
-    "ownerEmail" : "hannahbfearns@gmail.com"
-  }, {
-    "id" : 8,
-    "groupCode" : "A849E4",
-    "calendarId" : "b4c4f86b9a80e8ec890ef472729d5df5c2194d4c12a92c61ed064ac7c2cc45e7@group.calendar.google.com",
-    "ownerEmail" : "hannahbfearns@gmail.com"
+    "id" : 17,
+    "groupCode" : "06CC74",
+    "calendarId" : "19da810df68050a3c6220f1e492bd1ad7206a0aa790aa580250a6e7325efd336@group.calendar.google.com",
+    "ownerEmail" : "elasmarloay@gmail.com"
   }, {
     "id" : 2,
     "groupCode" : "AF340C",
     "calendarId" : "29e62ede6b3d9d01663e9840570b46f31b24a1ca49f752ab22d5bd00095bbcb6@group.calendar.google.com",
     "ownerEmail" : "hannahbfearns@gmail.com"
   }, {
-    "id" : 3,
-    "groupCode" : "PHYS101-A",
-    "calendarId" : "5d71065e4db425eef11e54c454f7feeb7a6e6d8a0784741f0f7ebfd8ba8d9f0c@group.calendar.google.com",
-    "ownerEmail" : "hannahbfearns@gmail.com"
+    "id" : 25,
+    "groupCode" : "118E01",
+    "calendarId" : "a2863201c45341f14b4570391655f48aab6e5d9028216276735df45838301108@group.calendar.google.com",
+    "ownerEmail" : "elasmarloay@gmail.com"
+  }, {
+    "id" : 24,
+    "groupCode" : "9E172B",
+    "calendarId" : "e8477df38c388c3608eb38808248f3ede8cd1c5b2d108617c43da71e0f935d48@group.calendar.google.com",
+    "ownerEmail" : "elasmarloay@gmail.com"
+  }, {
+    "id" : 28,
+    "groupCode" : "95F2BD",
+    "calendarId" : "bf48e8d9903f6284587e02adfa8769a3a43c732a85c81b0cd259b334348e3413@group.calendar.google.com",
+    "ownerEmail" : "elasmarloay@gmail.com"
+  }, {
+    "id" : 16,
+    "groupCode" : "206550",
+    "calendarId" : "7284258f0bf408ec0ff340c2c8172ffae896145a7f5e7a1a5195cbb5af7e6793@group.calendar.google.com",
+    "ownerEmail" : "elasmarloay@gmail.com"
   }, {
     "id" : 7,
     "groupCode" : "595556",
     "calendarId" : "2262aee89c014c8242c69060da418c250f446306ee9a460ef274090a9ba2352c@group.calendar.google.com",
     "ownerEmail" : "hannahbfearns@gmail.com"
   }, {
-    "id" : 1,
-    "groupCode" : "CS101-A",
-    "calendarId" : "2591d5112410fa041380d2c05042d8b4968df07b1b6d9a0e9fcdcd32b6535776@group.calendar.google.com",
-    "ownerEmail" : "hannahbfearns@gmail.com"
+    "id" : 26,
+    "groupCode" : "E1A218",
+    "calendarId" : "79158f534b736c5dd015bced800c42f4e267aa9fbe60f2dba89d79e69178883e@group.calendar.google.com",
+    "ownerEmail" : "elasmarloay@gmail.com"
   }, {
-    "id" : 10,
-    "groupCode" : "4DF31E",
-    "calendarId" : "bd0db3b23560a01f5abc8c2c4d3c8f8188f26f899f414317629b62c835be3cc3@group.calendar.google.com",
-    "ownerEmail" : "hannahbfearns@gmail.com"
-  }, {
-    "id" : 11,
-    "groupCode" : "55861A",
-    "calendarId" : "6ec34c85ef4e419ffe7b4adc4d6dd81c3c4d4e5dcc6d26ea330ead09f11ee2f8@group.calendar.google.com",
-    "ownerEmail" : "hannahbfearns@gmail.com"
+    "id" : 32,
+    "groupCode" : "987EF8",
+    "calendarId" : "a0f7b5f54063713a64e9273a7b62f1b171202a09eae4b42287b56fb86cf1b5ed@group.calendar.google.com",
+    "ownerEmail" : "elasmarloay@gmail.com"
   }, {
     "id" : 9,
     "groupCode" : "829B26",
     "calendarId" : "be11913b0ac7be13141dfbc06ebd791a78b82299e7ea8cdc992213c61282ad1a@group.calendar.google.com",
     "ownerEmail" : "hannahbfearns@gmail.com"
   }, {
-    "id" : 4,
-    "groupCode" : "MATH101-G1",
+    "id" : 23,
+    "groupCode" : "91B32A",
+    "calendarId" : "e8d1a83779dc6d75c421f4f90171d7e4b16dfda90223faa37996dc6916d907f5@group.calendar.google.com",
+    "ownerEmail" : "elasmarloay@gmail.com"
+  }, {
+    "id" : 22,
+    "groupCode" : "1FA62A",
+    "calendarId" : "aee4aa91fd1701194c65d7bc95e1242faa6670e867cef189098c0dba8252eb6f@group.calendar.google.com",
+    "ownerEmail" : "elasmarloay@gmail.com"
+  }, {
+    "id" : 33,
+    "groupCode" : "CF564A",
+    "calendarId" : "50fb01555103737bb53733df66615336557619b5046bb1e275f4aa81b47d1e7e@group.calendar.google.com",
+    "ownerEmail" : "elasmarloay@gmail.com"
+  }, {
+    "id" : 1,
+    "groupCode" : "CS101-A",
     "calendarId" : "2591d5112410fa041380d2c05042d8b4968df07b1b6d9a0e9fcdcd32b6535776@group.calendar.google.com",
+    "ownerEmail" : "hannahbfearns@gmail.com"
+  }, {
+    "id" : 13,
+    "groupCode" : "9FA659",
+    "calendarId" : "53979a306a9c239415d25e2c7c60216a403363f41dc1ddeb12879f3f3a999a27@group.calendar.google.com",
+    "ownerEmail" : "elasmarloay@gmail.com"
+  }, {
+    "id" : 19,
+    "groupCode" : "7807D4",
+    "calendarId" : "7a45b7d401d3f41fa9acc3f23e4d078b2d0dd617081c7cc4346183cc39aa8223@group.calendar.google.com",
+    "ownerEmail" : "elasmarloay@gmail.com"
+  }, {
+    "id" : 5,
+    "groupCode" : "ENG101-A",
+    "calendarId" : "29e62ede6b3d9d01663e9840570b46f31b24a1ca49f752ab22d5bd00095bbcb6@group.calendar.google.com",
+    "ownerEmail" : "hannahbfearns@gmail.com"
+  }, {
+    "id" : 15,
+    "groupCode" : "73B90E",
+    "calendarId" : "941f9be5944039d83eabb65870e91669dde697ff279bc8294bbc01f3fea37be1@group.calendar.google.com",
+    "ownerEmail" : "elasmarloay@gmail.com"
+  }, {
+    "id" : 27,
+    "groupCode" : "8544D9",
+    "calendarId" : "1f12450ca44ea9057bbb8bdb6a2d68eb02416c5edf80c4151f5d7608495db679@group.calendar.google.com",
+    "ownerEmail" : "elasmarloay@gmail.com"
+  }, {
+    "id" : 21,
+    "groupCode" : "FB149C",
+    "calendarId" : "cc004b67b29166137c903dcb25e484efd26bb582597f0921fb0be05887acd390@group.calendar.google.com",
+    "ownerEmail" : "elasmarloay@gmail.com"
+  }, {
+    "id" : 20,
+    "groupCode" : "FFA65E",
+    "calendarId" : "d2009166eb108b95855e266c99b7a62571b01cb9422bf25b41ca8164943fc44f@group.calendar.google.com",
+    "ownerEmail" : "elasmarloay@gmail.com"
+  }, {
+    "id" : 30,
+    "groupCode" : "56F8E5",
+    "calendarId" : "b9556e67c26940756fba845b6875042e485df0725e9af5a44c837bd3de9da5b8@group.calendar.google.com",
+    "ownerEmail" : "elasmarloay@gmail.com"
+  }, {
+    "id" : 10,
+    "groupCode" : "4DF31E",
+    "calendarId" : "bd0db3b23560a01f5abc8c2c4d3c8f8188f26f899f414317629b62c835be3cc3@group.calendar.google.com",
+    "ownerEmail" : "hannahbfearns@gmail.com"
+  }, {
+    "id" : 14,
+    "groupCode" : "DC6F3B",
+    "calendarId" : "69f1176fe2d73110ae30be6c70ed3206f1896c7cf9de6346bb234b192018a6b7@group.calendar.google.com",
+    "ownerEmail" : "elasmarloay@gmail.com"
+  }, {
+    "id" : 29,
+    "groupCode" : "A3514B",
+    "calendarId" : "57253d8ecfa709db6319e1a409095e1209845f299f14e7fe057254eab8f0e122@group.calendar.google.com",
+    "ownerEmail" : "elasmarloay@gmail.com"
+  }, {
+    "id" : 8,
+    "groupCode" : "A849E4",
+    "calendarId" : "b4c4f86b9a80e8ec890ef472729d5df5c2194d4c12a92c61ed064ac7c2cc45e7@group.calendar.google.com",
+    "ownerEmail" : "hannahbfearns@gmail.com"
+  }, {
+    "id" : 31,
+    "groupCode" : "C89429",
+    "calendarId" : "38f0d74d1fefd07bc5c0e1ccc924ca6530b5ecda188663cf15ec4a4fef0ecd7e@group.calendar.google.com",
+    "ownerEmail" : "elasmarloay@gmail.com"
+  }, {
+    "id" : 18,
+    "groupCode" : "AC0F4F",
+    "calendarId" : "b7239a1a8614d09b497e2f96a01f9e1c091e1a1dd2c800bf086a5c01e40775cb@group.calendar.google.com",
+    "ownerEmail" : "elasmarloay@gmail.com"
+  }, {
+    "id" : 3,
+    "groupCode" : "PHYS101-A",
+    "calendarId" : "5d71065e4db425eef11e54c454f7feeb7a6e6d8a0784741f0f7ebfd8ba8d9f0c@group.calendar.google.com",
+    "ownerEmail" : "hannahbfearns@gmail.com"
+  }, {
+    "id" : 12,
+    "groupCode" : "56040D",
+    "calendarId" : "eb2ba6d8c23fbf8fee3dfe0bad0a295de7d219e562a4e377cfcb681a0dd3bab6@group.calendar.google.com",
+    "ownerEmail" : "elasmarloay@gmail.com"
+  }, {
+    "id" : 11,
+    "groupCode" : "55861A",
+    "calendarId" : "6ec34c85ef4e419ffe7b4adc4d6dd81c3c4d4e5dcc6d26ea330ead09f11ee2f8@group.calendar.google.com",
     "ownerEmail" : "hannahbfearns@gmail.com"
   }, {
     "id" : 6,
     "groupCode" : "FDA356",
     "calendarId" : "ecd80a0a0c0a4fb6ca05301cd5e2fc832bac51791762bc8a0aac72cd1a5a805e@group.calendar.google.com",
+    "ownerEmail" : "hannahbfearns@gmail.com"
+  }, {
+    "id" : 4,
+    "groupCode" : "MATH101-G1",
+    "calendarId" : "2591d5112410fa041380d2c05042d8b4968df07b1b6d9a0e9fcdcd32b6535776@group.calendar.google.com",
     "ownerEmail" : "hannahbfearns@gmail.com"
   } ]
 }
