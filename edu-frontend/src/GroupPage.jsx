@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useLoaderData, useParams, Link, useNavigate } from 'react-router-dom';
 import Loading from "./Loading.jsx";
+import AddEventForm from "./AddEventForm.jsx"
 
 export async function loader({ params }) {
     const { classCode, groupCode } = params;
@@ -163,7 +164,12 @@ export default function GroupPage() {
             )}
 
             {userInGroup ? (
+                <>
                 <button onClick={handleLeave}>Leave Group</button>
+                  <Link to={`/class/${classCode}/groups/${groupCode}/add-event`}>
+                    <button>Add Event</button>
+                  </Link>
+                </>
             ) : (
                 <Link to={`/class/${classCode}/groups/${groupCode}/join`}>
                     <button>Join Group</button>
