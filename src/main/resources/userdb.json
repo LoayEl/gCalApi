@@ -18,7 +18,7 @@
     "userId" : 10,
     "name" : "Loay Elasmar",
     "email" : "elasmarloay@gmail.com",
-    "enrolledClassCodes" : [ "CS1", "29CB70" ]
+    "enrolledClassCodes" : [ "CS1", "29CB70", "PHYS101", "4CFDC5", "0A7DC1" ]
   }, {
     "userId" : 3,
     "name" : "Eva",

@@ -32,6 +32,14 @@
     "groupCalId" : "f504f1e1cb5c7be618d43d2b47957ca2bf259f3e3e6b12390ff55413188dafd3@group.calendar.google.com",
     "memberIds" : [ 8 ]
   }, {
+    "id" : 2017,
+    "title" : "Tech",
+    "code" : "A7437D",
+    "classCode" : "undefined",
+    "createdBy" : "elasmarloay@gmail.com",
+    "groupCalId" : "596bf88647e45d3c861e6272f6e81e64b28807a4301c697247f6332bce8bc59b@group.calendar.google.com",
+    "memberIds" : [ ]
+  }, {
     "id" : 2009,
     "title" : "testgroup2",
     "code" : "595556",
@@ -47,6 +55,14 @@
     "createdBy" : "hannahbfearns@gmail.com",
     "groupCalId" : "bd0db3b23560a01f5abc8c2c4d3c8f8188f26f899f414317629b62c835be3cc3@group.calendar.google.com",
     "memberIds" : [ ]
+  }, {
+    "id" : 2019,
+    "title" : "bobo",
+    "code" : "D45E3F",
+    "classCode" : "undefined",
+    "createdBy" : "elasmarloay@gmail.com",
+    "groupCalId" : "33afb3bfbdfea4c5125dd236f67057cb7272194d6fb063bc8d222fb24c02241c@group.calendar.google.com",
+    "memberIds" : [ 10 ]
   }, {
     "id" : 2011,
     "title" : "hhhhhh",
@@ -64,14 +80,6 @@
     "groupCalId" : "e9934a1f355d275c577bac1bd7e39861bb358368837b93e62b6afb14592b8b13@group.calendar.google.com",
     "memberIds" : [ 8 ]
   }, {
-    "id" : 2018,
-    "title" : "Fire",
-    "code" : "0F13F9",
-    "classCode" : "undefined",
-    "createdBy" : "elasmarloay@gmail.com",
-    "groupCalId" : "727c1a0ac3040bea959616eb0e048c2504219a72ea308a5be6fda6e7b5a1feec@group.calendar.google.com",
-    "memberIds" : [ 10 ]
-  }, {
     "id" : 2010,
     "title" : "tstgrp3",
     "code" : "A849E4",
@@ -80,12 +88,20 @@
     "groupCalId" : "b4c4f86b9a80e8ec890ef472729d5df5c2194d4c12a92c61ed064ac7c2cc45e7@group.calendar.google.com",
     "memberIds" : [ ]
   }, {
-    "id" : 2017,
-    "title" : "Data",
-    "code" : "737990",
+    "id" : 2018,
+    "title" : "bobobo",
+    "code" : "76F7E6",
     "classCode" : "undefined",
     "createdBy" : "elasmarloay@gmail.com",
-    "groupCalId" : "e9594243fee4e4bfa1987f2d32432a6ba635ad8bb2c01c0878dfb5655bcf329d@group.calendar.google.com",
+    "groupCalId" : "f523316dde25e0cfdfc9f02a909a0ba2f61a76da7936ab6208fdf668d2c041df@group.calendar.google.com",
+    "memberIds" : [ ]
+  }, {
+    "id" : 2020,
+    "title" : "Human",
+    "code" : "C644FF",
+    "classCode" : "undefined",
+    "createdBy" : "elasmarloay@gmail.com",
+    "groupCalId" : "b1f471460ced17fb21aef6d3062fa7b6d7435868fd84416f915b48c071fb3371@group.calendar.google.com",
     "memberIds" : [ 10 ]
   }, {
     "id" : 2003,
@@ -94,7 +110,7 @@
     "classCode" : "PHYS101",
     "createdBy" : "admin3@example.com",
     "groupCalId" : "null",
-    "memberIds" : [ 2, 7 ]
+    "memberIds" : [ 2, 7, 10 ]
   }, {
     "id" : 2001,
     "title" : "Study Buddies",
@@ -143,13 +159,5 @@
     "createdBy" : "hannahbfearns@gmail.com",
     "groupCalId" : "ecd80a0a0c0a4fb6ca05301cd5e2fc832bac51791762bc8a0aac72cd1a5a805e@group.calendar.google.com",
     "memberIds" : [ ]
-  }, {
-    "id" : 2019,
-    "title" : "Potato",
-    "code" : "24A013",
-    "classCode" : "undefined",
-    "createdBy" : "elasmarloay@gmail.com",
-    "groupCalId" : "72f0dba41900d80d45e8c48f5be965e819bae222330c7c786109fc0b3430b03e@group.calendar.google.com",
-    "memberIds" : [ 10 ]
   } ]
 }

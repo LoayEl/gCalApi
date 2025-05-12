@@ -1,88 +1,113 @@
+// AddEventForm.jsx
 import React, { useState } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
+import './AddEventForm.css';
 
-export default function AddEventForm() {
-  const { classCode, groupCode } = useParams();
-  const navigate = useNavigate();
+export default function AddEventForm({ onClose, onEventAdded }) {
+    const { classCode, groupCode } = useParams();
+    const [summary, setSummary] = useState('');
+    const [start, setStart] = useState('');
+    const [end, setEnd] = useState('');
+    const [location, setLocation] = useState('');
+    const [description, setDescription] = useState('');
+    const [error, setError] = useState(null);
+    const [loading, setLoading] = useState(false);
 
-  const [summary, setSummary] = useState('');
-  const [start, setStart] = useState('');
-  const [end, setEnd] = useState('');
-  const [location, setLocation] = useState('');
-  const [description, setDescription] = useState('');
-  const [error, setError] = useState(null);
-  const [success, setSuccess] = useState(false);
+    const handleSubmit = async e => {
+        e.preventDefault();
+        setError(null);
+        setLoading(true);
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setError(null);
-    setSuccess(false);
+        // convert to ISO before sending
+        const startISO = new Date(start).toISOString();
+        const endISO = new Date(end).toISOString();
 
-    const eventData = {
-      summary,
-      location,
-      description,
-      start: { dateTime: start, timeZone: 'America/New_York' },
-      end:   { dateTime: end,   timeZone: 'America/New_York' }
+        const eventData = {
+            summary,
+            location,
+            description,
+            start: { dateTime: startISO, timeZone: 'America/New_York' },
+            end:   { dateTime:   endISO, timeZone: 'America/New_York' }
+        };
+
+        try {
+            const res = await fetch(
+                `/class/${classCode}/groups/${groupCode}/calendar/addevent`,
+                {
+                    method:      'POST',
+                    headers:     { 'Content-Type': 'application/json' },
+                    credentials: 'include',
+                    body:        JSON.stringify(eventData)
+                }
+            );
+            if (!res.ok) {
+                const text = await res.text();
+                throw new Error(text || 'Failed to add event');
+            }
+
+            const newEvt = await res.json();
+            onEventAdded(newEvt);
+            onClose();
+        } catch (err) {
+            setError(err.message);
+        } finally {
+            setLoading(false);
+        }
     };
 
-    try {
-      const res = await fetch(
-        `/group/${groupCode}/calendar/addevent`,
-        {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          credentials: 'include',
-          body: JSON.stringify(eventData)
-        }
-      );
-      if (!res.ok) throw new Error(await res.text() || 'Failed to add event');
-         setSuccess(true);
-         alert('Event added successfully!');
-         setSummary(''); setStart(''); setEnd(''); setLocation(''); setDescription('');
-         navigate(`/class/${classCode}/group/${groupCode}`);
-    } catch (err) {
-      setError(err.message);
-    }
-  };
+    return (
+        <div className="ae-overlay" onClick={onClose}>
+            <div className="ae-modal" onClick={e => e.stopPropagation()}>
+                <h2>Add Group Event</h2>
+                <form onSubmit={handleSubmit} className="ae-form">
+                    <label>Title</label>
+                    <input
+                        type="text"
+                        value={summary}
+                        onChange={e => setSummary(e.target.value)}
+                        required
+                        className="ae-input"
+                    />
 
-  return (
-    <div style={{ marginTop: 20 }}>
-      <h3>Add Group Event</h3>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          value={summary}
-          onChange={e => setSummary(e.target.value)}
-          placeholder="Event title"
-          required
-        /><br/>
-        <input
-          type="datetime-local"
-          value={start}
-          onChange={e => setStart(e.target.value)}
-          required
-        /><br/>
-        <input
-          type="datetime-local"
-          value={end}
-          onChange={e => setEnd(e.target.value)}
-          required
-        /><br/>
-        <input
-          type="text"
-          value={location}
-          onChange={e => setLocation(e.target.value)}
-          placeholder="Location"
-        /><br/>
-        <textarea
-          value={description}
-          onChange={e => setDescription(e.target.value)}
-          placeholder="Description"
-        /><br/>
-        <button type="submit">Add Event</button>
-      </form>
-      {error   && <p style={{ color: 'red' }}>{error}</p>}
-    </div>
-  );
+                    <label>Start</label>
+                    <input
+                        type="datetime-local"
+                        value={start}
+                        onChange={e => setStart(e.target.value)}
+                        required
+                        className="ae-input"
+                    />
+
+                    <label>End</label>
+                    <input
+                        type="datetime-local"
+                        value={end}
+                        onChange={e => setEnd(e.target.value)}
+                        required
+                        className="ae-input"
+                    />
+
+                    <label>Location</label>
+                    <input
+                        type="text"
+                        value={location}
+                        onChange={e => setLocation(e.target.value)}
+                        className="ae-input"
+                    />
+
+                    <label>Description</label>
+                    <textarea
+                        value={description}
+                        onChange={e => setDescription(e.target.value)}
+                        className="ae-textarea"
+                    />
+
+                    <button type="submit" className="btn-filled" disabled={loading}>
+                        {loading ? 'Adding…' : 'Add Event'}
+                    </button>
+                </form>
+                {error && <p className="error">{error}</p>}
+            </div>
+        </div>
+    );
 }
