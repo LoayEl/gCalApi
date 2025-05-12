@@ -36,7 +36,7 @@ export default function GroupPage() {
     useEffect(() => {
         const fetchCalendar = async () => {
             try {
-                const res = await fetch(`/group/${groupCode}/calendar/display`, {
+                const res = await fetch(`/calendar/group/${groupCode}/display`, {
                     credentials: 'include'
                 });
                 if (!res.ok) throw new Error('Calendar fetch failed');
@@ -52,7 +52,7 @@ export default function GroupPage() {
 
         const fetchCalendarId = async () => {
             try {
-                const res = await fetch(`/group/${groupCode}/calendar/info`, {
+                const res = await fetch(`/calendar/group/${groupCode}/info`, {
                     credentials: 'include'
                 });
                 if (!res.ok) throw new Error('Failed to load calendar info');

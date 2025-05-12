@@ -1,35 +1,99 @@
 {
   "classrooms" : [ {
-    "id" : 1,
-    "title" : "CS101",
-    "description" : "Intro",
-    "code" : "CS1",
-    "createdBy" : "bob@example.com",
-    "studentIds" : [ 8, 10 ],
+    "id" : 6,
+    "title" : "tectclass2",
+    "description" : "",
+    "code" : "CA2128",
+    "createdBy" : "hannahbfearns@gmail.com",
+    "studentIds" : [ 8 ],
     "groupCodes" : [ ]
   }, {
-    "id" : 1,
-    "title" : "Math",
-    "description" : "MATH101",
-    "code" : "Intro",
-    "createdBy" : "test@example.com",
-    "studentIds" : [ 1 ],
+    "id" : 8,
+    "title" : "wahh",
+    "description" : "",
+    "code" : "091C27",
+    "createdBy" : "hannahbfearns@gmail.com",
+    "studentIds" : [ 8 ],
     "groupCodes" : [ ]
   }, {
-    "id" : 2,
-    "title" : "Math",
-    "description" : "Basic Math",
-    "code" : "MATH101",
-    "createdBy" : "charlie@example.com",
-    "studentIds" : [ ],
+    "id" : 9,
+    "title" : "pleasebedone",
+    "description" : "",
+    "code" : "908E47",
+    "createdBy" : "hannahbfearns@gmail.com",
+    "studentIds" : [ 8 ],
     "groupCodes" : [ ]
   }, {
     "id" : 3,
-    "title" : "Volley",
+    "title" : "Calculus I",
+    "description" : "Differential Calculus",
+    "code" : "MATH101",
+    "createdBy" : "unknown@example.com",
+    "studentIds" : [ ],
+    "groupCodes" : [ ]
+  }, {
+    "id" : 5,
+    "title" : "testCLASS",
     "description" : "",
-    "code" : "29CB70",
-    "createdBy" : "elasmarloay@gmail.com",
-    "studentIds" : [ 10 ],
+    "code" : "6695D9",
+    "createdBy" : "hannahbfearns@gmail.com",
+    "studentIds" : [ 8 ],
+    "groupCodes" : [ ]
+  }, {
+    "id" : 11,
+    "title" : "interface",
+    "description" : "",
+    "code" : "30D6A5",
+    "createdBy" : "hannahbfearns@gmail.com",
+    "studentIds" : [ 8 ],
+    "groupCodes" : [ ]
+  }, {
+    "id" : 7,
+    "title" : "testcls3",
+    "description" : "",
+    "code" : "80955F",
+    "createdBy" : "hannahbfearns@gmail.com",
+    "studentIds" : [ 8 ],
+    "groupCodes" : [ ]
+  }, {
+    "id" : 12,
+    "title" : "test i",
+    "description" : "",
+    "code" : "897BA8",
+    "createdBy" : "hannahbfearns@gmail.com",
+    "studentIds" : [ 8 ],
+    "groupCodes" : [ ]
+  }, {
+    "id" : 1,
+    "title" : "Intro",
+    "description" : "CS1",
+    "code" : "CS101",
+    "createdBy" : "bob@example.com",
+    "studentIds" : [ ],
+    "groupCodes" : [ ]
+  }, {
+    "id" : 10,
+    "title" : "help",
+    "description" : "",
+    "code" : "2BDEB2",
+    "createdBy" : "hannahbfearns@gmail.com",
+    "studentIds" : [ 8 ],
+    "groupCodes" : [ ]
+  }, {
+    "id" : 2,
+    "title" : "Physics 1",
+    "description" : "Intro to Physics",
+    "code" : "PHYS101",
+    "createdBy" : "unknown@example.com",
+    "studentIds" : [ ],
+    "groupCodes" : [ ]
+  }, {
+    "id" : 4,
+    "title" : "English Comp",
+    "description" : "Writing Fundamentals",
+    "code" : "ENG101",
+    "createdBy" : "hannahbfearns@gmail.com",
+    "studentIds" : [ ],
     "groupCodes" : [ ]
   } ]
 }

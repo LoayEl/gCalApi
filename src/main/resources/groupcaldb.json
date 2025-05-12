@@ -30,25 +30,20 @@
     "calendarId" : "be11913b0ac7be13141dfbc06ebd791a78b82299e7ea8cdc992213c61282ad1a@group.calendar.google.com",
     "ownerEmail" : "hannahbfearns@gmail.com"
   }, {
+    "id" : 16,
+    "groupCode" : "488636",
+    "calendarId" : "42d503d01a1b730bb630f86caac0970fcd8416fa4b61567035a562c018142f79@group.calendar.google.com",
+    "ownerEmail" : "hannahbfearns@gmail.com"
+  }, {
     "id" : 13,
     "groupCode" : "F089B8",
     "calendarId" : "e9934a1f355d275c577bac1bd7e39861bb358368837b93e62b6afb14592b8b13@group.calendar.google.com",
     "ownerEmail" : "hannahbfearns@gmail.com"
   }, {
-    "id" : 16,
-    "groupCode" : "0F13F9",
-    "calendarId" : "727c1a0ac3040bea959616eb0e048c2504219a72ea308a5be6fda6e7b5a1feec@group.calendar.google.com",
-    "ownerEmail" : "elasmarloay@gmail.com"
-  }, {
     "id" : 8,
     "groupCode" : "A849E4",
     "calendarId" : "b4c4f86b9a80e8ec890ef472729d5df5c2194d4c12a92c61ed064ac7c2cc45e7@group.calendar.google.com",
     "ownerEmail" : "hannahbfearns@gmail.com"
-  }, {
-    "id" : 15,
-    "groupCode" : "737990",
-    "calendarId" : "e9594243fee4e4bfa1987f2d32432a6ba635ad8bb2c01c0878dfb5655bcf329d@group.calendar.google.com",
-    "ownerEmail" : "elasmarloay@gmail.com"
   }, {
     "id" : 3,
     "groupCode" : "PHYS101-A",
@@ -70,10 +65,10 @@
     "calendarId" : "a82ef7698b603f38581007aba8d10b406d1ef6d4420fe0b2fd48598ccfa29e08@group.calendar.google.com",
     "ownerEmail" : "hannahbfearns@gmail.com"
   }, {
-    "id" : 18,
-    "groupCode" : "24EF2B",
-    "calendarId" : "cdf50646eef852893be5af015e9a92381b3d664a7395fcc153c87799950da2b2@group.calendar.google.com",
-    "ownerEmail" : "elasmarloay@gmail.com"
+    "id" : 15,
+    "groupCode" : "DC2CEA",
+    "calendarId" : "41edb0a7579b79026c8b2d0e7a24f448b5278c91f05bd75ccc816cefd28eee38@group.calendar.google.com",
+    "ownerEmail" : "hannahbfearns@gmail.com"
   }, {
     "id" : 4,
     "groupCode" : "MATH101-G1",
@@ -84,10 +79,5 @@
     "groupCode" : "FDA356",
     "calendarId" : "ecd80a0a0c0a4fb6ca05301cd5e2fc832bac51791762bc8a0aac72cd1a5a805e@group.calendar.google.com",
     "ownerEmail" : "hannahbfearns@gmail.com"
-  }, {
-    "id" : 17,
-    "groupCode" : "24A013",
-    "calendarId" : "72f0dba41900d80d45e8c48f5be965e819bae222330c7c786109fc0b3430b03e@group.calendar.google.com",
-    "ownerEmail" : "elasmarloay@gmail.com"
   } ]
 }
