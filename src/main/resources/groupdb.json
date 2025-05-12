@@ -128,6 +128,14 @@
     "groupCalId" : "a82ef7698b603f38581007aba8d10b406d1ef6d4420fe0b2fd48598ccfa29e08@group.calendar.google.com",
     "memberIds" : [ 8 ]
   }, {
+    "id" : 2020,
+    "title" : "Blade",
+    "code" : "24EF2B",
+    "classCode" : "undefined",
+    "createdBy" : "elasmarloay@gmail.com",
+    "groupCalId" : "cdf50646eef852893be5af015e9a92381b3d664a7395fcc153c87799950da2b2@group.calendar.google.com",
+    "memberIds" : [ 10 ]
+  }, {
     "id" : 2006,
     "title" : "Math Mentors",
     "code" : "MATH101-G1",
