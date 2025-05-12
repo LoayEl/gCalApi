@@ -1,17 +1,19 @@
-// AddEventForm.jsx
 import React, { useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import './AddEventForm.css';
 
 export default function AddEventForm({ onClose, onEventAdded }) {
-    const { classCode, groupCode } = useParams();
-    const [summary, setSummary] = useState('');
-    const [start, setStart] = useState('');
-    const [end, setEnd] = useState('');
-    const [location, setLocation] = useState('');
-    const [description, setDescription] = useState('');
-    const [error, setError] = useState(null);
-    const [loading, setLoading] = useState(false);
+  const { classCode, groupCode } = useParams();
+  const navigate = useNavigate();
+
+  const [summary, setSummary] = useState('');
+  const [start, setStart] = useState('');
+  const [end, setEnd] = useState('');
+  const [location, setLocation] = useState('');
+  const [description, setDescription] = useState('');
+  const [error, setError] = useState(null);
+  const [success, setSuccess] = useState(false);
+  const [loading, setLoading] = useState(false);
 
     const handleSubmit = async e => {
         e.preventDefault();
@@ -19,41 +21,43 @@ export default function AddEventForm({ onClose, onEventAdded }) {
         setLoading(true);
 
         // convert to ISO before sending
-        const startISO = new Date(start).toISOString();
-        const endISO = new Date(end).toISOString();
+       // const startISO = new Date(start).toISOString();
+      //  const endISO = new Date(end).toISOString();
 
         const eventData = {
             summary,
             location,
             description,
-            start: { dateTime: startISO, timeZone: 'America/New_York' },
-            end:   { dateTime:   endISO, timeZone: 'America/New_York' }
+            start: { dateTime: start, timeZone: 'America/New_York' },
+            end:   { dateTime: end,   timeZone: 'America/New_York' }
         };
 
-        try {
-            const res = await fetch(
-                `/class/${classCode}/groups/${groupCode}/calendar/addevent`,
-                {
-                    method:      'POST',
-                    headers:     { 'Content-Type': 'application/json' },
-                    credentials: 'include',
-                    body:        JSON.stringify(eventData)
-                }
-            );
-            if (!res.ok) {
-                const text = await res.text();
-                throw new Error(text || 'Failed to add event');
-            }
 
-            const newEvt = await res.json();
-            onEventAdded(newEvt);
-            onClose();
-        } catch (err) {
-            setError(err.message);
-        } finally {
-            setLoading(false);
+    try {
+        const res = await fetch(`/calendar/group/${groupCode}/addevent`,
+        {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          credentials: 'include',
+          body: JSON.stringify(eventData)
         }
-    };
+      );
+      if (!res.ok) throw new Error(await res.text() || 'Failed to add event');
+         setSuccess(true);
+         alert('Event added successfully!');
+         setSummary(''); setStart(''); setEnd(''); setLocation(''); setDescription('');
+
+        const newEvt = await res.json();
+        onEventAdded(newEvt);
+        onClose();
+
+        setLoading(false);
+
+        navigate(`/class/${classCode}/group/${groupCode}`);
+    } catch (err) {
+      setError(err.message);
+    }
+  };
 
     return (
         <div className="ae-overlay" onClick={onClose}>

@@ -13,37 +13,42 @@ import './GroupPage.css';
 
 export async function loader({ params }) {
     const { classCode, groupCode } = params;
-    // fetch group details
-    const r1 = await fetch(`/class/${classCode}/groups/${groupCode}/details`, { credentials: 'include' });
-    if (!r1.ok) throw new Error('Failed to load group');
-    const group   = await r1.json();
-    // fetch profile
+    // 1) group details
+    const r1 = await fetch(
+        `/class/${classCode}/groups/${groupCode}/details`,
+        { credentials: 'include' }
+    );
+    if (!r1.ok) throw new Error('Failed to load group details');
+    const group = await r1.json();
+
+    // 2) user profile
     const r2 = await fetch('/profile', { credentials: 'include' });
     if (!r2.ok) throw new Error('Failed to load profile');
     const profile = await r2.json();
+
     return { group, profile };
 }
 
 export default function GroupPage() {
-    const { group, profile } = useLoaderData();
+    const { group, profile }    = useLoaderData();
     const { classCode, groupCode } = useParams();
-    const navigate = useNavigate();
+    const navigate               = useNavigate();
 
-    // local join/leave state
+    // am I in the group?
     const [userInGroup, setUserInGroup] = useState(
         profile.email === group.createdBy ||
         group.memberNames.includes(profile.name)
     );
 
-    // upcoming events + calendar
-    const [events, setEvents]     = useState([]);
+    // events + calendar
+    const [events, setEvents]             = useState([]);
     const [loadingEvents, setLoadingEvents] = useState(true);
     const [eventsError, setEventsError]     = useState(null);
     const [calendarId, setCalendarId]       = useState(null);
     const [reloadCalKey, setReloadCalKey]   = useState(0);
 
     // modals
-    const [showAddModal,  setShowAddModal]  = useState(false);
+    const [showAddModal, setShowAddModal]   = useState(false);
     const [showJoinModal, setShowJoinModal] = useState(false);
 
     // fetch upcoming events
@@ -51,7 +56,10 @@ export default function GroupPage() {
         setLoadingEvents(true);
         setEventsError(null);
         try {
-            const r = await fetch(`/group/${groupCode}/calendar/display`, { credentials: 'include' });
+            const r = await fetch(
+                `/group/${groupCode}/calendar/display`,
+                { credentials: 'include' }
+            );
             if (!r.ok) throw new Error();
             setEvents(await r.json());
         } catch {
@@ -64,23 +72,32 @@ export default function GroupPage() {
     // fetch calendar embed ID
     const fetchCalId = useCallback(async () => {
         try {
-            const r = await fetch(`/group/${groupCode}/calendar/info`, { credentials: 'include' });
-            if (r.ok) setCalendarId((await r.json()).calendarId);
-        } catch {}
+            const r = await fetch(
+                `/group/${groupCode}/calendar/info`,
+                { credentials: 'include' }
+            );
+            if (r.ok) {
+                const d = await r.json();
+                setCalendarId(d.calendarId);
+            }
+        } catch {
+            // ignore
+        }
     }, [groupCode]);
 
+    // initial
     useEffect(() => {
         fetchEvents();
         fetchCalId();
     }, [fetchEvents, fetchCalId]);
 
-    // after add-event
+    // when a new event arrives
     const handleEventAdded = newEvt => {
         setEvents(es => [newEvt, ...es]);
         setReloadCalKey(k => k + 1);
     };
 
-    // share
+    // share code
     const handleShare = () => {
         navigator.clipboard.writeText(group.code);
         alert('Group code copied!');
@@ -94,13 +111,13 @@ export default function GroupPage() {
         );
         if (r.ok) {
             setUserInGroup(false);
-            alert('Left group');
+            alert('You left the group');
         } else {
-            alert('Could not leave');
+            alert('Failed to leave');
         }
     };
 
-    // join
+    // after joining
     const handleJoined = () => {
         setUserInGroup(true);
         setShowJoinModal(false);
@@ -110,7 +127,7 @@ export default function GroupPage() {
 
     return (
         <>
-            <div className={`group-page${(showAddModal||showJoinModal) ? ' blur' : ''}`}>
+            <div className={`group-page${(showAddModal||showJoinModal)?' blur':''}`}>
                 <header className="group-header">
                     <h1 className="group-title">{group.title}</h1>
                     <p className="group-subtitle">
@@ -119,26 +136,28 @@ export default function GroupPage() {
                 </header>
 
                 <div className="group-content">
-                    {/* left side */}
+                    {/* ── MAIN COLUMN ── */}
                     <div className="group-main">
-                        {/* calendar */}
+
+                        {/* Calendar View */}
                         <div className="panel-card">
                             <div className="panel-header">
                                 <h2 className="section-title">Calendar View</h2>
                             </div>
-                            {calendarId
-                                ? <iframe
+                            {calendarId ? (
+                                <iframe
                                     key={reloadCalKey}
                                     className="calendar-iframe"
                                     src={`https://calendar.google.com/calendar/embed?src=${encodeURIComponent(calendarId)}&ctz=America/New_York`}
                                     frameBorder="0"
                                     scrolling="no"
                                 />
-                                : <Loading message="Loading calendar…" />
-                            }
+                            ) : (
+                                <Loading message="Loading calendar…" />
+                            )}
                         </div>
 
-                        {/* upcoming events */}
+                        {/* Upcoming Events */}
                         <div className="panel-card">
                             <div className="panel-header">
                                 <h2 className="section-title">Upcoming Events</h2>
@@ -149,58 +168,77 @@ export default function GroupPage() {
                                     >➕ Add Event</button>
                                 )}
                             </div>
-                            {loadingEvents
-                                ? <Loading message="Loading events…" />
-                                : eventsError
-                                    ? <p className="error">{eventsError}</p>
-                                    : events.length === 0
-                                        ? <p>No upcoming events.</p>
-                                        : <ul className="events-list">
-                                            {events.map(ev => {
-                                                const rs = ev.start?.dateTime || ev.start?.date || '';
-                                                const re = ev.end  ?.dateTime || ev.end  ?.date || '';
-                                                const sd = rs ? new Date(rs).toLocaleString() : '—';
-                                                const ed = re ? new Date(re).toLocaleString() : '—';
-                                                return (
-                                                    <li key={ev.id||ev.summary+rs} className="event-item">
-                                                        <strong>{ev.summary}</strong>
-                                                        <div className="event-times">
-                                                            Start: {sd}<br/>End: {ed}
-                                                        </div>
-                                                        {ev.location && <div className="event-location">{ev.location}</div>}
-                                                    </li>
-                                                );
-                                            })}
-                                        </ul>
-                            }
+                            {loadingEvents ? (
+                                <Loading message="Loading events…" />
+                            ) : eventsError ? (
+                                <p className="error">{eventsError}</p>
+                            ) : events.length === 0 ? (
+                                <p>No upcoming events.</p>
+                            ) : (
+                                <ul className="events-list">
+                                    {events.map(ev => {
+                                        // handle both dateTime and all-day
+                                        const rs = ev.start?.dateTime || ev.start?.date || '';
+                                        const re = ev.end  ?.dateTime || ev.end?.date   || '';
+                                        const sd = rs ? new Date(rs).toLocaleString() : '—';
+                                        const ed = re ? new Date(re).toLocaleString() : '—';
+                                        return (
+                                            <li key={ev.id||ev.summary+rs} className="event-item">
+                                                <strong>{ev.summary}</strong>
+                                                <div className="event-times">
+                                                    Start: {sd}<br/>End: {ed}
+                                                </div>
+                                                {ev.location && (
+                                                    <div className="event-location">{ev.location}</div>
+                                                )}
+                                            </li>
+                                        );
+                                    })}
+                                </ul>
+                            )}
                         </div>
                     </div>
 
-                    {/* right sidebar */}
+                    {/* ── SIDEBAR ── */}
                     <aside className="group-sidebar">
                         <div className="panel-card">
                             <h2 className="section-title">Members</h2>
                             <ul className="members-list">
-                                {group.memberNames.map((n,i) => <li key={i}>{n}</li>)}
+                                {group.memberNames.map((n,i) => (
+                                    <li key={i}>{n}</li>
+                                ))}
                             </ul>
                             <div className="sidebar-actions">
-                                {userInGroup
-                                    ? <button className="btn-leave" onClick={handleLeave}>🚪 Leave Group</button>
-                                    : <button className="btn-join" onClick={() => setShowJoinModal(true)}>🤝 Join Group</button>
-                                }
-                                <button className="btn-share" onClick={handleShare}>📋 Copy Code</button>
+                                {userInGroup ? (
+                                    <button className="btn-leave" onClick={handleLeave}>
+                                        🚪 Leave Group
+                                    </button>
+                                ) : (
+                                    <button
+                                        className="btn-join"
+                                        onClick={() => setShowJoinModal(true)}
+                                    >
+                                        🤝 Join Group
+                                    </button>
+                                )}
+                                <button className="btn-share" onClick={handleShare}>
+                                    📋 Copy Code
+                                </button>
                             </div>
                         </div>
                     </aside>
                 </div>
             </div>
 
+            {/* Add Event Modal */}
             {showAddModal && (
                 <AddEventForm
                     onClose={() => setShowAddModal(false)}
                     onEventAdded={handleEventAdded}
                 />
             )}
+
+            {/* Join Group Modal */}
             {showJoinModal && (
                 <JoinGroupForm
                     onClose={() => setShowJoinModal(false)}

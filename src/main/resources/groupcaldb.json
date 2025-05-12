@@ -15,11 +15,6 @@
     "calendarId" : "f504f1e1cb5c7be618d43d2b47957ca2bf259f3e3e6b12390ff55413188dafd3@group.calendar.google.com",
     "ownerEmail" : "hannahbfearns@gmail.com"
   }, {
-    "id" : 15,
-    "groupCode" : "A7437D",
-    "calendarId" : "596bf88647e45d3c861e6272f6e81e64b28807a4301c697247f6332bce8bc59b@group.calendar.google.com",
-    "ownerEmail" : "elasmarloay@gmail.com"
-  }, {
     "id" : 7,
     "groupCode" : "595556",
     "calendarId" : "2262aee89c014c8242c69060da418c250f446306ee9a460ef274090a9ba2352c@group.calendar.google.com",
@@ -30,14 +25,14 @@
     "calendarId" : "bd0db3b23560a01f5abc8c2c4d3c8f8188f26f899f414317629b62c835be3cc3@group.calendar.google.com",
     "ownerEmail" : "hannahbfearns@gmail.com"
   }, {
-    "id" : 17,
-    "groupCode" : "D45E3F",
-    "calendarId" : "33afb3bfbdfea4c5125dd236f67057cb7272194d6fb063bc8d222fb24c02241c@group.calendar.google.com",
-    "ownerEmail" : "elasmarloay@gmail.com"
-  }, {
     "id" : 9,
     "groupCode" : "829B26",
     "calendarId" : "be11913b0ac7be13141dfbc06ebd791a78b82299e7ea8cdc992213c61282ad1a@group.calendar.google.com",
+    "ownerEmail" : "hannahbfearns@gmail.com"
+  }, {
+    "id" : 16,
+    "groupCode" : "488636",
+    "calendarId" : "42d503d01a1b730bb630f86caac0970fcd8416fa4b61567035a562c018142f79@group.calendar.google.com",
     "ownerEmail" : "hannahbfearns@gmail.com"
   }, {
     "id" : 13,
@@ -49,16 +44,6 @@
     "groupCode" : "A849E4",
     "calendarId" : "b4c4f86b9a80e8ec890ef472729d5df5c2194d4c12a92c61ed064ac7c2cc45e7@group.calendar.google.com",
     "ownerEmail" : "hannahbfearns@gmail.com"
-  }, {
-    "id" : 16,
-    "groupCode" : "76F7E6",
-    "calendarId" : "f523316dde25e0cfdfc9f02a909a0ba2f61a76da7936ab6208fdf668d2c041df@group.calendar.google.com",
-    "ownerEmail" : "elasmarloay@gmail.com"
-  }, {
-    "id" : 18,
-    "groupCode" : "C644FF",
-    "calendarId" : "b1f471460ced17fb21aef6d3062fa7b6d7435868fd84416f915b48c071fb3371@group.calendar.google.com",
-    "ownerEmail" : "elasmarloay@gmail.com"
   }, {
     "id" : 3,
     "groupCode" : "PHYS101-A",
@@ -78,6 +63,11 @@
     "id" : 14,
     "groupCode" : "E085CA",
     "calendarId" : "a82ef7698b603f38581007aba8d10b406d1ef6d4420fe0b2fd48598ccfa29e08@group.calendar.google.com",
+    "ownerEmail" : "hannahbfearns@gmail.com"
+  }, {
+    "id" : 15,
+    "groupCode" : "DC2CEA",
+    "calendarId" : "41edb0a7579b79026c8b2d0e7a24f448b5278c91f05bd75ccc816cefd28eee38@group.calendar.google.com",
     "ownerEmail" : "hannahbfearns@gmail.com"
   }, {
     "id" : 4,
