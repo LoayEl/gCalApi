@@ -22,7 +22,7 @@
     "classCode" : "PHYS101",
     "createdBy" : "mila@example.com",
     "groupCalId" : "null",
-    "memberIds" : [ 2, 7 ]
+    "memberIds" : [ 2 ]
   }, {
     "id" : 2014,
     "title" : "grouptestsun",
@@ -32,6 +32,14 @@
     "groupCalId" : "f504f1e1cb5c7be618d43d2b47957ca2bf259f3e3e6b12390ff55413188dafd3@group.calendar.google.com",
     "memberIds" : [ 8 ]
   }, {
+    "id" : 2019,
+    "title" : "Watermelon",
+    "code" : "04357E",
+    "classCode" : "undefined",
+    "createdBy" : "elasmarloay@gmail.com",
+    "groupCalId" : "1653ac8a43da2ed74abc8448cc8a9be86cf61289e63b3d13f2a85008804c8be0@group.calendar.google.com",
+    "memberIds" : [ ]
+  }, {
     "id" : 2009,
     "title" : "testgroup2",
     "code" : "595556",
@@ -39,6 +47,14 @@
     "createdBy" : "hannahbfearns@gmail.com",
     "groupCalId" : "2262aee89c014c8242c69060da418c250f446306ee9a460ef274090a9ba2352c@group.calendar.google.com",
     "memberIds" : [ ]
+  }, {
+    "id" : 2021,
+    "title" : "BUM",
+    "code" : "B834E4",
+    "classCode" : "undefined",
+    "createdBy" : "elasmarloay@gmail.com",
+    "groupCalId" : "c07b188b1daa1ee273224676d0a68f8170c6752b35c97ea05615269c3db6530d@group.calendar.google.com",
+    "memberIds" : [ 7 ]
   }, {
     "id" : 2012,
     "title" : "ohmygod",
@@ -63,6 +79,14 @@
     "createdBy" : "hannahbfearns@gmail.com",
     "groupCalId" : "42d503d01a1b730bb630f86caac0970fcd8416fa4b61567035a562c018142f79@group.calendar.google.com",
     "memberIds" : [ 8 ]
+  }, {
+    "id" : 2020,
+    "title" : "Fire",
+    "code" : "5B4392",
+    "classCode" : "undefined",
+    "createdBy" : "elasmarloay@gmail.com",
+    "groupCalId" : "fde6bee0ca2e36fe8a4fe8cb90b95503ed48060189acdf7a188c61a90f60c229@group.calendar.google.com",
+    "memberIds" : [ ]
   }, {
     "id" : 2015,
     "title" : "testtestg",

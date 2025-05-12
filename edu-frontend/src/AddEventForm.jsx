@@ -21,15 +21,15 @@ export default function AddEventForm({ onClose, onEventAdded }) {
         setLoading(true);
 
         // convert to ISO before sending
-       // const startISO = new Date(start).toISOString();
-      //  const endISO = new Date(end).toISOString();
+        const startISO = new Date(start).toISOString();
+        const endISO = new Date(end).toISOString();
 
         const eventData = {
             summary,
             location,
             description,
-            start: { dateTime: start, timeZone: 'America/New_York' },
-            end:   { dateTime: end,   timeZone: 'America/New_York' }
+            start: { dateTime: startISO, timeZone: 'America/New_York' },
+            end:   { dateTime: endISO,   timeZone: 'America/New_York' }
         };
 
 
