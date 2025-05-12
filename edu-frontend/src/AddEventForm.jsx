@@ -27,8 +27,7 @@ export default function AddEventForm() {
     };
 
     try {
-      const res = await fetch(
-        `/group/${groupCode}/calendar/addevent`,
+        const res = await fetch(`/calendar/group/${groupCode}/addevent`,
         {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },

@@ -25,8 +25,8 @@ import java.time.ZoneId;
 import java.util.Map;
 
 
-@Service
-public class GroupCalService {
+@Service("groupCalService")
+public class GroupCalService implements ICalendarService {
 
     @Autowired
     private GroupService groupService;
